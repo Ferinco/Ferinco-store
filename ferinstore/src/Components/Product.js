@@ -2,8 +2,8 @@ import { useState } from "react";
 import data from "../Data/Data";
 import Item from "./Item";
 export default function Products() {
-  const [activeTab, setActiveTab] = useState("All");
-  const [products, setProducts] = useState(data);
+  const [activeTab, setActiveTab] = useState("Top");
+  const [products, setProducts] = useState(data.filter((item)=> item.category === "Top"));
 const filterProducts=(tabItem)=>{
     console.log(products)
     setActiveTab(tabItem)
@@ -16,18 +16,20 @@ const filterProducts=(tabItem)=>{
     }
 }
   const tabItems = [
-    "All",
+    "Top",
     "T-Shirts",
     "Shorts",
     "Caps",
-    "Jackets",
-    "Hoodies",
+    "Belts",
+    "Hats",
     "Jackets",
     "Hoodies",
     "Watches",
     "Bags",
     "Trousers",
     "Skirts",
+    "Shoes"
+    
   ];
 
   return (
@@ -38,7 +40,10 @@ const filterProducts=(tabItem)=>{
       </div>
         <ul className="tab-items">
           {tabItems.map((tabItem, index) => (
-            <button key={index} onClick={() => filterProducts(tabItem)}>
+            <button key={index} onClick={() => filterProducts(tabItem)}
+            style={{
+                backgroundColor : activeTab === tabItem ? "rgb(181, 240, 181)" : "transparent"
+            }}>
               {tabItem}
             </button>
           ))}
@@ -49,14 +54,15 @@ const filterProducts=(tabItem)=>{
  
         <div className="item-wrapper">
         <Item
-            key={product.id} // Add a unique key for each Item component
-            category={product.category}
+            key={product.id}
             name={product.name}
+            tag={product.tag }
             price={product.price}
             rating={product.rating}
             img={product.image}
           />
         </div>
+        
 
     
 ))}

@@ -51,6 +51,8 @@
   flex-direction: column;
   justify-content: end;
   padding: 0 20px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0));
 }
 .left-body-bottom-image .bottom-text h5, .left-body-bottom-image .bottom-text p {
   color: white;
@@ -70,11 +72,8 @@ nav {
   flex-direction: row;
   align-items: center;
   padding: 10px 20px;
+  justify-content: space-between !important;
 }
-nav ul {
-  margin-left: 50%;
-}
-
 .right {
   width: 400px;
 }
@@ -108,10 +107,16 @@ nav ul {
 }
 .products-buttons button {
   border: 0;
-  background-color: 0;
+  background: #f5f5f5;
+  padding: 3px 15px;
+  border-radius: 30px;
 }
 .products-buttons .search-icon button {
   border-right: 1px solid grey;
+  border: 0;
+  background: #f5f5f5;
+  padding: 10px 15px !important;
+  border-radius: 30px;
 }
 .products-buttons .tab-items {
   width: 100%;
@@ -119,24 +124,22 @@ nav ul {
   justify-content: space-between;
 }
 .products-items {
-  width: 100% !important;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px !important;
-  align-items: center;
+  padding-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
 }
 
 .item {
-  width: 280px;
   display: flex;
   flex-direction: column;
   height: 400px;
 }
 .item-image {
-  width: 280px;
   height: 300px;
   background-color: rgb(243, 255, 243);
   border-radius: 10px;
+  position: relative;
 }
 .item-image img {
   width: 90%;
@@ -144,6 +147,16 @@ nav ul {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  position: absolute;
+}
+.item-tag {
+  position: absolute;
+  padding: 10px;
+}
+.item-tag .tag {
+  background-color: rgb(181, 240, 181);
+  padding: 5px 10px;
+  border-radius: 30px;
 }
 .item-body {
   display: flex;
@@ -157,4 +170,24 @@ nav ul {
 }
 .item-body-price {
   width: 40%;
+}
+
+.collections {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.collections-header {
+  display: flex;
+  justify-content: space-between;
+}
+.collection-image {
+  position: relative;
+}
+.collection-image img {
+  position: absolute;
+}
+.collection-title {
+  position: absolute;
 }/*# sourceMappingURL=Style.css.map */
