@@ -3,7 +3,7 @@ export default function Navbar(){
         
             <nav className="navbar-expand-lg">
   <a className="navbar-brand" href="#">FerinSTORE</a>
-  <div>
+  
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
@@ -23,7 +23,7 @@ export default function Navbar(){
       </li>
     </ul>
   </div>
-  </div>
+  
 </nav>
        
     )

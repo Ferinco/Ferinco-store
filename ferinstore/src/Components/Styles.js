@@ -11,6 +11,9 @@ export default function Styles (){
         mainImage = "../Images/Collection/Collection (2).png"
         topImage = "../Images/Collection/Collection (1).png"
         bottomImage = "../Images/Collection/Collection (3).png"
+        mainText = "Nike Hoodie"
+        topText = "Back Side"
+        bottomText ="Front View"
       />
     </div>
     <div className="carousel-item">
