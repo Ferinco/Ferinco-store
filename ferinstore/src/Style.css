@@ -361,7 +361,76 @@ nav {
   .left-body-bottom-image {
     width: 300px;
   }
-  .right, .products, .item, .collections, .collection, .styles, .style {
+  .right, .collections, .collection, .styles, .style {
     display: none !important;
+  }
+  .products {
+    padding-top: 20px;
+  }
+  .products-buttons {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+  }
+  .products-buttons .tab-items button {
+    width: 40% !important;
+  }
+  .products-items {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+  }
+  .products-logos .logo {
+    width: 50px;
+    height: 50px;
+  }
+  .item {
+    width: 300px;
+    justify-content: center;
+  }
+  .collections {
+    padding-top: 20px;
+  }
+  .collections-header h3 {
+    font-size: 30px;
+  }
+  .collections-body {
+    display: flex;
+    flex-direction: column;
+  }
+  .collection {
+    height: 200px;
+    width: 300px;
+  }
+  .collection h2 {
+    height: 200px;
+    width: 300px;
+  }
+  .styles {
+    padding-top: 20px;
+  }
+  .style {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .style .text p {
+    font-size: 30px;
+  }
+  .style-left {
+    height: 300px;
+    width: 100%;
+  }
+  .style-right {
+    flex-direction: row;
+    gap: 20px;
+    height: 300px;
+    width: 100%;
+  }
+  .style-right-top, .style-right-bottom {
+    align-items: center;
+    width: 50%;
+    height: 100%;
   }
 }/*# sourceMappingURL=Style.css.map */
