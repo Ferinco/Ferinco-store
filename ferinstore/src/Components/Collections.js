@@ -4,24 +4,24 @@ export default function Collections(){
         <div className="collections">
             <div className="collections-header">
                 <h3>Upgrade Your Style <br/> With Our Streetwear Collection</h3>
-                <p>see more collection</p>
+                <a href="">see more collection</a>
             </div>
             <div className="collections-body">
 <Collection
-    image = "../Images/bottom image 2.avif"
-    title = "Sport"
+    image = "../Images/Collections/sports.jpg"
+    title = "Sports"
 />
 <Collection
-    image = "../Images/bottom image 2.avif"
+    image = "../Images/Collections/csual.jpg"
     title = "Casual"
 />
 <Collection
-    image = "../Images/bottom image 2.avif"
-    title = "Yoruba"
+    image = "../Images/Collections/k-style.jpg"
+    title = "K-Style"
 />
 <Collection
-    image = "../Images/bottom image 2.avif"
-    title = "K-Style"
+    image = "../Images/Collections/afro-style.avif"
+    title = "Yoruba"
 />
             </div>
         </div>

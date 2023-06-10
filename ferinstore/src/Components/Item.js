@@ -5,10 +5,7 @@ export default function Item (props){
     <img src={props.img}/>
     </div>
     <div className="item-tag">
-<p className="tag"
-style={{
-    display: {props} === "" ? "none" : "flex"
-}}>{props.tag}</p>
+<p className="tag">{props.tag}</p>
     </div>
     <div className="item-body">
     <div className="item-body-about">

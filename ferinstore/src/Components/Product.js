@@ -21,12 +21,12 @@ const filterProducts=(tabItem)=>{
     "Shorts",
     "Caps",
     "Belts",
-    "Hats",
+    "Glasses",
     "Jackets",
     "Hoodies",
     "Watches",
     "Bags",
-    "Trousers",
+    "Pants",
     "Skirts",
     "Shoes"
     
@@ -61,12 +61,28 @@ const filterProducts=(tabItem)=>{
             rating={product.rating}
             img={product.image}
           />
-        </div>
-        
-
+        </div>    
     
 ))}
    
+      </div>
+      <div className="products-logos">
+      <div className="logo">
+      <img src="../Images/Logos/logo (1).png"/>
+      </div>
+      <div className="logo">
+        <img src="../Images/Logos/logo (2).png"/>
+      </div>
+      <div className="logo">
+        <img src="../Images/Logos/logo (3).png"/>
+      </div>
+      <div className="logo">
+        <img src="../Images/Logos/logo (4).png"/>
+      </div>
+      <div className="logo">
+        <img src="../Images/Logos/logo (5).png"/>
+      </div>
+
       </div>
     </div>
   );
