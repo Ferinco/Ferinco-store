@@ -115,15 +115,6 @@ nav {
       padding: 3px 15px;
       border-radius: 30px;
     }
-    .search-icon {
-      button {
-        border-right: 1px solid grey;
-        border: 0;
-        background: #f5f5f5;
-        padding: 3px 15px !important;
-        border-radius: 30px;
-      }
-    }
     .tab-items {
       width: 100%;
       display: flex;
@@ -203,8 +194,11 @@ nav {
   display: flex;
   flex-direction: column;
   &-header {
-    h3 {
+    .desktop-header{
       font-size: 40px;
+    }
+    .mobile-header{
+        display: none;
     }
     display: flex;
     justify-content: space-between;
@@ -215,6 +209,9 @@ nav {
     gap: 1.5rem;
     grid-template-columns: repeat(2, 1fr);
   }
+  &-link{
+    display: none;
+  }
 }
 .collection {
   display: flex;
@@ -222,6 +219,12 @@ nav {
   height: 300px;
   width: 600px;
   border-radius: 20px;
+  .landscape{
+    display: block;
+  }
+  .potrait{
+    display: none;
+  }
 
   &-image {
     height: 100%;
@@ -246,7 +249,11 @@ nav {
     align-items: center;
     color: white;
     font-size: 70px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    background: linear-gradient(
+        to bottom,
+        rgb(54, 54, 54),
+        rgba(0, 0, 0, 0)
+      );
   }
 }
 .styles {
@@ -337,9 +344,14 @@ align-items: center;
 }
 
 @media  screen and (min-width: 300px) and (max-width: 600px) {
+    .banner {
+        width: 90%;
+   padding-top: 10px;
+      }
     .left {
-        width: 100%;
+        width: 90%;
         height: auto;
+        margin: auto;
         &-body {
           padding-top: 20px;
           &-text {
@@ -347,6 +359,7 @@ align-items: center;
             border-radius: 20px;
             background-color: #f5f5f5;
             .mobile-text {
+                display: flex;
                 font-size: 50px;
               }
               .desktop-text{
@@ -354,68 +367,129 @@ align-items: center;
               }
           }
           &-bottom {
+            display: flex;
             flex-direction: column;
             &-image {
-              width: 300px;
+              width: 100%;
             }
           }
         }
       }
-      .right, .collections, .collection, .styles, .style {
+      .right {
 display: none !important;
       }
       .products {
-        padding-top: 20px;
+        padding-top: 50px;
+overflow: hidden;
         &-buttons {
           display:flex;
+          width: auto;
           width: 100%;
-        overflow-x: scroll;
+          justify-content: center;
+          align-items: start;
+          padding-bottom: 10px !important;
+        
         .tab-items {
+            width: 100%;
+            overflow-x:auto ;
+            
+            justify-content: space-between;
+            gap: 15px;
+            align-items: center;
          button{
-            width: 40% !important;
+            display: flex !important;
+            font-size: 20px;
+            padding: 0 15px;
+            border-radius: 20px;
          }
           }
         }
         
         &-items {
-          padding-top: 40px;
+            display: none;
+          padding-top: 20px;
           display: flex;
           flex-direction: row;
-          overflow-x: scroll;
+        width: 100%;
+
+          overflow-x: auto;
         }
         &-logos {
+            padding-top: 20px;
+            width: 90%;
+            margin: auto;
           .logo {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
           }
         }
       }
       .item {
         width: 300px;
-        justify-content: center;    
+        justify-content: center;  
+        &-tag{
+            display: none;
+        }  
       }
       .collections {
-        padding-top: 20px;
+        padding-top: 50px;
         &-header {
-          h3 {
+            display: flex;
+            flex-direction: column;
+            a{
+                display: none;
+            }
+            .desktop-header{
+                display: none;
+            }
+        .mobile-header {
+            text-align: center;
+            display: flex;
             font-size: 30px;
           }
         }
         &-body {
+            padding-top: 20px;
          display: flex;
          flex-direction: column;
+         justify-content: center;
+         align-items: center;
         }
+        &-link{
+            padding-top: 20px;
+            display: flex;
+            justify-content: center;
+          }
       }
       .collection {
-        height: 200px;
-        width: 300px;    
+        height: 400px;
+        width: 300px;
+        margin: auto !important;
+        justify-content: center;
+        &:hover{
+            scale: (1.05);
+            transition: 0.3s;
+        }
+        .potrait{
+            display: block;
+          }
+          .landscape{
+            display: none;
+          }    
         h2 {
-          height: 200px;
+          height: 400px;
           width: 300px;
+          font-size: 30px;
         }
       }
       .styles {
         padding-top: 20px;
+        &-button {
+            button {
+              padding: 10px;
+              font-size: 30px;
+            }
+          }
       }
       .style {
         display: flex;
