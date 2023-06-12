@@ -12,7 +12,7 @@ return(
                     Unleash Your <br/> Street Style with <br/> Our New Collection
                 </h1>
                 <h1 className="mobile-text">
-                    Unleash Your <br/> Street Style with <br/> Our New Collection
+                    Unleash Your Street Style with Our New Collection
                 </h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eleifend ante sed lectus <br/> bibendum aliquet. Aenean commodo justo ut justo finibus, a efficitur ex consequat. <br/> In at placerat nisi, vitae tincidunt nunc. Aliqua</p>
             </div>

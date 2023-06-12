@@ -7,14 +7,16 @@ export default function Item (props){
     <div className="item-tag">
 <p className="tag">{props.tag}</p>
     </div>
-    <div className="item-body">
-    <div className="item-body-about">
+   <div className="item-body">
+   <div className="about">
     <h5 className="name">{props.name}</h5>
-    </div>
-    <div className="item-body-price">
         <h3 className="price">{props.price}</h3>
     </div>
+    <div className="shop">
+        <button>fav</button>
+        <button>shop</button>
     </div>
+   </div>
 </div>
     )
 }

@@ -115,13 +115,6 @@ nav {
   padding: 3px 15px;
   border-radius: 30px;
 }
-.products-buttons .search-icon button {
-  border-right: 1px solid grey;
-  border: 0;
-  background: #f5f5f5;
-  padding: 3px 15px !important;
-  border-radius: 30px;
-}
 .products-buttons .tab-items {
   width: 100%;
   display: flex;
@@ -182,17 +175,18 @@ nav {
   border-radius: 30px;
 }
 .item-body {
+  width: 100%;
   display: flex;
   padding: 5px;
   justify-content: space-between;
-  display: flex;
   align-items: center;
 }
-.item-body-about {
-  width: 60%;
+.item-body .shop, .item-body .about {
+  display: flex;
+  flex-direction: column;
 }
-.item-body-price {
-  width: 40%;
+.item-body .shop button, .item-body .about button {
+  border: 0;
 }
 
 .collections {
@@ -207,13 +201,19 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-.collections-header h3 {
+.collections-header .desktop-header {
   font-size: 40px;
+}
+.collections-header .mobile-header {
+  display: none;
 }
 .collections-body {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(2, 1fr);
+}
+.collections-link {
+  display: none;
 }
 
 .collection {
@@ -222,6 +222,12 @@ nav {
   height: 300px;
   width: 600px;
   border-radius: 20px;
+}
+.collection .landscape {
+  display: block;
+}
+.collection .potrait {
+  display: none;
 }
 .collection-image {
   height: 100%;
@@ -246,7 +252,7 @@ nav {
   align-items: center;
   color: white;
   font-size: 70px;
-  background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+  background: linear-gradient(to bottom, rgb(54, 54, 54), rgba(0, 0, 0, 0));
 }
 
 .styles {
@@ -336,10 +342,44 @@ nav {
   position: absolute;
 }
 
+.footer {
+  margin-top: 20px !important;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+}
+.footer-top {
+  padding-bottom: 5px;
+  border-bottom: 1px solid grey;
+}
+.footer-top, .footer-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-top ul, .footer-bottom ul {
+  gap: 5px;
+  display: flex;
+}
+.footer-top ul li, .footer-bottom ul li {
+  list-style: none;
+}
+
 @media screen and (min-width: 300px) and (max-width: 600px) {
+  .banner {
+    width: 90%;
+    padding-top: 10px;
+  }
   .left {
-    width: 100%;
+    width: 90%;
     height: auto;
+    margin: auto;
   }
   .left-body {
     padding-top: 20px;
@@ -350,65 +390,128 @@ nav {
     background-color: #f5f5f5;
   }
   .left-body-text .mobile-text {
+    display: flex;
     font-size: 50px;
   }
   .left-body-text .desktop-text {
     display: none;
   }
   .left-body-bottom {
+    display: flex;
     flex-direction: column;
   }
   .left-body-bottom-image {
-    width: 300px;
+    width: 100%;
   }
-  .right, .collections, .collection, .styles, .style {
+  .right {
     display: none !important;
   }
   .products {
-    padding-top: 20px;
+    padding-top: 50px;
+    overflow: hidden;
   }
   .products-buttons {
     display: flex;
+    width: auto;
     width: 100%;
-    overflow-x: scroll;
+    justify-content: center;
+    align-items: start;
+    padding-bottom: 10px !important;
+  }
+  .products-buttons .tab-items {
+    width: 100%;
+    overflow-x: auto;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
   }
   .products-buttons .tab-items button {
-    width: 40% !important;
+    display: flex !important;
+    font-size: 20px;
+    padding: 0 15px;
+    border-radius: 20px;
   }
   .products-items {
-    padding-top: 40px;
+    display: none;
+    padding-top: 20px;
     display: flex;
     flex-direction: row;
-    overflow-x: scroll;
+    width: 100%;
+    overflow-x: auto;
+  }
+  .products-logos {
+    padding-top: 20px;
+    width: 90%;
+    margin: auto;
   }
   .products-logos .logo {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
   }
   .item {
     width: 300px;
     justify-content: center;
   }
+  .item-tag {
+    display: none;
+  }
   .collections {
-    padding-top: 20px;
+    padding-top: 50px;
   }
-  .collections-header h3 {
-    font-size: 30px;
-  }
-  .collections-body {
+  .collections-header {
     display: flex;
     flex-direction: column;
   }
+  .collections-header a {
+    display: none;
+  }
+  .collections-header .desktop-header {
+    display: none;
+  }
+  .collections-header .mobile-header {
+    text-align: center;
+    display: flex;
+    font-size: 30px;
+  }
+  .collections-body {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .collections-link {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
   .collection {
-    height: 200px;
+    height: 400px;
     width: 300px;
+    margin: auto !important;
+    justify-content: center;
+  }
+  .collection:hover {
+    scale: 1.05;
+    transition: 0.3s;
+  }
+  .collection .potrait {
+    display: block;
+  }
+  .collection .landscape {
+    display: none;
   }
   .collection h2 {
-    height: 200px;
+    height: 400px;
     width: 300px;
+    font-size: 30px;
   }
   .styles {
     padding-top: 20px;
+  }
+  .styles-button button {
+    padding: 10px;
+    font-size: 30px;
   }
   .style {
     display: flex;

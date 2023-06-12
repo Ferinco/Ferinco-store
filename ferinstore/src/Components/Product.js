@@ -35,14 +35,13 @@ const filterProducts=(tabItem)=>{
   return (
     <div className="products">
       <div className="products-buttons">
-      <div className="search-icon">
         <button className="fa fa-search"></button>
-      </div>
         <ul className="tab-items">
           {tabItems.map((tabItem, index) => (
             <button key={index} onClick={() => filterProducts(tabItem)}
             style={{
-                backgroundColor : activeTab === tabItem ? "rgb(181, 240, 181)" : "transparent"
+                backgroundColor : activeTab === tabItem ? "rgb(181, 240, 181)" : "transparent",
+                width: "100px"
             }}>
               {tabItem}
             </button>
@@ -51,7 +50,6 @@ const filterProducts=(tabItem)=>{
       </div>
       <div className="products-items">
 {products.map((product)=>(
- 
         <div className="item-wrapper">
         <Item
             key={product.id}
@@ -62,7 +60,6 @@ const filterProducts=(tabItem)=>{
             img={product.image}
           />
         </div>    
-    
 ))}
    
       </div>
