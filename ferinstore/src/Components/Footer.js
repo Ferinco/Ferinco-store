@@ -4,10 +4,10 @@ export default function Footer (){
 <div className="footer-top">
     <h3>FerinSTORE</h3>
     <ul>
-        <li>fb</li>
-        <li>ig</li>
-        <li>li</li>
-        <li>tw</li>
+        <li><a href=""><img src="./Images/Social/social (1).png"/></a></li>
+        <li><a href=""><img src="./Images/Social/social (2).png"/></a></li>
+        <li><a href=""><img src="./Images/Social/social (3).png"/></a></li>
+        <li><a href=""><img src="./Images/Social/social (4).png"/></a></li>
 
     </ul>
 </div>
