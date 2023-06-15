@@ -24,9 +24,15 @@
 }
 .left-body-text .desktop-text {
   font-size: 50px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
 }
 .left-body-text .mobile-text {
   display: none;
+  font-family: "Roboto", sans-serif;
+}
+.left-body-text p {
+  font-family: "Quicksand", sans-serif;
 }
 .left-body-bottom {
   padding-top: 20px;
