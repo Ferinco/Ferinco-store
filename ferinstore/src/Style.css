@@ -109,6 +109,12 @@ nav {
   display: flex;
   flex-direction: row;
 }
+.products-buttons .fa-search {
+  border-radius: 0;
+  padding: 10px !important;
+  border-right: 1px solid grey;
+  background: transparent;
+}
 .products-buttons button {
   border: 0;
   background: #f5f5f5;
@@ -119,6 +125,12 @@ nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  overflow-x: auto;
+  gap: 15px;
+  align-items: center;
+}
+.products-buttons .tab-items::-webkit-scrollbar {
+  margin-top: 5px;
 }
 .products-items {
   padding-top: 40px;

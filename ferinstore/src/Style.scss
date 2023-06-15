@@ -1,3 +1,6 @@
+
+
+
 .banner {
   padding-top: 30px;
   display: flex;
@@ -108,7 +111,12 @@ nav {
   &-buttons {
     display: flex;
     flex-direction: row;
-
+    .fa-search{
+      border-radius: 0;
+      padding: 10px !important;
+      border-right: 1px solid grey;
+      background: transparent;
+    }
     button {
       border: 0;
       background: #f5f5f5;
@@ -119,6 +127,15 @@ nav {
       width: 100%;
       display: flex;
       justify-content: space-between;
+      overflow-x:auto ;
+      gap: 15px ;
+      align-items: center;
+      &::-webkit-scrollbar {
+        
+        margin-top: 5px;
+      }
+    
+    
     }
   }
   &-items {
@@ -502,9 +519,9 @@ overflow: hidden;
       .item {
         width: 300px;
         justify-content: center;  
-        &-tag{
-            display: none;
-        }  
+        &-tag {
+   display: none;
+        } 
       }
       .collections {
         padding-top: 50px;
