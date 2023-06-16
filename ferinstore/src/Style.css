@@ -1,3 +1,11 @@
+h1, p, h5 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+button, a {
+  font-family: "Quicksand", sans-serif;
+}
+
 .banner {
   padding-top: 30px;
   display: flex;
@@ -24,15 +32,9 @@
 }
 .left-body-text .desktop-text {
   font-size: 50px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
 }
 .left-body-text .mobile-text {
   display: none;
-  font-family: "Roboto", sans-serif;
-}
-.left-body-text p {
-  font-family: "Quicksand", sans-serif;
 }
 .left-body-bottom {
   padding-top: 20px;
@@ -115,6 +117,7 @@ nav {
 .products-buttons {
   display: flex;
   flex-direction: row;
+  align-items: baseline;
 }
 .products-buttons .fa-search {
   border-radius: 0;
@@ -258,6 +261,7 @@ nav {
 }
 .collections-link {
   display: none;
+  color: black;
 }
 
 .collection {
@@ -470,11 +474,10 @@ nav {
     overflow: hidden;
   }
   .products-buttons {
-    display: flex;
     width: auto;
     width: 100%;
     justify-content: center;
-    align-items: start;
+    align-items: baseline;
     padding-bottom: 10px !important;
   }
   .products-buttons .fa-search {
@@ -488,7 +491,7 @@ nav {
     overflow-x: auto;
     justify-content: space-between;
     gap: 15px;
-    align-items: center;
+    align-items: baseline;
   }
   .products-buttons .tab-items button {
     display: flex !important;
