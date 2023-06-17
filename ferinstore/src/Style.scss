@@ -33,6 +33,7 @@ button, a{
       padding: 10px;
       border-radius: 20px;
       background-color: rgb(243, 255, 243);
+      //box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
       .desktop-text {
         font-size: 50px;
       }
@@ -90,6 +91,7 @@ button, a{
   width: 100% !important;
   background-color: $primary-color;
   border-radius: 20px;
+  //box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   &-brand{
     color: black;
     font-weight: 500 !important;
@@ -114,12 +116,16 @@ nav {
   align-items: center;
   padding: 10px 20px;
   justify-content: space-between !important;
+  //box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 .right {
   width: 400px;
+  border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   .carousel {
     height: 100% !important;
+    border-radius: 10px;
+
     &-inner {
       height: 100% !important;
     }
@@ -198,6 +204,7 @@ nav {
   display: flex;
   flex-direction: column;
   height: 400px;
+  //box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
   &-image {
     height: 300px;
