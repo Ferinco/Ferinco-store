@@ -46,7 +46,7 @@ export default function Products() {
               onClick={() => filterProducts(tabItem)}
               style={{
                 backgroundColor:
-                  activeTab === tabItem ? "rgb(181, 240, 181)" : "#f5f5f5",
+                  activeTab === tabItem ? "rgb(143, 241, 143)" : "#f5f5f5",
                 width: "100px",
               }}
             >

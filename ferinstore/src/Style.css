@@ -2,12 +2,16 @@ h1, p, h5 {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
+h5 {
+  font-size: 30px;
+}
+
 button, a {
   font-family: "Quicksand", sans-serif;
 }
 
 .banner {
-  padding-top: 30px;
+  padding-top: 10px;
   display: flex;
   width: 90%;
   margin: auto;
@@ -28,13 +32,16 @@ button, a {
 .left-body-text {
   padding: 10px;
   border-radius: 20px;
-  background-color: #f5f5f5;
+  background-color: rgb(243, 255, 243);
 }
 .left-body-text .desktop-text {
   font-size: 50px;
 }
 .left-body-text .mobile-text {
   display: none;
+}
+.left-body-text p {
+  font-size: 17px;
 }
 .left-body-bottom {
   padding-top: 20px;
@@ -46,6 +53,8 @@ button, a {
   width: 450px;
   height: 250px;
   position: relative;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 .left-body-bottom-image img {
   height: 100%;
@@ -69,15 +78,32 @@ button, a {
 .left-body-bottom-image .bottom-text p {
   color: white;
 }
+.left-body-bottom-image .bottom-text p {
+  font-size: 15px;
+}
 
 .navbar {
   width: 100% !important;
-  background-color: rgb(181, 240, 181);
+  background-color: rgb(143, 241, 143);
   border-radius: 20px;
+}
+.navbar-brand {
+  color: black;
+  font-weight: 500 !important;
+}
+.navbar-nav {
+  gap: 10px;
+}
+.navbar-nav a {
+  padding-bottom: 5px;
+}
+.navbar-nav a:hover {
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgb(243, 255, 243);
 }
 
 nav {
-  background-color: rgb(181, 240, 181);
+  background-color: rgb(143, 241, 143);
   border-radius: 20px;
   width: 100% !important;
   display: flex;
@@ -89,6 +115,7 @@ nav {
 
 .right {
   width: 400px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 .right .carousel {
   height: 100% !important;
@@ -193,7 +220,7 @@ nav {
   justify-content: flex-end;
 }
 .item-tag .tag {
-  background-color: rgb(181, 240, 181);
+  background-color: rgb(143, 241, 143);
   padding: 5px 10px;
   border-radius: 30px;
 }
@@ -237,7 +264,7 @@ nav {
 }
 
 .collections {
-  padding-top: 50px;
+  padding-top: 100px;
   width: 90%;
   margin: auto;
   display: flex;
@@ -268,8 +295,8 @@ nav {
   display: flex;
   flex-direction: column;
   height: 300px;
-  width: 600px;
   border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 .collection .landscape {
   display: block;
@@ -298,9 +325,9 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: rgb(243, 255, 243);
   font-size: 70px;
-  background: linear-gradient(to bottom, rgb(54, 54, 54), rgba(0, 0, 0, 0));
+  text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 10px rgba(255, 255, 255, 0.3);
 }
 
 .styles {
@@ -321,7 +348,7 @@ nav {
   justify-content: center;
   border: 0;
   border-radius: 20px;
-  background-color: rgb(181, 240, 181);
+  background-color: rgb(143, 241, 143);
   color: black;
   font-size: 50px;
 }
@@ -350,7 +377,7 @@ nav {
   height: 700px;
   width: 50%;
   border-radius: 20px;
-  background-color: #f5f5f5;
+  background-color: rgb(243, 255, 243);
   position: relative;
   justify-content: center;
   align-items: center;
@@ -376,7 +403,7 @@ nav {
   align-items: center;
   width: 100%;
   height: 50%;
-  background-color: #f5f5f5;
+  background-color: rgb(243, 255, 243);
   border-radius: 20px;
   position: relative;
   justify-content: center;
@@ -398,7 +425,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   padding: 10px;
-  background-color: #f5f5f5;
+  background-color: rgb(243, 255, 243);
   border-radius: 20px;
 }
 .footer-top {
@@ -426,8 +453,12 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
+.footer-top a, .footer-bottom a {
+  color: black;
+  text-decoration: none;
+}
 .footer-top ul, .footer-bottom ul {
-  gap: 5px;
+  gap: 10px;
   display: flex;
 }
 .footer-top ul li, .footer-bottom ul li {
@@ -458,6 +489,9 @@ nav {
   }
   .left-body-text .desktop-text {
     display: none;
+  }
+  .left-body-text p {
+    font-size: 20px;
   }
   .left-body-bottom {
     display: flex;
@@ -553,10 +587,7 @@ nav {
   }
   .collections-body {
     padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    grid-template-columns: repeat(1, 1fr);
   }
   .collections-link {
     padding-top: 20px;
@@ -580,9 +611,7 @@ nav {
     display: none;
   }
   .collection h2 {
-    height: 400px;
     width: 300px;
-    font-size: 30px;
   }
   .styles {
     padding-top: 20px;
