@@ -1,18 +1,18 @@
-import Banner from "./Components/Banner";
-import Products from "./Components/Product";
-import Collections from "./Components/Collections";
-import Styles from "./Components/Styles";
-import Footer from "./Components/Footer";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./Pages/Home";
+import Details from "./Pages/Details";
 function App() {
-  return (
-    <div className="App">
-<Banner/>
-<Products/>
-<Collections/>
-<Styles/>
-<Footer/>
-    </div>
-  );
+  return(
+<BrowserRouter>
+  <Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/details/:id" element={<Details/>} />
+  </Routes>
+</BrowserRouter>
+)
+  
 }
 
 export default App;

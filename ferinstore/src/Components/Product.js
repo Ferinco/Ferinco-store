@@ -1,5 +1,6 @@
 import { useState } from "react";
 import data from "../Data/Data";
+import { Link } from "react-router-dom";
 export default function Products() {
   const [activeTab, setActiveTab] = useState("Top");
   const [products, setProducts] = useState(
@@ -61,9 +62,9 @@ export default function Products() {
       </div>
       <div className="products-items">
         {products.map((product) => (
-          <div className="item-wrapper full-screen">
-            <div className="item" key={product.id} 
-            // onClick={()=> toggleDetails(product)}
+          <div className="item-wrapper full-screen"  key={product.id} >
+         <Link to={`/details/${product.id}`}>
+         <div className="item"
             >
               <div className="item-image">
                 <img src={product.image} />
@@ -93,6 +94,7 @@ export default function Products() {
   
               </div>
             </div>
+         </Link>
           </div>
         ))}
       </div>

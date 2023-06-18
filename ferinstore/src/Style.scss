@@ -488,6 +488,34 @@ align-items: center;
         }
     }
 }
+.details{
+  display: flex;
+  width: 90%;
+  margin: auto;
+  &-image{
+    width: 50%;
+    height: 400px;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  }
+  &-about{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    .button{
+width: 100%;
+button{
+  width: 100%;
+  display: flex;
+  padding: 10px;
+}
+    }
+  }
+}
 
 @media  screen and (min-width: 300px) and (max-width: 600px) {
     .banner {
