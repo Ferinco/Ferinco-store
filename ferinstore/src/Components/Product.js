@@ -34,7 +34,11 @@ export default function Products() {
     "Skirts",
     "Shoes",
   ];
-
+//   const [selectedProduct, setSelectedProduct] = useState(null)
+//   const toggleDetails = (product) => {
+//     console.log("appear here...")
+// setSelectedProduct(product)
+//   };
   return (
     <div className="products">
       <div className="products-buttons">
@@ -46,7 +50,7 @@ export default function Products() {
               onClick={() => filterProducts(tabItem)}
               style={{
                 backgroundColor:
-                  activeTab === tabItem ? "rgb(143, 241, 143)" : "#f5f5f5",
+                  activeTab === tabItem ? "rgb(143, 241, 143)" : "rgb(243, 255, 243)",
                 width: "100px",
               }}
             >
@@ -57,8 +61,10 @@ export default function Products() {
       </div>
       <div className="products-items">
         {products.map((product) => (
-          <div className="item-wrapper">
-            <div className="item" key={product.id}>
+          <div className="item-wrapper full-screen">
+            <div className="item" key={product.id} 
+            // onClick={()=> toggleDetails(product)}
+            >
               <div className="item-image">
                 <img src={product.image} />
               </div>
@@ -90,6 +96,13 @@ export default function Products() {
           </div>
         ))}
       </div>
+      {/* {selectedProduct && (
+        <div className="item-details full-screen">
+          <h2>{selectedProduct.category}</h2>
+          <button onClick={closeDetails}>Close</button>
+        </div>
+      )} */}
+
       <div className="products-logos">
         <div className="logo">
           <img src="../Images/Logos/logo (1).png" />

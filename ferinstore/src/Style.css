@@ -205,6 +205,8 @@ nav {
   background-color: rgb(243, 255, 243);
   border-radius: 10px;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 .item-image img {
   width: 90%;
@@ -283,6 +285,9 @@ nav {
 .collections-header .mobile-header {
   display: none;
 }
+.collections-header a {
+  color: grey;
+}
 .collections-body {
   display: grid;
   gap: 1.5rem;
@@ -291,6 +296,7 @@ nav {
 .collections-link {
   display: none;
   color: black;
+  color: grey;
 }
 
 .collection {
@@ -327,7 +333,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(243, 255, 243);
+  color: white;
   font-size: 70px;
   text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 10px rgba(255, 255, 255, 0.3);
 }
@@ -541,6 +547,7 @@ nav {
     display: flex;
     flex-direction: row;
     width: 100%;
+    overflow-y: hidden !important;
     overflow-x: auto;
   }
   .products-logos {

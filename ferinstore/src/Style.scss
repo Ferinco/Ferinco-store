@@ -1,6 +1,17 @@
 $text-font:  'Plus Jakarta Sans', sans-serif;
 $link-font: 'Quicksand', sans-serif;
 $primary-color: rgb(143, 241, 143);
+
+
+// .item-details.full-screen {
+// border: 1px solid red;
+// position: absolute;
+// z-index: 999;
+// height: 400px;
+// width: 80%;
+// }
+
+
 h1, p, h5{
   font-family: $text-font;
   
@@ -211,6 +222,8 @@ nav {
     background-color: rgb(243, 255, 243);
     border-radius: 10px;
     position: relative;
+    display: flex;
+    align-items: center;
     img {
       width: 90%;
       margin: auto !important;
@@ -288,6 +301,9 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    a{
+      color: grey;
+    }
   }
   &-body {
     display: grid;
@@ -297,6 +313,7 @@ nav {
   &-link{
     display: none;
 color: black;
+color: grey;
   }
 }
 .collection {
@@ -333,7 +350,7 @@ color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(243, 255, 243);
+    color: white;
     font-size: 70px;
     text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
     0px -4px 10px rgba(255,255,255,0.3);
@@ -547,7 +564,7 @@ overflow: hidden;
           display: flex;
           flex-direction: row;
         width: 100%;
-
+overflow-y: hidden !important;
           overflow-x: auto;
         }
         &-logos {
