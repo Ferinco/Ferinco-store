@@ -10,7 +10,7 @@ export default function Details() {
   console.log(product);
   console.log(Data);
   return (
-    <div>
+    <div style={{ paddingTop: "30px" }}>
       <div style={{ width: "90%", margin: "auto" }}>
         <Navbar />
       </div>
@@ -19,7 +19,17 @@ export default function Details() {
           <img src={"." + product.image} />
         </div>
         <div className="details-about">
-          <h5>{product.name}</h5>
+          <div className="header">
+            <h5>{product.name}</h5>{" "}
+            <button
+              className="fa fa-heart fa-2x"
+              style={{
+                backgroundColor: "transparent",
+                padding: "0",
+                color: "#f5f5f5"
+              }}
+            ></button>
+          </div>
           <p>{product.category}</p>
           <h5>{product.price}</h5>
           <p className="rate">

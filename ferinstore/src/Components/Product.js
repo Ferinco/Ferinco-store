@@ -63,7 +63,8 @@ export default function Products() {
       <div className="products-items">
         {products.map((product) => (
           <div className="item-wrapper full-screen"  key={product.id} >
-         <Link to={`/details/${product.id}`}>
+         <Link to={`/details/${product.id}`}
+         style={{textDecoration: "none", color: "black"}}>
          <div className="item"
             >
               <div className="item-image">
