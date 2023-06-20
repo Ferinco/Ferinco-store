@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./Pages/Home";
 import Details from "./Pages/Details";
+import 'bootstrap/dist/css/bootstrap.css';
+
 function App() {
   return(
 <BrowserRouter>

@@ -44,7 +44,7 @@ button, a{
     padding-top: 20px;
     &-text {
       padding: 10px;
-      border-radius: 20px;
+      border-radius: 30px;
       background-color: rgb(243, 255, 243);
       //box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
       .desktop-text {
@@ -103,7 +103,7 @@ button, a{
 .navbar {
   width: 100% !important;
   background-color: $primary-color;
-  border-radius: 20px;
+  border-radius: 30px;
   //box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   &-brand{
     color: black;
@@ -122,7 +122,7 @@ button, a{
 }
 nav {
   background-color: $primary-color;
-  border-radius: 20px;
+  border-radius: 30px;
   width: 100% !important;
   display: flex;
   flex-direction: row;
@@ -137,7 +137,7 @@ nav {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   .carousel {
     height: 100% !important;
-    border-radius: 10px;
+    border-radius: 30px;
 
     &-inner {
       height: 100% !important;
@@ -147,7 +147,7 @@ nav {
       img {
         object-fit: cover;
         width: 100%;
-        border-radius: 10px;
+        border-radius: 30px;
         height: 100% !important;
       }
     }

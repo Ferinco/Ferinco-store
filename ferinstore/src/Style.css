@@ -35,7 +35,7 @@ button, a {
 }
 .left-body-text {
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 30px;
   background-color: rgb(243, 255, 243);
 }
 .left-body-text .desktop-text {
@@ -89,7 +89,7 @@ button, a {
 .navbar {
   width: 100% !important;
   background-color: rgb(143, 241, 143);
-  border-radius: 20px;
+  border-radius: 30px;
 }
 .navbar-brand {
   color: black;
@@ -108,7 +108,7 @@ button, a {
 
 nav {
   background-color: rgb(143, 241, 143);
-  border-radius: 20px;
+  border-radius: 30px;
   width: 100% !important;
   display: flex;
   flex-direction: row;
@@ -124,7 +124,7 @@ nav {
 }
 .right .carousel {
   height: 100% !important;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 .right .carousel-inner {
   height: 100% !important;
@@ -136,7 +136,7 @@ nav {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 30px;
   height: 100% !important;
 }
 
