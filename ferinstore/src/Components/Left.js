@@ -3,9 +3,9 @@ import Navbar from "./Navbar";
 export default function Left(){
 return(
     <div className="left">
-    <div className="navbar">
+    
         <Navbar/>
-    </div>
+    
         <div className="left-body">
             <div className="left-body-text">
                 <h1 className="desktop-text">

@@ -1,13 +1,12 @@
 import React from "react"
 import {Link} from "react-router-dom"
 import styled from "styled-components"
+import { Icon } from '@iconify/react';
 export default function Navbar(){
     return(
 <NAV>
 <input type="checkbox" id="check"/>
-<label for="check" className="checkbtn">
-  <i className="fas fa-bars"></i>
-</label>
+
 <Link className="navbar-brand" to="/">FerinSTORE</Link>
 <ul className="navbar-nav">
   <li className="nav-item active">
@@ -23,6 +22,9 @@ export default function Navbar(){
      <a className="nav-link" href="#">FAQs</a>
        </li>
 </ul>
+<label for="check" className="checkbtn">
+<Icon icon="fe:bar" />
+</label>
 </NAV>
     )
 }
@@ -33,6 +35,7 @@ flex-direction: row;
   background: rgb(143, 241, 143);
  align-items: center;
   padding: 10px 20px;
+  height: 70px;
   border-radius: 10px;
 width: 100% !important;
  justify-content: space-between !important;
@@ -43,7 +46,7 @@ width: 100% !important;
     a{
       padding-bottom: 5px;
       &:hover{
-         padding-bottom: 5px;
+         
          border-bottom:  1px solid rgb(243, 255, 243);
        }
     }
