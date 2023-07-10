@@ -35,11 +35,6 @@ export default function Products() {
     "Skirts",
     "Shoes",
   ];
-//   const [selectedProduct, setSelectedProduct] = useState(null)
-//   const toggleDetails = (product) => {
-//     console.log("appear here...")
-// setSelectedProduct(product)
-//   };
   return (
     <div className="products">
       <div className="products-buttons">

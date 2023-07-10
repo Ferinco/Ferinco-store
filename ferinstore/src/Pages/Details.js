@@ -4,7 +4,7 @@ import Data from "../Data/Data";
 import Navbar from "../Components/Navbar";
 import { styled } from "styled-components";
 import ActionBar from "../Components/Custom/Actionbar";
-import Footer from "../Components/Footer";
+import Footer from "../Components/Custom/Footer";
 export default function Details() {
   const params = useParams();
   console.log(params.id);
