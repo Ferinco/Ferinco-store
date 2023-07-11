@@ -17,8 +17,9 @@ export default function Details() {
   console.log(product);
   console.log(Data);
   function addToCart(){
-
+setCartField(!cartField)
   }
+
   return (
     <div style={{display:"flex", flexDirection:"column"}}>
 
@@ -52,6 +53,11 @@ export default function Details() {
             <button onClick={addToCart}>Add to Cart</button>
             <button>Shop Now</button>
           </div>
+          {cartField && (
+                <div>
+                  <button>-</button>
+                </div>
+            )}
         </div>
         </div>
       </div>

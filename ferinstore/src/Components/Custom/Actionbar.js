@@ -4,6 +4,7 @@ export default function ActionBar() {
     return(
         <ACTIONBAR>
           <Icon icon="ion:cart-sharp" className="icon" />
+          <Icon icon="iconamoon:profile-fill" color="gray" />
         </ACTIONBAR>
     )
 }
