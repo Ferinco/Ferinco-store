@@ -12,7 +12,16 @@ export default function Details() {
   const product = data[0];
   const relateds = Data.filter((item)=> item.category === product.category)
   const [cartField, setCartField] = useState(false)
-  
+  const [cartNumber, setCartNumber] =  useState(0)
+  function reduceCart(){
+    setCartNumber(cartNumber -1)
+    if (cartNumber === 0) {
+      setCartNumber(0)
+    }
+      }
+      function increaseCart(){
+        setCartNumber(cartNumber +1)
+          }
   console.log(relateds)
   console.log(product);
   console.log(Data);
@@ -54,8 +63,10 @@ setCartField(!cartField)
             <button>Shop Now</button>
           </div>
           {cartField && (
-                <div>
-                  <button>-</button>
+                <div className="cartField">
+                  <button onClick={reduceCart}>-</button>
+                  <div>{cartNumber}</div>
+                  <button onClick={increaseCart}>+</button>
                 </div>
             )}
         </div>
@@ -147,6 +158,11 @@ button{
 }
     }
   }
+}
+.cartField{
+  display: flex;
+  flex-direction: row;
+  
 }
 }
 .right{
