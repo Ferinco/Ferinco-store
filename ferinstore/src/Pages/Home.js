@@ -12,7 +12,6 @@ export default function Home (){
 <Products/>
 <Collections/>
 <Styles/>
-<Footer/>
         </div>
     )
 }

@@ -32,7 +32,7 @@ const NAV = styled.div `
 margin: 0 !important;
 display: flex;
 flex-direction: row;
-  background: rgb(143, 241, 143);
+  background: #5cdb95;
  align-items: center;
   padding: 10px 20px;
   height: 70px;

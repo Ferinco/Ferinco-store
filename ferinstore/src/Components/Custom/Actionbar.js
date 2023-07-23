@@ -9,16 +9,13 @@ export default function ActionBar() {
     )
 }
 const ACTIONBAR = styled.div `
- background-color: rgb(243, 255, 243);
+background: #5cdb95;
 border-radius: 10px;
-height: 70px;
+height: 70px !important;
 width: 100% !important;
 display: flex;
 flex-direction: row;
 align-items: center;
 padding: 10px 20px;
 justify-content: flex-end;
-.icon{
-    font-size: 45px;
-    
-}`
+`

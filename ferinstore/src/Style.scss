@@ -1,7 +1,8 @@
 $text-font:  'Plus Jakarta Sans', sans-serif;
 $link-font: 'Quicksand', sans-serif;
-$primary-color: rgb(143, 241, 143);
-
+$primary-color: #5cdb95;
+$seconday-color: #05386b;
+$special-color:#379683;
 
 Link{
   text-decoration: none !important;
@@ -417,7 +418,7 @@ align-items: center;
     flex-direction: column;
     justify-content: center;
     padding: 10px;
-    background-color: rgb(243, 255, 243);
+    background-color: #5cdb95;
     border-radius: 20px;
     &-top{
         padding-bottom: 5px;

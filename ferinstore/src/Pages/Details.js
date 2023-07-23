@@ -5,6 +5,8 @@ import Navbar from "../Components/Navbar";
 import { styled } from "styled-components";
 import ActionBar from "../Components/Custom/Actionbar";
 import Footer from "../Components/Custom/Footer";
+import { Icon } from '@iconify/react';
+import {Button} from '../Components/Custom/button';
 export default function Details() {
   const params = useParams();
   console.log(params.id);
@@ -17,6 +19,7 @@ export default function Details() {
     setCartNumber(cartNumber -1)
     if (cartNumber === 0) {
       setCartNumber(0)
+      setCartField(!cartField)
     }
       }
       function increaseCart(){
@@ -48,7 +51,8 @@ setCartField(!cartField)
               style={{
                 backgroundColor: "transparent",
                 padding: "0",
-                color: "#f5f5f5"
+                color: "#f5f5f5",
+                border: "0" 
               }}
             ></button>
           </div>
@@ -59,8 +63,8 @@ setCartField(!cartField)
             {product.rating}
           </p>
           <div className="button">
-            <button onClick={addToCart}>Add to Cart</button>
-            <button>Shop Now</button>
+            <Button blue onClick={addToCart}>Add to Cart</Button>
+            <Button transparent border>Shop Now</Button>
           </div>
           {cartField && (
                 <div className="cartField">
@@ -73,18 +77,20 @@ setCartField(!cartField)
         </div>
       </div>
       <div className="right">
-        <ActionBar/>
+        {/* <ActionBar/> */}
         <div className="related">
 
           {relateds.map((related)=>(
              <div className="image">
              <img src={"." +  related.image} />
-           </div>
+<div className="price">
+<h3><Icon icon="solar:tag-linear" />{related.price}</h3>
+  </div>           </div>
           ))}
         </div>
       </div>
     </DETAILS>
-      <Footer/>
+      
     </div>
   );
 }
@@ -94,7 +100,6 @@ margin: auto;
 display: flex;
 flex-direction: row;
 justify-content: space-between;
-height: 90vh;
 gap: 20px;
 .left{
   display: flex;
@@ -115,9 +120,9 @@ gap: 20px;
     height: 60% !important;
     margin: auto !important;
   }
-  button{
+  /* button{
     border: 0;
-  }
+  } */
   .button{
     display: flex;
     flex-direction: row;
@@ -154,7 +159,7 @@ button{
   padding: 10px;
   border-radius: 10px;
   justify-content: center;
-  background-color: $primary-color;
+
 }
     }
   }
@@ -169,7 +174,6 @@ button{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100% !important;
   .related{
     border-radius: 10px;
     background-color: #f5f5f5;
@@ -189,7 +193,56 @@ gap: 10px;
     width: 100%;
     display: block;
   }
+  .price{
+    margin-top: -20%;
+    z-index: 999 !important;
+    justify-content: right;
+    display: flex;
+    h3{
+    background: #05386b;
+    border-radius: 20px;
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    gap: 5px;
+    color: white;
+
+    }
+  }
 }
   }
+}
+@media screen and (max-width: 600px){
+  flex-direction: column;
+  .left{
+
+  width: 100%;
+  .details{
+ flex-direction: column;
+  /* &-about{
+    height: 60% !important;
+    margin: auto !important;
+  } */
+  /* button{
+    border: 0;
+  } */
+  &-image{
+    width: 100%;
+  }
+  &-about{
+    width: 100%;
+    .button{
+width: 100%;
+margin-top: 20px;
+
+    }
+  }
+}
+.cartField{
+  display: flex;
+  flex-direction: row;
+  
+}
+}
 }
 `
