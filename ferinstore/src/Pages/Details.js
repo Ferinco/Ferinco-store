@@ -244,5 +244,39 @@ margin-top: 20px;
   
 }
 }
+.right{
+  display: flex !important;
+  .related{
+flex-direction: row;
+.image{
+  height: 300px;
+  margin: auto;
+  width: 300px !important;
+  
+  img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+  .price{
+    margin-top: -20%;
+    z-index: 999 !important;
+    justify-content: right;
+    display: flex;
+    h3{
+    background: #05386b;
+    border-radius: 20px;
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    gap: 5px;
+    color: white;
+
+    }
+  }
+}
+  }
+}
 }
 `

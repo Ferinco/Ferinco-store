@@ -1,12 +1,13 @@
-import React from "react"
+import React, {useState} from "react"
 import {Link} from "react-router-dom"
 import styled from "styled-components"
 import { Icon } from '@iconify/react';
+import { Button } from "../Components/Custom/button";
 export default function Navbar(){
+  const [isNavOpen, setIsNavOpen] = useState(false)
     return(
 <NAV>
-<input type="checkbox" id="check"/>
-
+<div className="top">
 <Link className="navbar-brand" to="/">FerinSTORE</Link>
 <ul className="navbar-nav">
   <li className="nav-item active">
@@ -22,23 +23,65 @@ export default function Navbar(){
      <a className="nav-link" href="#">FAQs</a>
        </li>
 </ul>
-<label for="check" className="checkbtn">
-<Icon icon="fe:bar" />
-</label>
+<button className="navbar-btn" onClick={()=>{
+  setIsNavOpen(!isNavOpen)
+}}>
+<Icon icon={isNavOpen? "iconoir:cancel":'fe:bar' }/>
+</button>
+</div>
+<div className={`mobile-nav ${isNavOpen? "opened" : "closed"}`}>
+<ul>
+  <li className="nav-item active">
+      <Link className="nav-link" to="/details">Checkout</Link>
+       </li>
+       <li className="nav-item">
+        <a className="nav-link" href="#">Collections</a>
+       </li>
+       <li className="nav-item">
+        <a className="nav-link" href="#">Blog</a>
+     </li>
+     <li className="nav-item"> 
+     <a className="nav-link" href="#">FAQs</a>
+     <a className="nav-link" href="#">
+     <Button>
+     <Icon icon="ion:cart-sharp" className="icon" />
+     </Button>
+     </a>
+     <a className="nav-link" href="#"><Button>
+     <Icon icon="iconamoon:profile-fill" color="gray" />
+     </Button></a>
+     
+          
+       </li>
+</ul>
+</div>
 </NAV>
     )
 }
 const NAV = styled.div `
 margin: 0 !important;
 display: flex;
-flex-direction: row;
+flex-direction: column;
   background: #5cdb95;
- align-items: center;
+
   padding: 10px 20px;
-  height: 70px;
+
   border-radius: 10px;
 width: 100% !important;
- justify-content: space-between !important;
+.navbar-btn{
+  display: none;
+}
+ .top{
+  display: flex;
+  flex-direction: row;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between !important;
+
+ }
+ .mobile-nav{
+  display: none;
+ }
  .navbar-nav{
     gap: 10px;
     display: flex;
@@ -51,57 +94,46 @@ width: 100% !important;
        }
     }
   }
-.checkbtn{
-  font-size: 30px;
-  color: white;
-  float: right;
-  line-height: 80px;
-  margin-right: 40px;
-  cursor: pointer;
-  display: none;
-}
-#check{
-  display: none;
-}
 @media (max-width: 952px){
 
-  nav ul li a{
-    font-size: 16px;
+   ul li a{
+    font-size: 19px !important;
   }
 }
 @media (max-width: 858px){
-  .checkbtn{
+  .navbar-nav{
+    display: none;
+  }
+  .navbar-btn{
     display: block;
+    background: transparent;
+    border: none;
   }
-  ul{
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: #2c3e50;
-    top: 80px;
-    left: -100%;
-    text-align: center;
-    transition: all .5s;
-  }
- NAV ul li{
-    display: block;
-    margin: 50px 0;
-    line-height: 30px;
-  }
- NAV ul li a{
-    font-size: 20px;
-  }
-  a:hover,a.active{
-    background: none;
-    color: #0082e6;
-  }
-  #check:checked ~ ul{
-    left: 0;
-  }
+.closed{
+  display: none !important;
+
 }
-section{
-  background: url(bg1.jpg) no-repeat;
-  background-size: cover;
-  height: calc(100vh - 80px);
+.opened{
+  width: 100%;
+  display: flex;
+flex-direction: column;
+/* position: fixed; */
+height: 50vh;
+background-color: #5cdb95;
+transition: ease-in-out cubic-bezier(0.55, 0.055, 0.675, 0.19);
+ul{
+  display:flex;
+flex-direction: column;
+  gap: 10px;
+  padding: 0 !important;
+
+  li{
+    list-style:  none;
+  
+
+  &:hover{
+
+  }  }
+} }
 }
 `
