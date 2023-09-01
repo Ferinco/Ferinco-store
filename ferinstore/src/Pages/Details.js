@@ -7,7 +7,12 @@ import ActionBar from "../Components/Custom/Actionbar";
 import Footer from "../Components/Custom/Footer";
 import { Icon } from '@iconify/react';
 import {Button} from '../Components/Custom/button';
+import { useDispatch } from "react-redux";
+import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
+import {increment, decrement, reset} from "../features/counter/counterSlice"
 export default function Details() {
+  const count = useSelector((state)=> state.counter.count);
+  const dispatch = useDispatch();
   const params = useParams();
   console.log(params.id);
   const data = Data.filter((item) => Number(params.id) === item.id);
@@ -68,9 +73,9 @@ setCartField(!cartField)
           </div>
           {cartField && (
                 <div className="cartField">
-                  <button onClick={reduceCart}>-</button>
-                  <div>{cartNumber}</div>
-                  <button onClick={increaseCart}>+</button>
+                  <button onClick={()=> dispatch(decrement())}>-</button>
+                  <div>{count}</div>
+                  <button onClick={()=> dispatch(increment())}>+</button>
                 </div>
             )}
         </div>

@@ -4,10 +4,10 @@ import Products from "../Components/Product"
 import Styles from "../Components/Styles"
 import Footer from "..//Components/Custom/Footer"
 
-
 export default function Home (){
     return(
         <div className="Home">
+          
 <Banner/>
 <Products/>
 <Collections/>
