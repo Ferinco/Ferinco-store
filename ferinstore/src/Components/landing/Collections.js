@@ -1,4 +1,4 @@
-import Collection from "./Collection"
+import Collection from "../Custom/Collection"
 export default function Collections(){
     return(
         <div className="collections">

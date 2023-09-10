@@ -1,5 +1,5 @@
 import { useState } from "react";
-import data from "../Data/Data";
+import data from "../../Data/Data";
 import { Link } from "react-router-dom";
 export default function Products() {
   const [activeTab, setActiveTab] = useState("Top");
