@@ -1,8 +1,8 @@
-import Banner from "../Components/Banner"
-import Collections from "../Components/Collections"
-import Products from "../Components/Product"
-import Styles from "../Components/Styles"
-import Footer from "..//Components/Custom/Footer"
+import Banner from "../Components/landing/frontPage/Banner"
+import Collections from "../Components/landing/Collections"
+import Products from "../Components/landing/Product"
+import Styles from "../Components/landing/Styles"
+
 
 export default function Home (){
     return(

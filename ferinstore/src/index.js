@@ -3,15 +3,13 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './Style.css';
-import Footer from './Components/Custom/Footer';
-import { store } from './app/store';
-import { Provider } from 'react-redux';
+import Footer from '../src/Components/layout/Footer'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <Provider store={store}>
-    <App />
-    <Footer/>
-    </Provider>
+    <div>
+        <App />
+        <Footer/>
+    </div>
 
 );
 

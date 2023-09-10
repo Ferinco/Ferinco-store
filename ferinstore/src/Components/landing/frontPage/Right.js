@@ -1,5 +1,5 @@
 import React from 'react';
-import ActionBar from './Custom/Actionbar';
+import ActionBar from '../../layout/Actionbar'
 export default function Right(){
     return(
         <div className="right">

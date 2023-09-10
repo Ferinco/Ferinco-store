@@ -1,4 +1,4 @@
-import Style from "./Style"
+import Style from "../Custom/Style"
 export default function Styles (){
     return (
         <div className="styles">
