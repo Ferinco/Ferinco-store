@@ -1,9 +1,7 @@
 import React from 'react';
-import ActionBar from '../../layout/Actionbar'
 export default function Right(){
     return(
         <div className="right">
-          <ActionBar/>
 <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">

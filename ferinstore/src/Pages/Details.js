@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import Data from "../Data/Data";
-import Navbar from "../Components/layout/Navbar";
 import { styled } from "styled-components";
 import { Icon } from '@iconify/react';
 import {Button} from '../Components/Custom/button';
@@ -36,7 +35,6 @@ setCartField(!cartField)
     
     <DETAILS style={{ paddingTop: "30px" }}>
       <div className="left">
-        <Navbar/>
         <div className="details">
         <div className="details-image">
           <img src={"." + product.image} />

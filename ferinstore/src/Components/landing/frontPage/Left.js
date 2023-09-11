@@ -1,11 +1,8 @@
-import Navbar from "../../layout/Navbar"
+
 
 export default function Left(){
 return(
     <div className="left">
-    
-        <Navbar/>
-    
         <div className="left-body">
             <div className="left-body-text">
                 <h1 className="desktop-text">

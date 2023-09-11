@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Icon } from "@iconify/react";
-import { Button } from "../Custom/button";
+import { Button } from "../../Custom/button";
 
 const NavConfig = [
   {
