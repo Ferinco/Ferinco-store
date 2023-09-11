@@ -14,5 +14,7 @@ export default function Routes() {
         { path: "details", element: <Details /> },
       ],
     },
+    { 
+    }
   ]);
 }

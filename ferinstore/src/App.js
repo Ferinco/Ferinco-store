@@ -8,8 +8,7 @@ function App() {
 <BrowserRouter>
   <Routes/>
 </BrowserRouter>
-)
-  
+) 
 }
 
 export default App;
