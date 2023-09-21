@@ -1,8 +1,8 @@
 import React from "react";
-import { Link, useRoutes } from "react-router-dom";
-import { ExternalLayout } from "../Components/layout/external";
+import { useRoutes } from "react-router-dom";
+import ExternalLayout from "../Components/layout/external";
 import Home from "../Pages/Home";
-import Details from "../Pages/Details";
+// import Details from "../Pages/Details";
 
 export default function Routes() {
   return useRoutes([
@@ -10,11 +10,11 @@ export default function Routes() {
       path: "/",
       element: <ExternalLayout />,
       children: [
-        { path: "/", element: <Home /> },
-        { path: "details", element: <Details /> },
+        { path: "/", element: <Home /> }
       ],
     },
-    { 
-    }
+    {
+        
+    } 
   ]);
 }

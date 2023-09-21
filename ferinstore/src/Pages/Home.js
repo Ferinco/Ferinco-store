@@ -3,7 +3,6 @@ import Collections from "../Components/landing/Collections"
 import Products from "../Components/landing/Product"
 import Styles from "../Components/landing/Styles"
 
-
 export default function Home (){
     return(
         <div className="Home">
