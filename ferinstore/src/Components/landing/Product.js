@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import data from "../../Data/Data";
 import { Link } from "react-router-dom";
-import { Icon } from '@iconify/react';
+import { Icon } from "@iconify/react";
+import { SearchInput } from "../Custom";
+import SearchResults from "../Services/SearchResults";
 export default function Products() {
   const [activeTab, setActiveTab] = useState("Top");
   const [activateSearch, setActivateSearch] = useState(false);
@@ -9,6 +11,18 @@ export default function Products() {
     data.filter((item) => item.category === "Top")
   );
   const [favourite, setFavourite] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searched, setSearched] = useState([]);
+  useEffect(() => {
+    const performSearch = (query) => {
+      const filterBySearch = data.filter((product) =>
+        product.name.toLowerCase().includes(query.toLowerCase())
+      );
+      setSearched(filterBySearch);
+    };
+    performSearch(searchQuery)
+  }, [searchQuery]);
+
   function isFavourite() {
     setFavourite(!favourite);
   }
@@ -22,6 +36,7 @@ export default function Products() {
       setProducts(filteredProducts);
     }
   };
+
   const tabItems = [
     "Top",
     "Shirts",
@@ -40,17 +55,17 @@ export default function Products() {
   return (
     <div className="products">
       <div className="products-buttons">
-        <button onClick={()=>setActivateSearch(true)}>
+        <button onClick={() => setActivateSearch(true)}>
           <Icon icon="bx:search" />
         </button>
         <div className="tab-items">
           {tabItems.map((tabItem, index) => (
             <button
               key={index}
-              onClick={()=> {
-                filterProducts(tabItem)
-                setActivateSearch(false)}
-              }
+              onClick={() => {
+                filterProducts(tabItem);
+                setActivateSearch(false);
+              }}
               style={{
                 backgroundColor:
                   activeTab === tabItem ? "#5cdb95" : "rgb(243, 255, 243)",
@@ -62,58 +77,70 @@ export default function Products() {
           ))}
         </div>
       </div>
-      {activateSearch ? (
-        <div>
-          <input placeholder="search..." />
-        </div>
-      ) : (
-        <div className="products-items">
-          {products.map((product) => (
-            <div className="item-wrapper full-screen" key={product.id}>
-              <Link
-                to={`/details/${product.id}`}
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                <div className="item">
-                  <div className="item-image">
-                    <img src={product.image} />
+
+      <div className="products-items">
+        {activateSearch ? (
+          <div>
+            <SearchInput handleSearch={setSearchQuery} />
+          </div>
+        ) : (
+       <>
+               {products.map((product) => (
+          <div className="item-wrapper full-screen" key={product.id}>
+            <Link
+              to={`/details/${product.id}`}
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <div className="item">
+                <div className="item-image">
+                  <img src={product.image} />
+                </div>
+                {product.category === "Top" ? (
+                  <div className="item-tag">
+                    <p className="tag">{product.tag}</p>
                   </div>
-                  {product.category === "Top" ? (
-                    <div className="item-tag">
-                      <p className="tag">{product.tag}</p>
-                    </div>
-                  ) : (
-                    ""
-                  )}
-                  <div className="item-body">
-                    <div className="about">
-                      <p className="name">{product.name}</p>
-                      <h5 className="price">{product.price}</h5>
-                      <p className="rate">
-                        <i className="fa fa-star" />
-                        {product.rating}
-                      </p>
-                    </div>
-                    <div className="shop">
-                      <button
-                        className="fa fa-heart fa-2x"
-                        onClick={isFavourite}
-                        style={{
-                          color: favourite ? "green" : "rgb(243, 255, 243)",
-                          backgroundColor: "transparent",
-                          padding: "0",
-                        }}
-                      ></button>
-                      <button className="fa fa-cart"></button>
-                    </div>
+                ) : (
+                  ""
+                )}
+                <div className="item-body">
+                  <div className="about">
+                    <p className="name">{product.name}</p>
+                    <h5 className="price">{product.price}</h5>
+                    <p className="rate">
+                      <i className="fa fa-star" />
+                      {product.rating}
+                    </p>
+                  </div>
+                  <div className="shop">
+                    <button
+                      className="fa fa-heart fa-2x"
+                      onClick={isFavourite}
+                      style={{
+                        color: favourite ? "green" : "rgb(243, 255, 243)",
+                        backgroundColor: "transparent",
+                        padding: "0",
+                      }}
+                    ></button>
+                    <button className="fa fa-cart"></button>
                   </div>
                 </div>
-              </Link>
-            </div>
-          ))}
-        </div>
-      )}
+              </div>
+            </Link>
+          </div>
+        ))}
+       </>
+        )}
+{
+  searched > 0 ? (
+    <SearchResults results={searched}/>
+  ): (
+    <div>
+      no results found
+    </div>
+  )
+}
 
+      </div>
       <div className="products-logos">
         <div className="logo">
           <img src="../Images/Logos/logo (1).png" />
