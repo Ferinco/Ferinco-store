@@ -13,14 +13,22 @@ export default function Products() {
   const [favourite, setFavourite] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [searched, setSearched] = useState([]);
+  let inputHandler = (e) => {
+    const inputValue = e.target.value.toLowerCase();
+    setSearchQuery(inputValue)
+    console.log(inputValue)
+      };
   useEffect(() => {
     const performSearch = (query) => {
       const filterBySearch = data.filter((product) =>
         product.name.toLowerCase().includes(query.toLowerCase())
-      );
-      setSearched(filterBySearch);
+        );
+        console.log(searchQuery)
+        console.log(filterBySearch.length)
+        setSearched(filterBySearch);
+        console.log(searched)
     };
-    performSearch(searchQuery)
+    performSearch(searchQuery);
   }, [searchQuery]);
 
   function isFavourite() {
@@ -36,6 +44,8 @@ export default function Products() {
       setProducts(filteredProducts);
     }
   };
+
+ 
 
   const tabItems = [
     "Top",
@@ -81,65 +91,75 @@ export default function Products() {
       <div className="products-items">
         {activateSearch ? (
           <div>
-            <SearchInput handleSearch={setSearchQuery} />
+            <input
+              type="text"
+              placeholder="Search by name"
+              onChange={inputHandler}
+             
+            />
           </div>
         ) : (
-       <>
-               {products.map((product) => (
-          <div className="item-wrapper full-screen" key={product.id}>
-            <Link
-              to={`/details/${product.id}`}
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              <div className="item">
-                <div className="item-image">
-                  <img src={product.image} />
-                </div>
-                {product.category === "Top" ? (
-                  <div className="item-tag">
-                    <p className="tag">{product.tag}</p>
+          <>
+            {products.map((product) => (
+              <div className="item-wrapper full-screen" key={product.id}>
+                <Link
+                  to={`/details/${product.id}`}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  <div className="item">
+                    <div className="item-image">
+                      <img src={product.image} />
+                    </div>
+                    {product.category === "Top" ? (
+                      <div className="item-tag">
+                        <p className="tag">{product.tag}</p>
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                    <div className="item-body">
+                      <div className="about">
+                        <p className="name">{product.name}</p>
+                        <h5 className="price">{product.price}</h5>
+                        <p className="rate">
+                          <i className="fa fa-star" />
+                          {product.rating}
+                        </p>
+                      </div>
+                      <div className="shop">
+                        <button
+                          className="fa fa-heart fa-2x"
+                          onClick={isFavourite}
+                          style={{
+                            color: favourite ? "green" : "rgb(243, 255, 243)",
+                            backgroundColor: "transparent",
+                            padding: "0",
+                          }}
+                        ></button>
+                        <button className="fa fa-cart"></button>
+                      </div>
+                    </div>
                   </div>
-                ) : (
-                  ""
-                )}
-                <div className="item-body">
-                  <div className="about">
-                    <p className="name">{product.name}</p>
-                    <h5 className="price">{product.price}</h5>
-                    <p className="rate">
-                      <i className="fa fa-star" />
-                      {product.rating}
-                    </p>
-                  </div>
-                  <div className="shop">
-                    <button
-                      className="fa fa-heart fa-2x"
-                      onClick={isFavourite}
-                      style={{
-                        color: favourite ? "green" : "rgb(243, 255, 243)",
-                        backgroundColor: "transparent",
-                        padding: "0",
-                      }}
-                    ></button>
-                    <button className="fa fa-cart"></button>
-                  </div>
-                </div>
+                </Link>
               </div>
-            </Link>
+            ))}
+          </>
+        )}
+        {searched.length > 0 ?  (
+        <>{
+          searchQuery &&
+          <> 
+        {searched.map((product)=>(
+          <div key={product.index}>
+            {product.name}
           </div>
         ))}
-       </>
+          </>
+        }
+        </>
+        ) : (
+          <div>no results found</div>
         )}
-{
-  searched > 0 ? (
-    <SearchResults results={searched}/>
-  ): (
-    <div>
-      no results found
-    </div>
-  )
-}
-
       </div>
       <div className="products-logos">
         <div className="logo">
