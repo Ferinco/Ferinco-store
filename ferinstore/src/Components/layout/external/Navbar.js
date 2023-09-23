@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Icon } from "@iconify/react";
-import { Button } from "../../Custom/button";
 
 const NavConfig = [
   {
@@ -21,112 +20,94 @@ const NavConfig = [
     title: "FAQs",
     link: "",
   },
+  {
+    title: "About us",
+    link: "",
+  },
+  {
+    title: "Contact us",
+    link: "",
+  },
 ];
 export default function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
-    <NAV>
-      <div className="top">
-        <Link className="navbar-brand" to="/">
-          FerinSTORE
-        </Link>
-        <ul className="navbar-nav">
+    <NavWrapper className="mt-3">
+      <div className="top d-flex justify-content-between">
+        <div className="navbar-header d-flex flex-row gap-3">
+          <button
+            className="navbar-btn"
+            onClick={() => {
+              setIsNavOpen(!isNavOpen);
+            }}
+          >
+            <Icon icon={isNavOpen ? "iconoir:cancel" : "fe:bar"} />
+          </button>
+          <Link className="navbar-brand" to="/">
+            FerinSTORE
+          </Link>
+        </div>
+        <div className="navbar-links d-flex gap-3">
           {NavConfig.map(({ title, link }, index) => (
-            <li>
             <Link className="nav-link" to={link}>
               {title}
             </Link>
-            </li>
           ))}
-        </ul>
-        <button
-          className="navbar-btn"
-          onClick={() => {
-            setIsNavOpen(!isNavOpen);
-          }}
-        >
-          <Icon icon={isNavOpen ? "iconoir:cancel" : "fe:bar"} />
-        </button>
+        </div>
+        <div className="user-links d-flex gap-4">
+        <Icon icon="fluent:cart-16-regular" className="icon"/>
+        <Icon icon="mdi:user-outline" className="icon"/>
+        </div>
       </div>
-      <div className={`mobile-nav ${isNavOpen ? "opened" : "closed"}`}>
-        <ul>
-          <li className="nav-item active">
-            <Link className="nav-link" to="/details">
-              Checkout
-            </Link>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Collections
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Blog
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              FAQs
-            </a>
-            <a className="nav-link" href="#">
-              <Button>
-                <Icon icon="ion:cart-sharp" className="icon" />
-              </Button>
-            </a>
-            <a className="nav-link" href="#">
-              <Button>
-                <Icon icon="iconamoon:profile-fill" color="gray" />
-              </Button>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </NAV>
+    </NavWrapper>
   );
 }
-const NAV = styled.div`
-  margin: 0 !important;
+const NavWrapper = styled.div`
+  margin: auto;
   display: flex;
   flex-direction: column;
   background: #5cdb95;
-
   padding: 10px 20px;
-
   border-radius: 10px;
-  width: 100% !important;
+  width: 95%;
+  .navbar-brand {
+    font-weight: 700;
+    font-size: 25px;
+  }
+  .nav-link {
+    font-weight: 700;
+    &:hover{
+      color: grey;
+      transition: 0.3s;
+    }
+  }
   .navbar-btn {
     display: none;
   }
   .top {
-    display: flex;
-    flex-direction: row;
     height: 70px;
     align-items: center;
-    justify-content: space-between !important;
   }
   .mobile-nav {
     display: none;
   }
-  .navbar-nav {
-    gap: 10px;
-    display: flex;
-    flex-direction: row;
-    a {
-      padding-bottom: 5px;
-      &:hover {
-        border-bottom: 1px solid rgb(243, 255, 243);
-      }
-    }
+.user-links{
+  .icon{
+    font-size:25px;
   }
+}
   @media (max-width: 952px) {
     ul li a {
       font-size: 19px !important;
     }
   }
   @media (max-width: 858px) {
+
     .navbar-nav {
       display: none;
+    }
+    .navbar-links{
+      display: none !important;
     }
     .navbar-btn {
       display: block;

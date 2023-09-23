@@ -14,79 +14,6 @@ button, a {
   font-family: "Quicksand", sans-serif;
 }
 
-.banner {
-  padding-top: 10px;
-  display: flex;
-  width: 90%;
-  margin: auto;
-  gap: 20px;
-  height: auto;
-}
-
-.left {
-  padding: 0 !important;
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  height: auto;
-  justify-content: space-between;
-}
-.left-body {
-  padding-top: 20px;
-}
-.left-body-text {
-  padding: 10px;
-  border-radius: 10px;
-  background-color: rgb(243, 255, 243);
-}
-.left-body-text .desktop-text {
-  font-size: 50px;
-}
-.left-body-text .mobile-text {
-  display: none;
-}
-.left-body-text p {
-  font-size: 17px;
-}
-.left-body-bottom {
-  padding-top: 20px;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-.left-body-bottom-image {
-  width: 450px;
-  height: 250px;
-  position: relative;
-  border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-}
-.left-body-bottom-image img {
-  height: 100%;
-  width: 100%;
-  border-radius: 10px;
-  position: absolute;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.left-body-bottom-image .bottom-text {
-  position: absolute;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  padding: 0 20px;
-  border-radius: 10px;
-  background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(0, 0, 0, 0));
-}
-.left-body-bottom-image .bottom-text h5,
-.left-body-bottom-image .bottom-text p {
-  color: white;
-}
-.left-body-bottom-image .bottom-text p {
-  font-size: 15px;
-}
-
 .right {
   width: 400px;
   border-radius: 10px;
@@ -124,12 +51,6 @@ button, a {
   display: flex;
   flex-direction: row;
   align-items: baseline;
-}
-.products-buttons .fa-search {
-  border-radius: 0;
-  padding: 10px !important;
-  border-right: 1px solid grey;
-  background: transparent;
 }
 .products-buttons button {
   border: 0;

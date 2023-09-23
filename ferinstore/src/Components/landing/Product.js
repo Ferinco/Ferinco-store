@@ -1,8 +1,10 @@
 import { useState } from "react";
 import data from "../../Data/Data";
 import { Link } from "react-router-dom";
+import { Icon } from '@iconify/react';
 export default function Products() {
   const [activeTab, setActiveTab] = useState("Top");
+  const [activateSearch, setActivateSearch] = useState(false);
   const [products, setProducts] = useState(
     data.filter((item) => item.category === "Top")
   );
@@ -38,12 +40,17 @@ export default function Products() {
   return (
     <div className="products">
       <div className="products-buttons">
-        <button className="fa fa-search"></button>
-        <ul className="tab-items">
+        <button onClick={()=>setActivateSearch(true)}>
+          <Icon icon="bx:search" />
+        </button>
+        <div className="tab-items">
           {tabItems.map((tabItem, index) => (
             <button
               key={index}
-              onClick={() => filterProducts(tabItem)}
+              onClick={()=> {
+                filterProducts(tabItem)
+                setActivateSearch(false)}
+              }
               style={{
                 backgroundColor:
                   activeTab === tabItem ? "#5cdb95" : "rgb(243, 255, 243)",
@@ -53,53 +60,59 @@ export default function Products() {
               {tabItem}
             </button>
           ))}
-        </ul>
-      </div>
-      <div className="products-items">
-        {products.map((product) => (
-          <div className="item-wrapper full-screen"  key={product.id} >
-         <Link to={`/details/${product.id}`}
-         style={{textDecoration: "none", color: "black"}}>
-         <div className="item"
-            >
-              <div className="item-image">
-                <img src={product.image} />
-              </div>
-              <div className="item-tag">
-                <p className="tag">{product.tag}</p>
-              </div>
-              <div className="item-body">
-                <div className="about">
-                  <p className="name">{product.name}</p>
-                  <h5 className="price">{product.price}</h5>                 
-                  <p className="rate"><i className="fa fa-star"/>{product.rating}</p>
-                </div>
-                <div className="shop">
-                  <button
-                  className="fa fa-heart fa-2x"
-                    onClick={isFavourite}
-                    style={{
-                      color: favourite ? "green" : "rgb(243, 255, 243)",
-                      backgroundColor: "transparent",
-                      padding: "0"
-                    }}
-                  >
-                  </button>
-                  <button className="fa fa-cart"></button>
-                </div>
-  
-              </div>
-            </div>
-         </Link>
-          </div>
-        ))}
-      </div>
-      {/* {selectedProduct && (
-        <div className="item-details full-screen">
-          <h2>{selectedProduct.category}</h2>
-          <button onClick={closeDetails}>Close</button>
         </div>
-      )} */}
+      </div>
+      {activateSearch ? (
+        <div>
+          <input placeholder="search..." />
+        </div>
+      ) : (
+        <div className="products-items">
+          {products.map((product) => (
+            <div className="item-wrapper full-screen" key={product.id}>
+              <Link
+                to={`/details/${product.id}`}
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <div className="item">
+                  <div className="item-image">
+                    <img src={product.image} />
+                  </div>
+                  {product.category === "Top" ? (
+                    <div className="item-tag">
+                      <p className="tag">{product.tag}</p>
+                    </div>
+                  ) : (
+                    ""
+                  )}
+                  <div className="item-body">
+                    <div className="about">
+                      <p className="name">{product.name}</p>
+                      <h5 className="price">{product.price}</h5>
+                      <p className="rate">
+                        <i className="fa fa-star" />
+                        {product.rating}
+                      </p>
+                    </div>
+                    <div className="shop">
+                      <button
+                        className="fa fa-heart fa-2x"
+                        onClick={isFavourite}
+                        style={{
+                          color: favourite ? "green" : "rgb(243, 255, 243)",
+                          backgroundColor: "transparent",
+                          padding: "0",
+                        }}
+                      ></button>
+                      <button className="fa fa-cart"></button>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
+      )}
 
       <div className="products-logos">
         <div className="logo">

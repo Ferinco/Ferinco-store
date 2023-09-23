@@ -7,14 +7,12 @@ import Home from "../Pages/Home";
 export default function Routes() {
   return useRoutes([
     {
-      path: "/",
+     
       element: <ExternalLayout />,
       children: [
         { path: "/", element: <Home /> }
       ],
     },
-    {
-        
-    } 
+ 
   ]);
 }

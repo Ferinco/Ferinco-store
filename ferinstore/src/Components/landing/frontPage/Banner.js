@@ -1,12 +1,19 @@
 import Left from "./Left"
 import Right from "./Right"
+import styled from "styled-components"
 function Banner(){
     return(
-        <div className="banner">
+        <Wrapper className="banner d-flex flex-row pt-2">
 <Left/>
 <Right/>
 
-        </div>
+        </Wrapper>
     )
 }
+const Wrapper = styled.div`
+  width: 95%;
+  margin: auto;
+  gap: 20px;
+  height: auto;
+`
 export default Banner
