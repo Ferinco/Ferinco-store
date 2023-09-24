@@ -15,5 +15,8 @@ const Wrapper = styled.div`
   margin: auto;
   gap: 20px;
   height: auto;
+  @media (min-width: 300px) and (max-width: 800px) {
+   flex-direction :column !important;
+  }
 `
 export default Banner
