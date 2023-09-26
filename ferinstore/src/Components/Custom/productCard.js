@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import React from 'react'
 import { useState } from "react";
 import styled from "styled-components"
+import { PATH_DETAILS } from "../../routes/path";
 function ProductCard(props) {
   const [favourite, setFavourite] = useState(false);
     function isFavourite() {
@@ -9,7 +10,7 @@ function ProductCard(props) {
       }
   return (
     <Link
-    to={`/details/${props.id}`}
+    to={PATH_DETAILS}
     style={{ textDecoration: "none", color: "black" }}
   >
     <Card className="item">
