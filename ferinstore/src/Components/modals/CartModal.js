@@ -11,12 +11,12 @@ const handleAddItem =()=>{
 } 
   return (
     <Wrapper className="d-flex p-3 flex-column justify-content-between">
-        <div className="d-flex flex-row">
+        <div className="d-flex flex-row align-items-center justify-content-between">
             <div className="image">
                 <img src={props.image}/>
             </div>
             <div>
-<div>
+<div className="d-flex flex-row gap-3 cart-field">
     <button onClick={()=> setQuantity( quantity-1)}>-</button>
     <div>{quantity}</div>
     <button onClick={()=> setQuantity( quantity+1)}>+</button>
@@ -35,7 +35,7 @@ const handleAddItem =()=>{
 const Wrapper = styled.div`
 width: 400px;
 height: 400px;
-position: absolute !important;
+/* position: absolute !important; */
 border: 1px solid red;
 background-color: white;
 border-radius: 10px;
