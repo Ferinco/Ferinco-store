@@ -2,16 +2,18 @@ import { Link } from "react-router-dom";
 import React from 'react'
 import { useState } from "react";
 import styled from "styled-components"
-import { PATH_DETAILS } from "../../routes/path";
+import { PATH_PAGE } from "../../routes/path";
 function ProductCard(props) {
   const [favourite, setFavourite] = useState(false);
     function isFavourite() {
         setFavourite(!favourite);
       }
+      
   return (
     <Link
-    to={PATH_DETAILS}
+    to={PATH_PAGE.details + '/' + props.id}
     style={{ textDecoration: "none", color: "black" }}
+    key={props.id}
   >
     <Card className="item">
       <div className="item-image">
@@ -24,26 +26,16 @@ function ProductCard(props) {
       ) : (
         ""
       )}
-      <div className="item-body">
-        <div className="about">
+      <div className="item-body d-flex flex-column mt-4">
+        <div className="about d-flex flex-row justify-content-between">
           <p className="name">{props.name}</p>
           <h5 className="price">{props.price}</h5>
+        </div>
+        <div className="shop">
           <p className="rate">
             <i className="fa fa-star" />
             {props.rating}
           </p>
-        </div>
-        <div className="shop">
-          <button
-            className="fa fa-heart fa-2x"
-            onClick={isFavourite}
-            style={{
-              color: favourite ? "green" : "rgb(243, 255, 243)",
-              backgroundColor: "transparent",
-              padding: "0",
-            }}
-          ></button>
-          <button className="fa fa-cart"></button>
         </div>
       </div>
     </Card>
@@ -53,7 +45,8 @@ function ProductCard(props) {
 const Card = styled.div`
     display: flex;
     flex-direction: column;
-    height: 400px;
+    height: auto !important;
+    width: auto;
     .item-image {
       height: 300px;
       background-color: rgb(243, 255, 243);
@@ -62,18 +55,16 @@ const Card = styled.div`
       display: flex;
       align-items: center;
       img {
-        width: 90%;
+        width: 70%;
         margin: auto !important;
-        height: 100%;
+        height: 90%;
+        display: cover;
         object-fit: contain;
-        position: absolute;
       }
     }
     .item-tag {
       position: absolute;
-      width: 270px;
       display: flex;
-      padding: 10px;
       justify-content: flex-end;
       .tag {
         background-color: #5cdb95;
@@ -81,45 +72,13 @@ const Card = styled.div`
         border-radius: 30px;
       }
     }
-    .item-body {
-      width: 100%;
-      display: flex;
-      padding: 5px;
-      justify-content: space-between;
-      align-items: center;
-      height: auto;
-      .about {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        width: 80%;
-        .name,
-        .price,
-        .rate {
-          margin: 0 !important;
-        }
-        .rate {
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          padding-left: 0 !important;
-          i {
-            padding-right: 5px;
-          }
-        }
-      }
-      .shop {
-        justify-content: space-between;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        background: transparent;
-        button {
-          border: 0;
-          padding: 0;
-          background-color: transparent;
-        }
-      }
+    .name{
+        font-family: 500;
+
     }
+    .price{
+        font-family: 700;
+    }
+
   `
 export default ProductCard

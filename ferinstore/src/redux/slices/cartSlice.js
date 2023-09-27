@@ -3,13 +3,18 @@ const cartSlice = createSlice({
     name: "cart",
     initialState: {
         isCartOpen: false,
+        modalOpen: false,
         cartItems: []
     }, 
     reducers: {
         toggleCart(state, action){
             state.isCartOpen = action.payload
         },
+        toggleModal (state, action){
+state.modalOpen = action.payload
+        },
         addItem(state, action){
+            console.log(action.payload)
             const newItem = action.payload.id;
             const existingItem = state.cartItems.find(item => item.id === newItem)
             if (existingItem){
@@ -40,5 +45,5 @@ const cartSlice = createSlice({
         }
     }
 })
-export const {toggleCart, addItem, removeItem, increaseItem, decre} = cartSlice.actions
+export const {toggleCart, addItem, removeItem, increaseItem, decreaseItem, toggleModal} = cartSlice.actions
 export default cartSlice.reducer;

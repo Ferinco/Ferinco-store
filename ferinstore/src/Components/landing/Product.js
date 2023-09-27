@@ -107,7 +107,7 @@ export default function Products() {
         </div>
       ) : (
         <>
-          <div className="products-items">
+          <div className="products-items mt-5 gap-4">
             {products.map((product) => (
            <ProductCard 
            id = {product.id}
@@ -191,10 +191,8 @@ const Wrapper = styled.div`
     }
   }
   .products-items {
-    padding-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
   }
   .products-logos {
     padding-top: 10px;

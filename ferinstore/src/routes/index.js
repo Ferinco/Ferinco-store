@@ -11,7 +11,7 @@ export default function Routes(product) {
       element: <ExternalLayout />,
       children: [
         { path: "/", element: <Home /> },
-        { path: `/details`, element: <Details /> }
+        { path: "/details/:id", element: <Details /> }
 
       ],
     },
