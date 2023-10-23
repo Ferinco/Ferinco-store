@@ -63,6 +63,7 @@ export default function Products() {
   ];
   return (
     <Wrapper className="products d-flex flex-column">
+      <h6 className="intro-header" >Shop The Best</h6>
       <div className="top-buttons d-flex flex-row gap-4">
         <button
           onClick={() => {
@@ -86,8 +87,10 @@ export default function Products() {
               }}
               style={{
                 backgroundColor:
-                  activeTab === tabItem ? "#5cdb95" : "#f5f5f5",
+                  activeTab === tabItem ? "#5cdb95" : "transparent",
                 width: "100px",
+                color: activeTab === tabItem ? "white" : "black",
+                border: activeTab === tabItem ? "none" : "1px solid grey"
               }}
             >
               {tabItem}
@@ -169,14 +172,20 @@ const Wrapper = styled.div`
   padding-top: 100px;
   width: 95%;
   margin: auto;
+  .intro-header{
+    font-weight: 800;
+    padding-bottom:20px ;
+  }
   .top-buttons {
     align-items: baseline;
 
     button {
       border: 0;
-      background: #f5f5f5;
-      padding: 3px 15px;
+      padding: 10px 20px;
       border-radius: 30px;
+      font-weight: 600;
+      background: transparent;
+  
     }
     .tab-items {
       width: 100%;

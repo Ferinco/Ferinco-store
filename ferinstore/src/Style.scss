@@ -59,6 +59,7 @@ justify-content: space-between;
   flex-direction: column;
   &-header {
     .desktop-header{
+      font-weight: 800;
       font-size: 40px;
     }
     .mobile-header{

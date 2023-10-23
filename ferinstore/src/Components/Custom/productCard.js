@@ -3,6 +3,7 @@ import React from 'react'
 import { useState } from "react";
 import styled from "styled-components"
 import { PATH_PAGE } from "../../routes/path";
+import { Icon } from "@iconify/react";
 function ProductCard(props) {
   const [favourite, setFavourite] = useState(false);
     function isFavourite() {
@@ -29,14 +30,11 @@ function ProductCard(props) {
       <div className="item-body d-flex flex-column mt-4">
         <div className="about d-flex flex-row justify-content-between">
           <p className="name">{props.name}</p>
+          <Icon icon="ph:heart-light" className="icon" />
+        </div>
+
           <h5 className="price">{props.price}</h5>
-        </div>
-        <div className="shop">
-          <p className="rate">
-            <i className="fa fa-star" />
-            {props.rating}
-          </p>
-        </div>
+ 
       </div>
     </Card>
   </Link>
@@ -47,21 +45,18 @@ const Card = styled.div`
     flex-direction: column;
     height: auto !important;
     width: auto;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;    
+    /* box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;     */
     .item-image {
-      height: 300px;
+      height: 400px;
       background-color: rgb(243, 255, 243);
-      border-radius: 10px;
       position: relative;
       display: flex;
       align-items: center;
       img {
         width: 70%;
         margin: auto !important;
-        height: 90%;
-        display: cover;
+        height: 100%;
+        display: block;
         object-fit: contain;
       }
     }
@@ -71,6 +66,9 @@ const Card = styled.div`
       justify-content: flex-end;
       margin-left: 10px;
       margin-top: 10px !important;
+      font-size: 12px;
+      font-weight: 600;
+      color: white;
       .tag {
         background-color: #5cdb95;
         padding: 5px 10px;
@@ -79,10 +77,18 @@ const Card = styled.div`
     }
     .name{
         font-family: 500;
-
-    }
+        font-size: 12px;
+        font-weight: 500;
+        
+      }
+      .icon{
+        font-size: 30px;
+        margin-top: -7px;
+      }
     .price{
-        font-family: 700;
+        font-weight: 700;
+        color: #05386b;
+        margin-top: -7px;
     }
 
   `

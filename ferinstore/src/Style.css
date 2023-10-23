@@ -58,6 +58,7 @@ button, a {
   align-items: center;
 }
 .collections-header .desktop-header {
+  font-weight: 800;
   font-size: 40px;
 }
 .collections-header .mobile-header {
