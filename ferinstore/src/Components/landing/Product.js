@@ -195,7 +195,7 @@ display: grid;
 grid-template-columns: repeat(4, 1fr);
   }
   .products-logos {
-    padding-top: 10px;
+    padding-top: 40px;
     width: 100%;
     display: flex;
     justify-content: space-between;

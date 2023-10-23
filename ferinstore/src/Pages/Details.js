@@ -29,6 +29,11 @@ export default function Details() {
       setIsAdded(false);
     }, 3000);
   }
+
+
+  const closeModal = ()=>{
+    dispatch(toggleModal(false))
+}
   const location = useLocation()
 useEffect(()=>{
 if (location.pathname !== "details") {
@@ -100,7 +105,7 @@ if (location.pathname !== "details") {
         </div>
       </div>
         {modalOpen === true ? (
-      <div className="d-flex justify-content-center modal-field align-items-center">
+      <div className="d-flex justify-content-center modal-field align-items-center" onClick={closeModal}>
           <CartModal
             image={"/" + product.image}
             id={product.id}

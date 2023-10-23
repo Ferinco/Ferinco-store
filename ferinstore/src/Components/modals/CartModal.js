@@ -8,9 +8,10 @@ import { useSelector } from "react-redux";
 export default function CartModal(props) {
 const [quantity, setQuantity] = useState(1)
 const dispatch = useDispatch()
-const isCartOpen = useSelector((state)=> state.cart)
+const cartItems = useSelector((state)=> state.cart)
 const handleAddItem =()=>{
     dispatch(addItem({...props, quantity}))
+    console.log(cartItems)
 } 
 const closeModal = ()=>{
     dispatch(toggleModal(false))

@@ -4,7 +4,8 @@ const cartSlice = createSlice({
     initialState: {
         isCartOpen: false,
         modalOpen: false,
-        cartItems: []
+        cartItems: [],
+        
     }, 
     reducers: {
         toggleCart(state, action){

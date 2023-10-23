@@ -47,6 +47,9 @@ const Card = styled.div`
     flex-direction: column;
     height: auto !important;
     width: auto;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;    
     .item-image {
       height: 300px;
       background-color: rgb(243, 255, 243);
@@ -66,6 +69,8 @@ const Card = styled.div`
       position: absolute;
       display: flex;
       justify-content: flex-end;
+      margin-left: 10px;
+      margin-top: 10px !important;
       .tag {
         background-color: #5cdb95;
         padding: 5px 10px;
