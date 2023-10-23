@@ -5,15 +5,7 @@ import { Icon } from "@iconify/react";
 
 const NavConfig = [
   {
-    title: "Checkout",
-    link: "/details",
-  },
-  {
     title: "Collections",
-    link: "",
-  },
-  {
-    title: "Blog",
     link: "",
   },
   {
@@ -68,7 +60,9 @@ const NavbarWrapper = styled.div`
   width: 95%;
   margin: auto;
   gap: 20px;
-
+  @media (max-width: 370px){
+    gap: 10px;
+  }
 
   `
 const LeftBar = styled.div`
@@ -146,6 +140,9 @@ const LeftBar = styled.div`
       }
     }
   }
+  @media (max-width: 370px){
+    width: 85%;
+  }
 `;
 const RightBar= styled.div`
 width: 30%;
@@ -156,5 +153,11 @@ margin: auto;
   padding: 10px 20px;
   border-radius: 10px;
   height: 70px;
-
+  @media (max-width: 370px){
+    width: 15%;
+    justify-content: center !important;
+    .user-links{
+      flex-direction: column-reverse !important;
+}
+  }
 `
