@@ -1,7 +1,8 @@
 import React from 'react';
+import styled from 'styled-components';
 export default function Right(){
     return(
-        <div className="right">
+        <RightDiv className="right">
 <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">
@@ -15,6 +16,9 @@ export default function Right(){
     </div>
   </div>
 </div>
-        </div>
+        </RightDiv>
     )
 }
+const RightDiv = styled.div`
+width:30%;
+`

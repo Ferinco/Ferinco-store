@@ -32,8 +32,8 @@ const NavConfig = [
 export default function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
-    <NavWrapper className="mt-3">
-      <div className="top d-flex justify-content-between">
+    <NavbarWrapper className="d-flex flex-row">
+    <LeftBar className="mt-3 d-flex flex-row align-items-center justify-content-between">
         <div className="navbar-header d-flex flex-row gap-3">
           <button
             className="navbar-btn"
@@ -54,22 +54,31 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
-        <div className="user-links d-flex gap-4">
+    </LeftBar>
+    <RightBar className="mt-3 d-flex flex-row align-items-center justify-content-between">
+    <div className="user-links d-flex gap-4">
         <Icon icon="fluent:cart-16-regular" className="icon"/>
         <Icon icon="mdi:user-outline" className="icon"/>
         </div>
-      </div>
-    </NavWrapper>
+    </RightBar>
+    </NavbarWrapper>
   );
 }
-const NavWrapper = styled.div`
+const NavbarWrapper = styled.div`
+  width: 95%;
+  margin: auto;
+  gap: 20px;
+
+
+  `
+const LeftBar = styled.div`
   margin: auto;
   display: flex;
-  flex-direction: column;
   background: #5cdb95;
   padding: 10px 20px;
   border-radius: 10px;
-  width: 95%;
+  width: 70%;
+  height: 70px;
   .navbar-brand {
     font-weight: 700;
     font-size: 25px;
@@ -84,10 +93,7 @@ const NavWrapper = styled.div`
   .navbar-btn {
     display: none;
   }
-  .top {
-    height: 70px;
-    align-items: center;
-  }
+
   .mobile-nav {
     display: none;
   }
@@ -141,3 +147,13 @@ const NavWrapper = styled.div`
     }
   }
 `;
+const RightBar= styled.div`
+width: 30%;
+margin: auto;
+  display: flex;
+  flex-direction: column;
+  background: #5cdb95;
+  padding: 10px 20px;
+  border-radius: 10px;
+  height: 70px;
+`

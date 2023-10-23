@@ -70,7 +70,7 @@ const Wrapper = styled.div`
       padding-top: 20px;
       gap: 20px;
       &-image {
-        width: 450px;
+        width: 50%;
         height: 250px;
         position: relative;
         border-radius: 10px;

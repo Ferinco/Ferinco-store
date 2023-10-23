@@ -3,12 +3,18 @@ import React, { useState } from 'react'
 import { Button } from "../Custom/button";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/slices/cartSlice";
+import { toggleModal } from "../../redux/slices/cartSlice";
+import { useSelector } from "react-redux";
 export default function CartModal(props) {
 const [quantity, setQuantity] = useState(1)
 const dispatch = useDispatch()
+const isCartOpen = useSelector((state)=> state.cart)
 const handleAddItem =()=>{
     dispatch(addItem({...props, quantity}))
 } 
+const closeModal = ()=>{
+    dispatch(toggleModal(false))
+}
   return (
     <Wrapper className="d-flex p-3 flex-column justify-content-between">
         <div className="d-flex flex-row align-items-center justify-content-between">
@@ -20,13 +26,12 @@ const handleAddItem =()=>{
     <button onClick={()=> setQuantity( quantity-1)}>-</button>
     <div>{quantity}</div>
     <button onClick={()=> setQuantity( quantity+1)}>+</button>
-
 </div>
             </div>
             <div></div>
         </div>
         <div className="buttons d-flex justify-content-between">
-            <Button>CONTINUE SHOPPING</Button>
+            <Button onClick={closeModal}>CONTINUE SHOPPING</Button>
             <Button onClick={handleAddItem}>ADD ITEMS TO CART</Button>
         </div>
     </Wrapper>
