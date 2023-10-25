@@ -110,7 +110,7 @@ export default function Products() {
         </div>
       ) : (
         <>
-          <div className="products-items mt-5 gap-4">
+          <div className="products-items gap-4">
             {products.map((product) => (
            <ProductCard 
            id = {product.id}
@@ -164,6 +164,9 @@ const Wrapper = styled.div`
     font-weight: 800;
     padding-bottom:20px ;
     font-size:40px;
+    @media (max-width: 600px){
+      font-size:30px;
+    }
   }
   .top-buttons {
     align-items: baseline;
@@ -240,7 +243,6 @@ padding-right: 24px !important;
   }
   .top-buttons {
     padding-left: 24px !important;
-padding-right: 24px !important;
   }
   .products-items {
 display: grid;

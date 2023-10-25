@@ -1,10 +1,10 @@
 import Style from "../Custom/Style"
 export default function Styles (){
     return (
-        <div className="styles">
+        <div className="styles mt-5 container">
 
-       
-      <div id="carouselExampleSlidesOnly" className=" styles-carousel carousel slide" data-ride="carousel">
+<h3>Style Up</h3> 
+      <div id="carouselExampleSlidesOnly" className=" styles-carousel carousel slide mt-3" data-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">
       <Style

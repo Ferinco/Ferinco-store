@@ -12,7 +12,7 @@ function ProductCard(props) {
       }
 
   return (
-    <Card className="item">
+    <Card className="item mt-4">
       <Link
       to={PATH_PAGE.details + '/' + props.id}
       style={{ textDecoration: "none", color: "black" }}
@@ -59,7 +59,8 @@ const Card = styled.div`
     width: auto;
     /* box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;     */
    &:nth-child(odd) .item-image {
-  background-color: #f1f1f1 !important;
+  background-color: rgb(243, 245, 243) !important;
+
 }
 
 &:nth-child(even) .item-image {
@@ -91,14 +92,14 @@ const Card = styled.div`
       font-weight: 600;
       color: white;
       .tag {
-        background-color: #5cdb95;
+        background-color: #5cdb95; 
         padding: 5px 10px;
         border-radius: 30px;
       }
     }
     .name{
         font-family: 500;
-        font-size: 12px;
+        font-size: 13px;
         font-weight: 500;
         
       }
@@ -134,6 +135,15 @@ const Card = styled.div`
     .active-color{
       border:2px solid #5cdb95 !important;
 
+    }
+    @media screen and (max-width: 987px){
+      .icon{
+        font-size: 20px;
+        margin-top: 0px ;
+      }
+      .item-body{
+        padding:0 5px;
+      }
     }
 
   `

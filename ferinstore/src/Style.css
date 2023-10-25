@@ -45,84 +45,21 @@ button, a {
   }
 }
 
-.collections {
-  padding-top: 100px;
-  width: 90%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-}
-.collections-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.collections-header .desktop-header {
-  font-weight: 800;
-  font-size: 40px;
-}
-.collections-header .mobile-header {
-  display: none;
-}
-.collections-header a {
-  color: grey;
-}
-.collections-body {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(2, 1fr);
-}
-.collections-link {
-  display: none;
-  color: black;
-  color: grey;
-}
-
-.collection {
-  display: flex;
-  flex-direction: column;
-  height: 300px;
-  border-radius: 20px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-}
-.collection .landscape {
-  display: block;
-}
-.collection .potrait {
-  display: none;
-}
-.collection-image {
-  height: 100%;
-  position: relative;
-  border-radius: 20px;
-}
-.collection-image img {
-  border-radius: 20px;
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  position: absolute;
-}
-.collection h2 {
-  border-radius: 20px;
-  height: 300px;
-  width: 600px;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 70px;
-  text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3), 0px -4px 10px rgba(255, 255, 255, 0.3);
-}
-
 .styles {
   padding-top: 100px;
   width: 90%;
   margin: auto;
   display: flex;
   flex-direction: column;
+}
+.styles h3 {
+  font-weight: 800;
+  font-size: 40px;
+}
+@media screen and (max-width: 600px) {
+  .styles h3 {
+    font-size: 30px;
+  }
 }
 .styles-button {
   display: flex;
@@ -136,7 +73,7 @@ button, a {
   border: 0;
   border-radius: 20px;
   background-color: #5cdb95;
-  color: black;
+  color: white;
   font-size: 50px;
 }
 
@@ -253,52 +190,6 @@ button, a {
 }
 
 @media screen and (min-width: 300px) and (max-width: 600px) {
-  .collections {
-    padding-top: 50px;
-  }
-  .collections-header {
-    display: flex;
-    flex-direction: column;
-  }
-  .collections-header a {
-    display: none;
-  }
-  .collections-header .desktop-header {
-    display: none;
-  }
-  .collections-header .mobile-header {
-    text-align: center;
-    display: flex;
-    font-size: 30px;
-  }
-  .collections-body {
-    padding-top: 20px;
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .collections-link {
-    padding-top: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  .collection {
-    height: 400px;
-    width: 300px;
-    margin: auto !important;
-    justify-content: center;
-  }
-  .collection:hover {
-    scale: 1.05;
-    transition: 0.3s;
-  }
-  .collection .potrait {
-    display: block;
-  }
-  .collection .landscape {
-    display: none;
-  }
-  .collection h2 {
-    width: 300px;
-  }
   .styles {
     padding-top: 20px;
   }
@@ -370,25 +261,6 @@ button, a {
   }
 }
 @media screen and (min-width: 601px) and (max-width: 800px) {
-  .collections-header .desktop-header {
-    font-size: 20px;
-  }
-  .collections-body {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-  }
-  .collection {
-    width: 540px;
-  }
-  .collection .landscape {
-    display: block;
-  }
-  .collection h2 {
-    width: 540px;
-  }
   .styles {
     padding-top: 20px;
   }
@@ -457,130 +329,5 @@ button, a {
   }
   .footer-top ul li, .footer-bottom ul li {
     list-style: none;
-  }
-}
-@media screen and (min-width: 801px) and (max-width: 1000px) {
-  .collections-body {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: center;
-    padding: 10px 0;
-    background-color: #f5f5f5;
-    border-radius: 20px;
-  }
-  .collections-link {
-    display: none;
-  }
-  .collection {
-    width: 720px;
-  }
-}
-@media screen and (min-width: 801px) and (max-width: 1000px) and (width: 1000px) {
-  .collection {
-    width: 900px !important;
-    height: 400px;
-  }
-}
-@media screen and (min-width: 801px) and (max-width: 1000px) and (width: 900px) {
-  .collection {
-    width: 810px !important;
-    height: 400px;
-  }
-}
-@media screen and (min-width: 801px) and (max-width: 1000px) {
-  .collection h2 {
-    width: 720px;
-  }
-}
-@media screen and (min-width: 801px) and (max-width: 1000px) and (width: 1000px) {
-  .collection h2 {
-    width: 900px;
-    height: 400px;
-  }
-}
-@media screen and (min-width: 801px) and (max-width: 1000px) and (width: 900px) {
-  .collection h2 {
-    width: 810px;
-    height: 400px;
-  }
-}
-@media screen and (min-width: 1001px) and (max-width: 1100px) {
-  .collection {
-    width: 445px;
-  }
-}
-@media screen and (min-width: 1001px) and (max-width: 1100px) and (min-width: 1051px) and (max-width: 1100px) {
-  .collection {
-    width: 460px !important;
-  }
-}
-@media screen and (min-width: 1001px) and (max-width: 1100px) {
-  .collection h2 {
-    width: 445px;
-  }
-}
-@media screen and (min-width: 1001px) and (max-width: 1100px) and (min-width: 1051px) and (max-width: 1100px) {
-  .collection h2 {
-    width: 460px !important;
-  }
-}
-@media screen and (min-width: 1101px) and (max-width: 1200px) {
-  .collection {
-    width: 480px;
-  }
-}
-@media screen and (min-width: 1101px) and (max-width: 1200px) and (min-width: 1151px) and (max-width: 1200px) {
-  .collection {
-    width: 500px !important;
-  }
-}
-@media screen and (min-width: 1101px) and (max-width: 1200px) {
-  .collection h2 {
-    width: 480px;
-  }
-}
-@media screen and (min-width: 1101px) and (max-width: 1200px) and (min-width: 1151px) and (max-width: 1200px) {
-  .collection h2 {
-    width: 500px !important;
-  }
-}
-@media screen and (min-width: 1400px) {
-  .collections-body {
-    display: flex;
-    flex-direction: column;
-  }
-  .collections-link {
-    display: none;
-  }
-  .collection {
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-    width: 1000px;
-    border-radius: 20px;
-  }
-  .collection .landscape {
-    display: block;
-  }
-  .collection .potrait {
-    display: none;
-  }
-  .collection-image {
-    height: 100%;
-    position: relative;
-    border-radius: 20px;
-  }
-  .collection-image img {
-    border-radius: 20px;
-    height: 100%;
-    width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    position: absolute;
-  }
-  .collection h2 {
-    width: 1000px;
-    background: transparent;
   }
 }/*# sourceMappingURL=Style.css.map */

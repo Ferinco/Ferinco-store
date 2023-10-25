@@ -3,7 +3,7 @@ import Right from "./Right"
 import styled from "styled-components"
 function Banner(){
     return(
-        <Wrapper className="banner d-flex flex-row pt-2">
+        <Wrapper className=" banner d-flex flex-row pt-2">
 <Left/>
 <Right/>
 
