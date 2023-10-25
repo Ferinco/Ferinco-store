@@ -8,7 +8,23 @@ const Data = [
     image: "./Images/T-Shirts/shirts3.png",
     tag: "T-Shirt",
     quantity: 1,
-    favourite : false || true
+    favourite : false || true,
+    colors: [
+      {
+        id: 1,
+        name: ""
+      },
+      {
+        id: 2,
+        name: ""
+
+      },
+      {
+        id: 3,
+        name: ""
+
+      },
+    ]
   },
   {
     id: 2,
@@ -19,7 +35,13 @@ const Data = [
     image: "./Images/Watches/Watch (3).png",
     tag: "Watch",
     quantity: 1,
-    favourite : false || true
+    favourite : false || true,
+    colors: [
+      {
+        id: 1,
+        name: ""
+      },
+    ]
   },
   {
     id: 3,
@@ -30,7 +52,23 @@ const Data = [
     image: "./Images/Caps/Caps (3).png",
     tag: "Cap",
     quantity: 1,
-    favourite : false || true
+    favourite : false || true,
+    colors: [
+      {
+        id: 3,
+        name: ""
+      },
+      {
+        id: 2,
+        name: ""
+
+      },
+      {
+        id: 1,
+        name: ""
+
+      },
+    ]
   },
   {
     id: 4,
@@ -41,7 +79,23 @@ const Data = [
     image: "./Images/Jackets/Jackets (6).png",
     tag: "Jacket",
     quantity: 1,
-    favourite : false || true
+    favourite : false || true,
+    colors: [
+      {
+        id: 2,
+        name: ""
+      },
+      {
+        id: 1,
+        name: ""
+
+      },
+      {
+        id: 3,
+        name: ""
+
+      },
+    ]
   },
   {
     id: 5,

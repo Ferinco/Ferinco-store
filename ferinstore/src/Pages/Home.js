@@ -3,13 +3,14 @@ import Collections from "../Components/landing/Collections"
 import Products from "../Components/landing/Product"
 import Styles from "../Components/landing/Styles"
 import styled from "styled-components";
-
+import BrandLogos from "../Components/landing/logos";
 export default function Home (){
     return(
         <HomeDiv className="Home">
           
 <Banner/>
 <Products/>
+<BrandLogos/>
 <Collections/>
 <Styles/>
         </HomeDiv>

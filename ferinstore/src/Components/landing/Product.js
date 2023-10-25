@@ -62,7 +62,7 @@ export default function Products() {
     "Shoes",
   ];
   return (
-    <Wrapper className="products d-flex flex-column">
+    <Wrapper className="container products d-flex flex-column">
       <h6 className="intro-header" >Shop The Best</h6>
       <div className="top-buttons d-flex flex-row gap-4">
         <button
@@ -119,7 +119,10 @@ export default function Products() {
            tag ={product.tag}
            rating = {product.rating}
            name = {product.name}
-           price = {product.price}/>
+           price = {product.price}
+           colors = {product.colors}
+           />
+           
             ))}
           </div>
         </>
@@ -149,32 +152,18 @@ export default function Products() {
       )}
 
       <div className="products-logos">
-        <div className="logo">
-          <img src="../Images/Logos/logo (1).png" />
-        </div>
-        <div className="logo">
-          <img src="../Images/Logos/logo (2).png" />
-        </div>
-        <div className="logo">
-          <img src="../Images/Logos/logo (3).png" />
-        </div>
-        <div className="logo">
-          <img src="../Images/Logos/logo (4).png" />
-        </div>
-        <div className="logo">
-          <img src="../Images/Logos/logo (5).png" />
-        </div>
+   
       </div>
     </Wrapper>
   );
 }
 const Wrapper = styled.div`
   padding-top: 100px;
-  width: 95%;
   margin: auto;
   .intro-header{
     font-weight: 800;
     padding-bottom:20px ;
+    font-size:40px;
   }
   .top-buttons {
     align-items: baseline;
@@ -202,22 +191,7 @@ const Wrapper = styled.div`
   .products-items {
 display: grid;
 grid-template-columns: repeat(4, 1fr);
-  }
-  .products-logos {
-    padding-top: 40px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    .logo {
-      width: 70px;
-      height: 70px;
-      img {
-        object-fit: contain;
-        width: 100%;
-        height: 100%;
-        display: block;
-      }
-    }
+
   }
   .search-field {
   align-items: center;
@@ -257,5 +231,21 @@ grid-template-columns: repeat(4, 1fr);
     border-radius: 20px;
     background-color: rgb(243, 255, 243);
   }
-
+  @media screen and (max-width: 987px){
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  .intro-header{
+    padding-left: 24px !important;
+padding-right: 24px !important;
+  }
+  .top-buttons {
+    padding-left: 24px !important;
+padding-right: 24px !important;
+  }
+  .products-items {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 0 !important;
+  }
+}
 `;
