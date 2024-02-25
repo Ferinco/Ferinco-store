@@ -25,34 +25,7 @@ export default function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
     <NavbarWrapper className="d-flex flex-row">
-    <LeftBar className="mt-3 d-flex flex-row align-items-center justify-content-between">
-        <div className="navbar-header d-flex flex-row gap-3">
-          <button
-            className="navbar-btn"
-            onClick={() => {
-              setIsNavOpen(!isNavOpen);
-            }}
-          >
-            <Icon icon={isNavOpen ? "iconoir:cancel" : "fe:bar"} />
-          </button>
-          <Link className="navbar-brand" to="/">
-            FerinSTORE
-          </Link>
-        </div>
-        <div className="navbar-links d-flex gap-3">
-          {NavConfig.map(({ title, link }, index) => (
-            <Link className="nav-link" to={link}>
-              {title}
-            </Link>
-          ))}
-        </div>
-    </LeftBar>
-    <RightBar className="mt-3 d-flex flex-row align-items-center justify-content-between">
-    <div className="user-links d-flex gap-4">
-        <Icon icon="fluent:cart-16-regular" className="icon"/>
-        <Icon icon="mdi:user-outline" className="icon"/>
-        </div>
-    </RightBar>
+
     </NavbarWrapper>
   );
 }
