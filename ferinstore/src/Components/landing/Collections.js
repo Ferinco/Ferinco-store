@@ -18,12 +18,6 @@ export default function Collections() {
         <div className="image d-flex justify-content-center align-items-center">
           <h2>casual</h2>
         </div>
-        <div className="image d-flex justify-content-center align-items-center">
-          <h2>k-style</h2>
-        </div>
-        <div className="image d-flex justify-content-center align-items-center">
-          <h2>sports</h2>
-        </div>
       </div>
       <div className="link mt-3 justify-content-center">
         see more collection
@@ -82,16 +76,10 @@ const CollectionsDiv = styled.div`
     text-transform: uppercase;
   }
     &:first-child {
-      background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/Images/Collection/African.avif);
+      background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/Images/Collection/k-style.jpg);
     }
     &:nth-child(2) {
       background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/Images/Collection/casual.avif);
-    }
-    &:nth-child(3) {
-      background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/Images/Collection/k-style.jpg);
-    }
-    &:nth-child(4) {
-      background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(/Images/Collection/sports.jpg);
     }
   }
   .link {

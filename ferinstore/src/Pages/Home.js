@@ -1,9 +1,10 @@
-import Banner from "../Components/landing/frontPage/Banner"
+import Banner from "../Components/landing/Banner"
 import Collections from "../Components/landing/Collections"
 import Products from "../Components/landing/Product"
 import Styles from "../Components/landing/Styles"
 import styled from "styled-components";
 import BrandLogos from "../Components/landing/logos";
+import SliderDiv from "../Components/landing/slider";
 export default function Home (){
     return(
         <HomeDiv className="Home">
@@ -12,6 +13,7 @@ export default function Home (){
 <Products/>
 <BrandLogos/>
 <Collections/>
+<SliderDiv/>
 <Styles/>
         </HomeDiv>
     )
@@ -39,5 +41,5 @@ const HomeDiv = styled.div`
     transparent 50%
   ); */
 
-
+overflow-x: hidden;
 `

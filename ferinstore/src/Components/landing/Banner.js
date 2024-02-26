@@ -1,9 +1,7 @@
-import Left from "./Left"
-import Right from "./Right"
 import styled from "styled-components"
 function Banner(){
     return(
-        <Wrapper className="container banner d-flex flex-column justify-content-center align-items-center text-center gap-3">
+        <Wrapper className="container banner d-flex flex-column justify-content-center align-items-center text-center gap-3 mt-4">
 <div className="text-div">
   <h1 className="m-0">Your Online destination <br/> for online fashion</h1>
 </div>

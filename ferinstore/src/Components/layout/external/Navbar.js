@@ -24,7 +24,19 @@ const NavConfig = [
 export default function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
-    <NavbarWrapper className="d-flex flex-row">
+    <NavbarWrapper className="d-flex flex-row justify-content-between py-3">
+      <div className="link-div d-flex flex-row gap-2"><h6>Logo</h6>
+      {
+        NavConfig.map((link)=>(
+          <Link>{link.title}</Link>
+        ))
+      }
+      </div>
+      <div className="search-div ">
+        <div className="input-div d-flex align-items-center p-1 px-2">
+          <input placeholder="Search"/> <Icon icon="iconamoon:search-thin"/>
+        </div>
+      </div>
 
     </NavbarWrapper>
   );
@@ -33,104 +45,18 @@ const NavbarWrapper = styled.div`
   width: 95%;
   margin: auto;
   gap: 20px;
+  .input-div{
+    border: 1px solid grey;
+    border-radius: 30px;
+    input{
+      border: 0 !important;
+      outline: 0 !important;
+    border-radius: 30px;
+
+    }
+  }
   @media (max-width: 370px){
     gap: 10px;
   }
 
   `
-const LeftBar = styled.div`
-  margin: auto;
-  display: flex;
-  background: #5cdb95;
-  padding: 10px 20px;
-  border-radius: 10px;
-  width: 70%;
-  height: 70px;
-  .navbar-brand {
-    font-weight: 700;
-    font-size: 25px;
-  }
-  .nav-link {
-    font-weight: 700;
-    &:hover{
-      color: grey;
-      transition: 0.3s;
-    }
-  }
-  .navbar-btn {
-    display: none;
-  }
-
-  .mobile-nav {
-    display: none;
-  }
-.user-links{
-  .icon{
-    font-size:25px;
-  }
-}
-  @media (max-width: 952px) {
-    ul li a {
-      font-size: 19px !important;
-    }
-  }
-  @media (max-width: 858px) {
-
-    .navbar-nav {
-      display: none;
-    }
-    .navbar-links{
-      display: none !important;
-    }
-    .navbar-btn {
-      display: block;
-      background: transparent;
-      border: none;
-    }
-    .closed {
-      display: none !important;
-    }
-    .opened {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      /* position: fixed; */
-      height: 50vh;
-      background-color: #5cdb95;
-      transition: ease-in-out cubic-bezier(0.55, 0.055, 0.675, 0.19);
-      ul {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 0 !important;
-
-        li {
-          list-style: none;
-
-          &:hover {
-          }
-        }
-      }
-    }
-  }
-  @media (max-width: 370px){
-    width: 85%;
-  }
-`;
-const RightBar= styled.div`
-width: 30%;
-margin: auto;
-  display: flex;
-  flex-direction: column;
-  background: #5cdb95;
-  padding: 10px 20px;
-  border-radius: 10px;
-  height: 70px;
-  @media (max-width: 370px){
-    width: 15%;
-    justify-content: center !important;
-    .user-links{
-      flex-direction: column-reverse !important;
-}
-  }
-`
