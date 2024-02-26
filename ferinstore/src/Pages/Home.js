@@ -1,25 +1,26 @@
-import Banner from "../Components/landing/Banner"
-import Collections from "../Components/landing/Collections"
-import Products from "../Components/landing/Product"
-import Styles from "../Components/landing/Styles"
+import Banner from "../Components/landing/Banner";
+import Collections from "../Components/landing/Collections";
+import Products from "../Components/landing/Product";
+import Styles from "../Components/landing/Styles";
 import styled from "styled-components";
 import BrandLogos from "../Components/landing/logos";
 import SliderDiv from "../Components/landing/slider";
-export default function Home (){
-    return(
-        <HomeDiv className="Home">
-          
-<Banner/>
-<Products/>
-<BrandLogos/>
-<Collections/>
-<SliderDiv/>
-<Styles/>
-        </HomeDiv>
-    )
+import BrowseSection from "../Components/landing/browseSection";
+export default function Home() {
+  return (
+    <HomeDiv className="Home">
+      <Banner />
+      <Products />
+      <BrandLogos />
+      <Collections />
+      <SliderDiv />
+      <Styles />
+      <BrowseSection />
+    </HomeDiv>
+  );
 }
 const HomeDiv = styled.div`
-/* background: linear-gradient(1turn, hsla(210, 100%, 99%, 0.15), #fff 85%), /* Subtle whitish blue */
+  /* background: linear-gradient(1turn, hsla(210, 100%, 99%, 0.15), #fff 85%), /* Subtle whitish blue */
   /* radial-gradient(
     ellipse at top left,
     rgba(13, 110, 253, 0.5),
@@ -41,5 +42,5 @@ const HomeDiv = styled.div`
     transparent 50%
   ); */
 
-overflow-x: hidden;
-`
+  overflow-x: hidden;
+`;
