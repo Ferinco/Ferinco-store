@@ -11,10 +11,10 @@ export default function Home() {
     <HomeDiv className="Home">
       <Banner />
       <Products />
-      {/* <BrandLogos /> */}
       <Collections />
       <SliderDiv />
       <Styles />
+      <BrandLogos />
       <BrowseSection />
     </HomeDiv>
   );

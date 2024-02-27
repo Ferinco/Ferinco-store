@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button } from "../Custom/button";
 export default function Collections() {
   return (
     <CollectionsDiv className="container collections mt-5">
@@ -8,7 +9,7 @@ export default function Collections() {
         </h4>
         <div className="col-md-4 d-flex flex-column gap-2">
           <p>From our favourite Naija influencers to the best missives from Milan and coolest New Yorkers, find out more.</p>
-          <button>Browse All Products</button>
+          <Button black>Browse All Products</Button>
         </div>
       </div>
       <div className="body mt-5">

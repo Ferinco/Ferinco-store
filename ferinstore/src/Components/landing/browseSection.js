@@ -1,4 +1,6 @@
+import { Icon } from "@iconify/react";
 import styled from "styled-components";
+import { Button } from "../Custom/button";
 
 export default function BrowseSection() {
   return (
@@ -6,9 +8,12 @@ export default function BrowseSection() {
       <div className="top-div">
         <img src="/Images/couple.png" />
         <div className="absolute-div d-flex justify-content-start p-3">
+          <div className="d-flex flex-column justify-content-end align-items-start info gap-2">
+          <h4>Grab Exciting and Special Deals for You and Yours</h4>
           <div className="buttons d-flex flex-row gap-1 justify-content-end align-items-end">
-            <button>View</button>
-            <button>View</button>
+            <Button black>View</Button>
+            <button className="icon-div"><Icon icon="gg:arrow-top-right"  style={{color: "black"}} className="icon"/></button>
+          </div>
           </div>
         </div>
       </div>
@@ -28,7 +33,7 @@ export default function BrowseSection() {
           <div className="small-image">
             <img src="/Images/fashion_3.jpg" />
           </div>{" "}
-          <button>Browse Collection</button>
+          <Button transparent>Browse Collection</Button>
           <div className="small-image">
             <img src="/Images/fashion_3.jpg" />
           </div>{" "}
@@ -56,20 +61,30 @@ const Wrapper = styled.div`
       width: 100%;
       border-radius: 20px;
       z-index: 99 !important;
+      .icon{
+        height: fit-content !important;
+      }
+      .info{
+        max-width: 350px;
+        h4{
+          font-size: 30px;
+          color: black;
+        }
+      }
       button {
         height: fit-content;
       }
     }
   }
   button{
-    border-radius: 30px;
-    padding: 10px 25px;
-    font-weight: 600;
-    background-color: #5cdb95;
-    border: 1px solid #5cdb95;
-    color: white;
-
-
+    height: fit-content;
+&:last-child{
+  padding: 4px 8px;
+  border: 1px solid black;
+  color: black;
+  border-radius: 50%;
+    background-color: transparent;
+}
   }
   .small-image {
     height: 200px;

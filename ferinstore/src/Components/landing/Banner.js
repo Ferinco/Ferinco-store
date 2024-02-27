@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Button } from "../Custom/button";
 function Banner(){
     return(
         <Wrapper className="container banner d-flex flex-column justify-content-center align-items-center text-center gap-3 mt-4">
@@ -9,8 +10,8 @@ function Banner(){
 <img src="/images/background_3.jpg"/>
 <div className="absolute-div d-flex justify-content-start p-3">
   <div className="buttons d-flex flex-row gap-1 justify-content-end align-items-end">
-    <button>Top collections</button>
-    <button>view more</button>
+    <Button black>Top collections</Button>
+    <Button transparent>view more</Button>
 
   </div>
 </div>
@@ -48,26 +49,6 @@ const Wrapper = styled.div`
   height: 100%;
   width: 100%;
   border-radius: 20px;
-  button{
-    height: fit-content;
-    padding: 5px 25px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 600;
-&:first-child{
-  border: 1px solid black;
-    background-color: black;
-    color: white;
-
-}
-&:last-child{
-  border: 1px solid black;
-  color: black;
-
-    background-color: transparent;
-}
-  }
-
 }
   @media (min-width: 300px) and (max-width: 800px) {
    flex-direction :column !important;
