@@ -3,7 +3,7 @@ export default function Styles (){
     return (
         <div className="styles mt-5 container">
 
-<h3>Style Up</h3> 
+<h6 className="intro-header" >Today's Style Up</h6>
       <div id="carouselExampleSlidesOnly" className=" styles-carousel carousel slide mt-3" data-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">
@@ -31,9 +31,6 @@ export default function Styles (){
       />
     </div>
   </div>
-</div>
-<div className="styles-button">
-<button>Step Up Your Style</button>
 </div>
  </div>
     )

@@ -29,21 +29,21 @@ const Wrapper = styled.div`
   .div {
     border: 1px solid black;
     border-radius: 20px;
-    height: 350px;
+    height: 300px;
  &:first-child{
     width: 500px;
  }
  &:nth-child(2){
-    width: 280px;
+    width: 270px;
  }
  &:nth-child(3){
-    width: 280px;
+    width: 270px;
  }
  &:nth-child(4){
     width: 400px;
  }
  &:nth-child(5){
-    width: 280px;
+    width: 270px;
  }
   }
 `;

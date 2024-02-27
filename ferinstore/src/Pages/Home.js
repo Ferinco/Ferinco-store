@@ -11,7 +11,7 @@ export default function Home() {
     <HomeDiv className="Home">
       <Banner />
       <Products />
-      <BrandLogos />
+      {/* <BrandLogos /> */}
       <Collections />
       <SliderDiv />
       <Styles />

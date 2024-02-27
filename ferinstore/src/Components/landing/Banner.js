@@ -3,14 +3,14 @@ function Banner(){
     return(
         <Wrapper className="container banner d-flex flex-column justify-content-center align-items-center text-center gap-3 mt-4">
 <div className="text-div">
-  <h1 className="m-0">Your Online destination <br/> for online fashion</h1>
+  <h1 className="m-0">Your Online destination for online fashion</h1>
 </div>
 <div className="image-div d-flex flex-column">
 <img src="/images/background_3.jpg"/>
 <div className="absolute-div d-flex justify-content-start p-3">
   <div className="buttons d-flex flex-row gap-1 justify-content-end align-items-end">
-    <button>View</button>
-    <button>View</button>
+    <button>Top collections</button>
+    <button>view more</button>
 
   </div>
 </div>
@@ -25,8 +25,9 @@ const Wrapper = styled.div`
   height: auto;
   h1{
     text-transform: capitalize;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 50px;
+    max-width: 600px;
   }
 .image-div{
   height: 600px;
@@ -49,6 +50,22 @@ const Wrapper = styled.div`
   border-radius: 20px;
   button{
     height: fit-content;
+    padding: 5px 25px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+&:first-child{
+  border: 1px solid black;
+    background-color: black;
+    color: white;
+
+}
+&:last-child{
+  border: 1px solid black;
+  color: black;
+
+    background-color: transparent;
+}
   }
 
 }

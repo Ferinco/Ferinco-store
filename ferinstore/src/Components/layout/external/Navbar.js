@@ -25,12 +25,14 @@ export default function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
     <NavbarWrapper className="d-flex flex-row justify-content-between py-3">
-      <div className="link-div d-flex flex-row gap-2"><h6>Logo</h6>
+      <div className="link-div d-flex flex-row gap-2 align-items-baseline gap-5"><h4 className="m-0">Logo</h4>
+      <div className="links d-none d-md-flex flex-sm-row gap-3 align-items-center ">
       {
         NavConfig.map((link)=>(
-          <Link>{link.title}</Link>
+          <Link className="react-router-link link m-0">{link.title}</Link>
         ))
       }
+      </div>
       </div>
       <div className="search-div ">
         <div className="input-div d-flex align-items-center p-1 px-2">
@@ -45,6 +47,12 @@ const NavbarWrapper = styled.div`
   width: 95%;
   margin: auto;
   gap: 20px;
+  .link{
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 !important;
+    color: black;
+  }
   .input-div{
     border: 1px solid grey;
     border-radius: 30px;

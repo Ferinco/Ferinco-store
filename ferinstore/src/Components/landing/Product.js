@@ -87,7 +87,7 @@ export default function Products() {
               }}
               style={{
                 backgroundColor:
-                  activeTab === tabItem ? "#5cdb95" : "transparent",
+                  activeTab === tabItem ? "black" : "transparent",
                 width: "100px",
                 color: activeTab === tabItem ? "white" : "black",
                 border: activeTab === tabItem ? "none" : "1px solid grey"
@@ -109,7 +109,7 @@ export default function Products() {
           <Icon icon="ion:filter" color="gray" />
         </div>
       ) : (
-        <>
+        <div>
           <div className="products-items gap-4">
             {products.map((product) => (
            <ProductCard 
@@ -125,7 +125,8 @@ export default function Products() {
            
             ))}
           </div>
-        </>
+        
+        </div>
       )}
       {activateSearch ? (
         <>

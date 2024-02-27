@@ -1,5 +1,17 @@
-Link {
+.react-router-link {
   text-decoration: none !important;
+  color: inherit;
+}
+
+.intro-header {
+  font-weight: 800;
+  padding-bottom: 20px;
+  font-size: 40px;
+}
+@media (max-width: 600px) {
+  .intro-header {
+    font-size: 30px;
+  }
 }
 
 h1, p, h5 {
