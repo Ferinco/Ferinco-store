@@ -8,7 +8,7 @@ import SliderDiv from "../Components/landing/slider";
 import BrowseSection from "../Components/landing/browseSection";
 export default function Home() {
   return (
-    <HomeDiv className="Home">
+    <HomeDiv className="Home ">
       <Banner />
       <Products />
       <Collections />

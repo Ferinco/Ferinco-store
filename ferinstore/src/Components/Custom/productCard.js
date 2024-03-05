@@ -57,23 +57,81 @@ const Card = styled.div`
     flex-direction: column;
     height: auto !important;
     width: auto;
+    border-radius: 20px !important;
+    &:hover{
+.tag{
+opacity: 0;
+  transition: 0.5s;
+}
+    }
+
     /* box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;     */
-   &:nth-child(odd) .item-image {
-  background-color: rgb(243, 2243) 45, !important;
+    &:first-child .item-image {
+ background-image: url(./Images/backdrop-2.png);
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+
+
+}
+   &:nth-child(2) .item-image {
+ background-image: url(./Images/backdrop_1.png);
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ 
+
+}
+&:nth-child(3) .item-image {
+ background-image: url(./Images/backdrop-6.png);
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ 
+
+}
+&:nth-child(4) .item-image {
+ background-image: url(./Images/backdrop-3.png);
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ 
+
+}
+&:nth-child(5) .item-image {
+ background-image: url(./Images/backdrop-4.png);
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ 
+
+}
+&:last-child .item-image {
+ background-image: url(./Images/backdrop-5.png);
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ 
 
 }
 
-&:nth-child(even) .item-image {
- background-color: rgb(243, 255, 243);
-}
     .item-image {
       height: 400px;
-     
       position: relative;
       display: flex;
       align-items: center;
+      border-radius: 20px !important;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      &:hover{
+      scale: 1.05;
+      transition: 0.3s;
+    }
+    @media screen and (max-width: 987px){
+      border-radius: 0 !important;
+    }
+
       img {
-        width: 70%;
+        width: 75%;
         margin: auto !important;
         height: 100%;
         display: block;
@@ -108,6 +166,7 @@ const Card = styled.div`
       .icon{
         font-size: 30px;
         margin-top: -7px;
+        
 
       }
     .price{

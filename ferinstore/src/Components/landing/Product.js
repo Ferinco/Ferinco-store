@@ -71,9 +71,9 @@ export default function Products() {
             setActiveTab("");
             setSearchButton(true)
           }}
-          style={{backgroundColor: searchButton ? "#5cdb95" : "#f5f5f5"}}
+          style={{backgroundColor: searchButton ? "black" : "#f5f5f5"}}
         >
-          <Icon icon="bx:search" />
+          <Icon icon="bx:search"  style={{color: searchButton ? "white" : "black"}}/>
         </button>
         <div className="tab-items">
           {tabItems.map((tabItem, index) => (
@@ -178,6 +178,10 @@ const Wrapper = styled.div`
       border-radius: 30px;
       font-weight: 600;
       background: transparent;
+      &:hover{
+        border: 1px solid black !important;
+        transition: 0.3s !important;
+      }
   
     }
     .tab-items {

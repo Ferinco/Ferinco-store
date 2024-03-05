@@ -9,20 +9,24 @@ export default function Collections() {
         </h4>
         <div className="col-md-4 d-flex flex-column gap-2">
           <p>From our favourite Naija influencers to the best missives from Milan and coolest New Yorkers, find out more.</p>
-          <Button black>Browse All Products</Button>
+          <Button transparent>Browse All Products</Button>
         </div>
       </div>
-      <div className="body mt-5">
+      <div className="body mt-3">
         <div className="image d-flex justify-content-left align-items-end px-3">
-          <h6>african</h6>
+         <div className="d-flex flex-column p-2 gap-2">
+          <Button black>39.99 USD</Button>
+          <p>Culture Store:<br/> Channel Your <span>Culture</span></p>
+         </div>
         </div>
-        <div className="image d-flex justify-content-center align-items-center">
-          <h2>casual</h2>
+        <div className="image d-flex justify-content-left align-items-end px-3">
+        <div className="d-flex flex-column p-2 gap-2">
+          <Button black>72.99 USD</Button>
+          <p>Time Travel:<br/> Explore The Next Gen.</p>
+         </div>
         </div>
       </div>
-      <div className="link mt-3 justify-content-center">
-        see more collection
-      </div>
+
     </CollectionsDiv>
   );
 }
@@ -31,6 +35,9 @@ const CollectionsDiv = styled.div`
   margin: auto;
   display: flex;
   flex-direction: column;
+  Button{
+    padding: 2px 20px;
+  }
   .header {
     h4{
       font-weight: 700;
@@ -75,12 +82,18 @@ const CollectionsDiv = styled.div`
     display: grid;
     gap: 1.5rem;
     grid-template-columns: repeat(2, 1fr);
+    p{
+      color: white;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1.2;
+    }
   }
 
   .image {
     height: 300px;
     width: auto;
-    background-position: center;
+    background-position: top;
     background-size: cover;
     border-radius: 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
@@ -91,7 +104,7 @@ const CollectionsDiv = styled.div`
     }
     &:first-child {
       background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url(/Images/Collection/k-style.jpg);
+        url(/Images/background_1.jpg);
     }
     &:nth-child(2) {
       background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
@@ -121,37 +134,7 @@ const CollectionsDiv = styled.div`
       gap: 1.5rem;
       grid-template-columns: repeat(1, 1fr);
     }
-    .image {
-      height: 400px;
-      &:first-child {
-        background-image: linear-gradient(
-            rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0.4)
-          ),
-          url(/Images/Collection/AfricanP.avif);
-      }
-      &:nth-child(2) {
-        background-image: linear-gradient(
-            rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0.4)
-          ),
-          url(/Images/Collection/casualP.avif);
-      }
-      &:nth-child(3) {
-        background-image: linear-gradient(
-            rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0.4)
-          ),
-          url(/Images/Collection/k-styleP.avif);
-      }
-      &:nth-child(4) {
-        background-image: linear-gradient(
-            rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0.4)
-          ),
-          url(/Images/Collection/sportsP.jpg);
-      }
-    }
+
   }
   @media screen and (max-width: 991px) {
     .desktop-link {
