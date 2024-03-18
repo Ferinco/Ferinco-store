@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 export default function Footer() {
   return (
     <Wrapper className="mt-5">
-      <div className="row py-5 container">
+      <div className="row py-5 container d-flex flex-wrap">
         <div className="col-md-3 col d-flex justify-content-center">
           <div className="d-flex flex-column gap-3">
             <h4 className="m-0">Logo</h4>
@@ -13,7 +13,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="col-md-8 col d-flex flex-column gap-3 px-3 justify-content-between mx-auto">
-          <div className="top-div d-flex flex-row justify-content-between gap-3">
+          <div className="top-div d-flex flex-row justify-content-between gap-3 flex-wrap">
             <div className="d-flex flex-column gap-2">
               <h6 className="m-0">Top Categories</h6>
               <div className="d-flex flex-column">
@@ -146,5 +146,15 @@ const Wrapper = styled.div`
     padding: 5px 10px;
     background-color: black;
     border-radius: 5px;
+  }
+  @media screen and (max-width:768px) {
+    .container{
+      flex-direction: column !important;
+      justify-content: center;
+      align-items: center;
+      .col-md-3{
+        border: 0 !important;
+      }
+    }
   }
 `;

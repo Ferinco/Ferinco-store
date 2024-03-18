@@ -15,13 +15,11 @@ export default function Collections() {
       <div className="body mt-3">
         <div className="image d-flex justify-content-left align-items-end px-3">
          <div className="d-flex flex-column p-2 gap-2">
-          <Button black>39.99 USD</Button>
           <p>Culture Store:<br/> Channel Your <span>Culture</span></p>
          </div>
         </div>
         <div className="image d-flex justify-content-left align-items-end px-3">
         <div className="d-flex flex-column p-2 gap-2">
-          <Button black>72.99 USD</Button>
           <p>Time Travel:<br/> Explore The Next Gen.</p>
          </div>
         </div>
@@ -36,7 +34,8 @@ const CollectionsDiv = styled.div`
   display: flex;
   flex-direction: column;
   Button{
-    padding: 2px 20px;
+    padding: 10px 20px;
+    font-weight: 700 !important;
   }
   .header {
     h4{
@@ -103,13 +102,10 @@ const CollectionsDiv = styled.div`
       text-transform: capitalize;
     }
     &:first-child {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url(/Images/background_1.jpg);
+      background-image: url(/Images/collection_1.png);
     }
     &:nth-child(2) {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        url(/Images/Collection/casual.avif);
-    }
+      background-image: url(/Images/collection_2.png);    }
   }
   .link {
     display: none;

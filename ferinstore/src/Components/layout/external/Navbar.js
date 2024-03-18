@@ -84,7 +84,7 @@ const NavbarWrapper = styled.div`
     margin: auto;
     gap: 20px;
   }
-  .menu-btn{
+  .menu-btn {
     border: 0;
     background: transparent;
   }

@@ -30,81 +30,75 @@ export default function Details() {
     }, 3000);
   }
 
-
-  const closeModal = ()=>{
-    dispatch(toggleModal(false))
-}
-  const location = useLocation()
-useEffect(()=>{
-if (location.pathname !== "details") {
-  dispatch(toggleModal(false))
-  
-}
-},[])
+  const closeModal = () => {
+    dispatch(toggleModal(false));
+  };
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname !== "details") {
+      dispatch(toggleModal(false));
+    }
+  }, []);
   return (
-    <Wrapper className="d-flex flex-column">
-      <div className="div mt-5 gap-5 d-flex flex-row justify-content-between">
-        <div className="left">
-          <div className="details  d-flex flex-row p-5 align-items-center gap-5">
-            <div className="image">
-              <img src={"." + product.image} />
-            </div>
-            <div className="about">
-              <div className="header">
-                <h3>{product.name}</h3>{" "}
-                <button
-                  className="fa fa-heart fa-2x"
-                  style={{
-                    backgroundColor: "transparent",
-                    padding: "0",
-                    color: "#f5f5f5",
-                    border: "0",
-                  }}
-                ></button>
-              </div>
-              <p>{product.category}</p>
-              <h5>{product.price}</h5>
-              <p className="rate">
-                <i className="fa fa-star" />
-                {product.rating}
-              </p>
-              <div className="button">
-                <Button
-                  blue
-                  className={`btn ${isAdded ? "added" : ""}`}
-                  onClick={addToCart}
-                >
-                  {isAdded ? "Added" : "Add to cart"}
-                </Button>
-                {/* <Button
-                  transparent
-                  border
-                  className={`btn ${isAdded ? "added" : ""}`}
-                  onClick={addToCart}
-                >
-                  
-                </Button> */}
-              </div>
-            </div>
+    <Wrapper className="d-flex flex-column gap-4 container">
+      <div className="row p-4 main">
+        <div className="col-md-6 left d-flex justify-content-center align-items-center">
+          <div className="image  d-flex flex-column align-items-center justify-content-center">
+            <img src={"." + product.image} />
           </div>
         </div>
-        <div className="right ">
-          <div className="related">
-            {relateds.map((related) => (
-              <div className="image">
-                <img src={"." + related.image} />
-                <div className="price">
-                  <h3>
-                    <Icon icon="solar:tag-linear" />
-                    {related.price}
-                  </h3>
-                </div>{" "}
-              </div>
-            ))}
+        <div className="col-md-6 d-flex flex-column px-4 justify-content-between">
+          <div className="top-div row">
+            <div className="col-6">
+              <h1>{product.name}</h1>
+              <h3>{product.price}</h3>
+              <Button transparent>Add</Button>
+            </div>
+            <div className="col-6 d-flex flex-column gap-3">
+           <div>
+           <h6>Info</h6>
+              <p>
+                laving ehli eggpb dfugef jh hiuhdf hid hiuuid ihiupdhf ihiuhd
+                uhiudgfd fhidufid fdhfiudhif diufhdfydihf idfe fuehiufehiufehf
+                dugjk
+              </p>
+           </div>
+           <div className="d-flex flex-row justify-content-between">
+            <p>chuif ehe8hde ug8ge uhiugoe gugdu uugg</p>
+          <Icon icon="ph:heart-light" className="icon" />
+           </div>
+            </div>
+          </div>
+          <div className="bottom-div d-flex flex-row justify-content-between">
+            <div className=" small-img">
+              <img src={"." + product.image} />
+            </div>
+            <div className="small-img">
+              <img src={"." + product.image} />
+            </div>
           </div>
         </div>
       </div>
-        {modalOpen === true ? (
+      <div className="d-flex flex-column">
+        <div className="text-center ">
+          <h4 className="bottom-header">YOU WILL LIKE</h4>
+        </div>
+        <div className="relateds d-flex flex-row gap-3">
+          {relateds.map((related) => (
+            <div className="d-flex flex-column p-3 gap-1 ">
+              <div className="image p-3">
+                <img src={"." + related.image} />
+              </div>
+              <div className="d-flex flex-row justify-content-between align-items-center gap-2 no-wrap">
+                <p>{related.name}</p>
+                <h4>{related.price}</h4>
+              </div>{" "}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* {modalOpen === true ? (
       <div className="d-flex justify-content-center modal-field align-items-center" onClick={closeModal}>
           <CartModal
             image={"/" + product.image}
@@ -115,93 +109,128 @@ if (location.pathname !== "details") {
         ) : (
           ""
           )
-      }
+      } */}
     </Wrapper>
   );
 }
 const Wrapper = styled.div`
-  .div {
-    width: 95%;
-    margin: auto;
-    gap: 20px;
-    height: 79vh;
-    /* overflow: hidden; */
-    .left {
-      width: 70%;
-      background-color: #f5f5f5;
-      border-radius: 20px;
-      height: fit-content;
-      .image {
-        width: 350px;
-        height: 350px;
-        background-color: rgb(243, 255, 243);
-        border-radius: 20px;
-        img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-      .button {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-      }
+  /* background-color: #f9f9f9 !important; */
+  overflow-x: hidden;
+  .icon{
+    font-size: 40px;
+  }
+  h1 {
+    text-transform: uppercase;
+    line-height: 0.9;
+  }
+  p,
+  h6,
+  h3,
+  h4 {
+    margin: 0 !important;
+  }
+  p {
+    font-size: 14px;
+  }
+  .main {
+    min-height: 600px;
+    /* border: 1px solid red; */
+    .col-md-6 {
+      /* border: 1px solid green; */
     }
-    .right {
-      width: 30%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      /* background-color: #f5f5f5; */
-      .related {
-        padding: 0 !important;
-        margin: 0 !important;
-        border-radius: 10px;
-        margin-top: 20px;
-        display: flex;
-        flex-direction: column;
-        overflow: auto;
-        gap: 30px;
-        background-color: white;
-        .image {
-          width: 80%;
-          margin: auto;
-          height: 250px;
-          background-color: rgb(243, 255, 243);
-          border-radius: 20px;
-          padding: 20px;
-          img {
-            object-fit: contain;
-            height: 100%;
-            width: 100%;
-            display: block;
-          }
-          .price {
-            margin-top: -20%;
-            z-index: 999 !important;
-            justify-content: right;
-            display: flex;
-            h3 {
-              background: #05386b;
-              border-radius: 20px;
-              padding: 10px;
-              width: 50%;
-              display: flex;
-              gap: 5px;
-              color: white;
-            }
-          }
-        }
+  }
+  .left {
+    background-image: url(/Images/backdrop-6.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    .image {
+      width: 450px;
+      height: 450px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
     }
   }
-  .modal-field {
-    position: absolute;
-    border: 1px solid green;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(5px);
-    background-color: rgba(192, 192, 192, 0.5);
-    top: 0;
+  .small-img {
+    background-image: url(/Images/backdrop-6.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+    width: 300px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .relateds {
+    overflow-x: auto;
+    width: 100% !important;
+    p {
+      color: black;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 1.1;
+    }
+    h4 {
+      font-size: 21px;
+    }
+    .image {
+      width: 200px;
+      height: 200px;
+      background-color: #e4e6e1;
+      border-radius: 15px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+  .bottom-header {
+    font-weight: 500;
+    font-size: 18px !important;
+  }
+  .related {
+    &:first-child .image {
+      background-image: url(/Images/backdrop-2.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    &:nth-child(2) .image {
+      background-image: url(/Images/backdrop_1.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    &:nth-child(3) .image {
+      background-image: url(/Images/backdrop-6.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    &:nth-child(4) .image {
+      background-image: url(/Images/backdrop-3.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    &:nth-child(5) .image {
+      background-image: url(/Images/backdrop-4.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    &:last-child .image {
+      background-image: url(/Images/backdrop-5.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
   }
 `;
