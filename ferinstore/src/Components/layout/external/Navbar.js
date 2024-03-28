@@ -63,17 +63,20 @@ export default function Navbar() {
       <div
         className={
           openSidebar
-            ? "d-flex d-md-none opened mobile-navbar"
-            : "d-flex d-md-none closed mobile-navbar"
+          ? "d-flex flex-column d-md-none opened mobile-navbar"
+          : "d-flex flex-column d-md-none closed mobile-navbar"
         }
       >
-        <button
+     <div className="d-flex flex-row justify-content-between p-3 align-items-center">
+      <h3>Ferinstore</h3>
+     <button
           onClick={() => {
             setOpenSidebar((prev) => !prev);
           }}
         >
           M
         </button>
+     </div>
       </div>
     </NavbarWrapper>
   );
