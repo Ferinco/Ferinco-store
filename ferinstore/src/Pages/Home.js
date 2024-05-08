@@ -12,7 +12,7 @@ export default function Home() {
       <Banner />
       <Products />
       <Collections />
-      <SliderDiv />
+      {/* <SliderDiv /> */}
       <Styles />
       <BrandLogos />
       <BrowseSection />

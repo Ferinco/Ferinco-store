@@ -1,40 +1,22 @@
-import Style from "../Custom/Style";
+import styled from "styled-components"
+
 export default function Styles() {
   return (
-    <div className="styles mt-5 container">
-      <h6 className="intro-header">Today's Style Up</h6>
-      <div
-        id="carouselExampleSlidesOnly"
-        className=" styles-carousel carousel slide mt-3"
-        data-ride="carousel"
-      >
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <Style
-              mainImage="../Images/Collection/Collection (2).png"
-              topImage="../Images/Collection/Collection (1).png"
-              bottomImage="../Images/Collection/Collection (3).png"
-              mainText="Nike Hoodie"
-              topText="Back Side"
-              bottomText="Front View"
-            />
-          </div>
-          <div className="carousel-item">
-            <Style
-              mainImage="../Images/Collection/Collection (1).png"
-              topImage="../Images/Collection/Collection (2).png"
-              bottomImage="../Images/Collection/Collection (3).png"
-            />
-          </div>
-          <div className="carousel-item">
-            <Style
-              mainImage="../Images/Collection/Collection (1).png"
-              topImage="../Images/Collection/Collection (2).png"
-              bottomImage="../Images/Collection/Collection (3).png"
-            />
-          </div>
-        </div>
+    <StylesDiv className=" mt-5 container">
+      <div className="row h-100">
+        <div className="col-lg-7 left"></div>
+        <div className="col-lg-4 right"></div>
       </div>
-    </div>
+
+    </StylesDiv>
   );
 }
+const StylesDiv = styled.div`
+border: 1px solid red;
+height: 600px;
+width:100%;
+.left, .right{
+  border: 1px solid red;
+  height: 100%;
+}
+`

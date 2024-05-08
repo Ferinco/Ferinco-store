@@ -92,4 +92,8 @@ const Wrapper = styled.div`
       width: 270px;
     }
   }
+  Button{
+    border: 1px solid white !important;
+    color: white !important;
+  }
 `;

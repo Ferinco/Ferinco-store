@@ -63,8 +63,8 @@ export default function Navbar() {
       <div
         className={
           openSidebar
-          ? "d-flex flex-column d-md-none opened mobile-navbar"
-          : "d-flex flex-column d-md-none closed mobile-navbar"
+          ? "d-flex flex-column gap-3 d-md-none opened mobile-navbar"
+          : "d-flex flex-column gap-3 d-md-none closed mobile-navbar"
         }
       >
      <div className="d-flex flex-row justify-content-between p-3 align-items-center">
@@ -76,6 +76,14 @@ export default function Navbar() {
         >
           M
         </button>
+     </div>
+     <div className="d-flex flex-column justify-content-center align-items-center mt-5 gap-4 ">
+      <h3>About</h3>
+      <h3>Top Collections</h3>
+      <h3>Our Designers</h3>
+      <h3>Reach Out</h3>
+      <h3>Faqs</h3>
+
      </div>
       </div>
     </NavbarWrapper>

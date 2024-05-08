@@ -198,7 +198,7 @@ const Wrapper = styled.div`
   }
   .products-items {
 display: grid;
-grid-template-columns: repeat(4, 1fr);
+grid-template-columns: repeat(5, 1fr);
 
   }
   .search-field {
