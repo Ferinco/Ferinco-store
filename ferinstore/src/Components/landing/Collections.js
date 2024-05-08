@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Button } from "../Custom/button";
 export default function Collections() {
   return (
-    <CollectionsDiv className="container collections mt-5">
+    <CollectionsDiv className="container mt-5 ">
       <div className="header row align-items-center">
         <h4 className="col-md-6">
           Real Designs by Real Artists for Real People
