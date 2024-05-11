@@ -8,7 +8,7 @@ import CartModal from "../Components/modals/CartModal";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { addItem, toggleModal } from "../redux/slices/cartSlice";
-
+import { useAppContext } from "../contexts/appContext";
 export default function Details() {
   const params = useParams();
   const { modalOpen } = useSelector((state) => state.cart);
@@ -19,7 +19,8 @@ export default function Details() {
   // const [cartModal, setCartModal] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
   const dispatch = useDispatch();
-
+  const {openAddSlide, setOpenAddSlide} = useAppContext()
+console.log(openAddSlide)
   //function to handle add to cart
   function addToCart() {
     dispatch(toggleModal(true));
@@ -52,7 +53,7 @@ export default function Details() {
             <div className="col-6">
               <h1>{product.name}</h1>
               <h3>{product.price}</h3>
-              <Button transparent>Add</Button>
+              <Button transparent onClick={()=>{setOpenAddSlide(true)}}>Add</Button>
             </div>
             <div className="col-6 d-flex flex-column gap-3">
            <div>

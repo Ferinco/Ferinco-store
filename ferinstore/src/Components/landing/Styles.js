@@ -20,7 +20,7 @@ export default function Styles() {
                 </div>
               </div>
             </div>
-            <div className="middle">
+            <div className="middle pl-3">
               <h2>
                 Be Real, <br />
                 For Your Guys!
