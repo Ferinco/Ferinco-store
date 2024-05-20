@@ -61,7 +61,20 @@ a {
     display: none !important;
   }
 }
+.on-modal{
+  // background-image: url(../public/Images/backdrop-6.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
+}
+.off-modal{
+  // background-image: url(../public/Images/backdrop-6.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
 .styles {
   padding-top: 100px;
   width: 90%;

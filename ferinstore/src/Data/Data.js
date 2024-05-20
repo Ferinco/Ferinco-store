@@ -76,7 +76,7 @@ const Data = [
     name: "Blue Jean Jacket",
     price: "$11.99",
     rating: "3.1 (600 ratings)",
-    image: "./Images/Jackets/Jackets (6).png",
+    image: "/Images/Jackets/Jackets (6).png",
     tag: "Jacket",
     quantity: 1,
     favourite : false || true,

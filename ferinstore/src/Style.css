@@ -64,6 +64,18 @@ a {
   }
 }
 
+.on-modal {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.off-modal {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .styles {
   padding-top: 100px;
   width: 90%;

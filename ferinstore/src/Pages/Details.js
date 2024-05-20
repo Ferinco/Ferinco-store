@@ -45,7 +45,7 @@ console.log(openAddSlide)
       <div className="row p-4 main">
         <div className="col-md-6 left d-flex justify-content-center align-items-center">
           <div className="image  d-flex flex-column align-items-center justify-content-center">
-            <img src={"." + product.image} />
+            <img src={product.image} />
           </div>
         </div>
         <div className="col-md-6 d-flex flex-column px-4 justify-content-between">
@@ -72,10 +72,10 @@ console.log(openAddSlide)
           </div>
           <div className="bottom-div d-flex flex-row justify-content-between">
             <div className=" small-img">
-              <img src={"." + product.image} />
+              <img src={product.image} />
             </div>
             <div className="small-img">
-              <img src={"." + product.image} />
+              <img src={product.image} />
             </div>
           </div>
         </div>
