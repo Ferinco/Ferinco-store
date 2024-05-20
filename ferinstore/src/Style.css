@@ -65,12 +65,14 @@ a {
 }
 
 .on-modal {
+  background-image: url(../public/Images/backdrop-6.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 .off-modal {
+  background-image: url(../public/Images/backdrop-6.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

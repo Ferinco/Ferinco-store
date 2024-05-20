@@ -19,8 +19,8 @@ export default function Details() {
   // const [cartModal, setCartModal] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
   const dispatch = useDispatch();
-  const {openAddSlide, setOpenAddSlide} = useAppContext()
-console.log(openAddSlide)
+  const { openAddSlide, setOpenAddSlide } = useAppContext();
+  console.log(openAddSlide);
   //function to handle add to cart
   function addToCart() {
     dispatch(toggleModal(true));
@@ -45,37 +45,50 @@ console.log(openAddSlide)
       <div className="row p-4 main">
         <div className="col-md-6 left d-flex justify-content-center align-items-center">
           <div className="image  d-flex flex-column align-items-center justify-content-center">
-            <img src={product.image} />
+            <img src={"." + product.image} />
           </div>
         </div>
-        <div className="col-md-6 d-flex flex-column px-4 justify-content-between">
+        <div
+          className={
+            openAddSlide
+              ? "d-none"
+              : "col-md-6 d-flex flex-column px-4 justify-content-between"
+          }
+        >
           <div className="top-div row">
             <div className="col-6">
               <h1>{product.name}</h1>
               <h3>{product.price}</h3>
-              <Button transparent onClick={()=>{setOpenAddSlide(true)}}>Add</Button>
+              <Button
+                transparent
+                onClick={() => {
+                  setOpenAddSlide(true);
+                }}
+              >
+                Add
+              </Button>
             </div>
             <div className="col-6 d-flex flex-column gap-3">
-           <div>
-           <h6>Info</h6>
-              <p>
-                laving ehli eggpb dfugef jh hiuhdf hid hiuuid ihiupdhf ihiuhd
-                uhiudgfd fhidufid fdhfiudhif diufhdfydihf idfe fuehiufehiufehf
-                dugjk
-              </p>
-           </div>
-           <div className="d-flex flex-row justify-content-between">
-            <p>chuif ehe8hde ug8ge uhiugoe gugdu uugg</p>
-          <Icon icon="ph:heart-light" className="icon" />
-           </div>
+              <div>
+                <h6>Info</h6>
+                <p>
+                  laving ehli eggpb dfugef jh hiuhdf hid hiuuid ihiupdhf ihiuhd
+                  uhiudgfd fhidufid fdhfiudhif diufhdfydihf idfe fuehiufehiufehf
+                  dugjk
+                </p>
+              </div>
+              <div className="d-flex flex-row justify-content-between">
+                <p>chuif ehe8hde ug8ge uhiugoe gugdu uugg</p>
+                <Icon icon="ph:heart-light" className="icon" />
+              </div>
             </div>
           </div>
           <div className="bottom-div d-flex flex-row justify-content-between">
             <div className=" small-img">
-              <img src={product.image} />
+              <img src={"." + product.image} />
             </div>
             <div className="small-img">
-              <img src={product.image} />
+              <img src={"." + product.image} />
             </div>
           </div>
         </div>
@@ -117,7 +130,7 @@ console.log(openAddSlide)
 const Wrapper = styled.div`
   /* background-color: #f9f9f9 !important; */
   overflow-x: hidden;
-  .icon{
+  .icon {
     font-size: 40px;
   }
   h1 {
