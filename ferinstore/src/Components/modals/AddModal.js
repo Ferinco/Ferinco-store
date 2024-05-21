@@ -21,8 +21,8 @@ export default function AddModal() {
   };
   return (
     <Slide className={openAddSlide ? "on-modal" : "off-modal"} style={{backgroundImageStyle}}>
-      <div className={openAddSlide ? " on py-3 px-4 d-flex flex-column" : "off"}>
-          <div className="d-flex flex-row justify-content-between">
+      <div className={openAddSlide ? " on py-3 px-4 d-flex flex-column " : "off"}>
+          <div className="d-flex flex-row justify-content-between select">
             <button
               onClick={() => {
                 setOpenAddSlide(false);
@@ -34,17 +34,17 @@ export default function AddModal() {
               <Icon icon="solar:bag-2-bold" style={{ color: "white" }} />{" "}
             </div>
           </div>
-        <div className="d-flex flex-column gap-3 mt-5">
+        <div className="d-flex flex-column gap-3 mt-5 select py-5">
             <h1 className="name m-0">{product?.name}</h1>
           <div className="d-flex justify-content-between align-items-end">
-            <p className="col-6 p-0 m-0">
+            <p className="col-7 p-0 m-0 about">
               laving ehli eggpb dfugef jh hiuhdf hid hiuuid ihiupdhf ihiuhd
               uhiudgfd fhidufid fdhfiudhif diufhdfydihf idfe fuehiufehiufehf
               dugjk
             </p>
             <div>lov</div>
           </div>
-            <h3>{product?.price}</h3>
+            <h3 className="price">{product?.price}</h3>
           <div className="d-flex flex-row justify-content-between select">
             <div className="d-flex flex-column">
               <p className="m-0">select size</p>
@@ -84,8 +84,17 @@ const Slide = styled.div`
   right: 0 !important;
   transition: 0.3s;
   border-left: 1px solid grey;
+  .price{
+    color: #325221;
+    font-weight: 500;
+    font-size: 30px;
+  }
+  .about{
+    font-size: 14px;
+  }
   .name{
     max-width: 200px;
+    line-height: 1.0;
   }
   .sizes{
     button{
@@ -105,7 +114,7 @@ const Slide = styled.div`
     height: 50px;
     border-radius: 10px;
     &:nth-child(2){
-        background-color: #325221;
+        background-color: #05386b;
         color: white;
         border: #325221;
     }
@@ -115,7 +124,7 @@ const Slide = styled.div`
   }
   .on {
     height: 100% !important;
-    max-width: 570px;
+    width: 570px;
     z-index: 999 !important;
     /* position: fixed; */
     right: 0 !important;

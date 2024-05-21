@@ -37,6 +37,5 @@ const CollectionDiv = styled.div`
       position: absolute;
     }
   }
- 
 }
 `
