@@ -10,7 +10,7 @@ export default function AddModal() {
   const params = useParams();
   const data = Data.filter((item) => Number(params.id) === item.id);
   const product = data[0];
-  console.log(product.image);
+  console.log(product?.image);
   const backgroundImageStyle = {
     backgroundImage: `url(/Images/backdrop-6.png)`,
     backgroundRepeat: "no-repeat",

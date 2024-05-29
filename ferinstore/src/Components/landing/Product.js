@@ -38,12 +38,7 @@ export default function Products() {
   const filterProducts = (tabItem) => {
     console.log(products);
     setActiveTab(tabItem);
-    if (tabItem === "Top") {
-      setProducts(products);
-    } else {
-      const filteredProducts = data.filter((item) => item.category === tabItem);
-      setProducts(filteredProducts);
-    }
+    setProducts(data.filter((item) => item.category === tabItem));
   };
 
   const tabItems = [
@@ -63,17 +58,20 @@ export default function Products() {
   ];
   return (
     <Wrapper className="container products d-flex flex-column">
-      <h6 className="intro-header" >Shop The Best</h6>
+      <h6 className="intro-header">Shop The Best</h6>
       <div className="top-buttons d-flex flex-row gap-4">
         <button
           onClick={() => {
             setActivateSearch(true);
             setActiveTab("");
-            setSearchButton(true)
+            setSearchButton(true);
           }}
-          style={{backgroundColor: searchButton ? "black" : "#f5f5f5"}}
+          style={{ backgroundColor: searchButton ? "black" : "#f5f5f5" }}
         >
-          <Icon icon="bx:search"  style={{color: searchButton ? "white" : "black"}}/>
+          <Icon
+            icon="bx:search"
+            style={{ color: searchButton ? "white" : "black" }}
+          />
         </button>
         <div className="tab-items">
           {tabItems.map((tabItem, index) => (
@@ -82,7 +80,7 @@ export default function Products() {
               onClick={() => {
                 filterProducts(tabItem);
                 setActivateSearch(false);
-                setSearchButton(false)
+                setSearchButton(false);
                 setSearchQuery("");
               }}
               style={{
@@ -90,7 +88,7 @@ export default function Products() {
                   activeTab === tabItem ? "black" : "transparent",
                 width: "100px",
                 color: activeTab === tabItem ? "white" : "black",
-                border: activeTab === tabItem ? "none" : "1px solid grey"
+                border: activeTab === tabItem ? "none" : "1px solid grey",
               }}
             >
               {tabItem}
@@ -112,20 +110,18 @@ export default function Products() {
         <div>
           <div className="products-items gap-4">
             {products.map((product) => (
-           <ProductCard 
-           id = {product.id}
-           image= {product.image}
-           category = {product.category}
-           tag ={product.tag}
-           rating = {product.rating}
-           name = {product.name}
-           price = {product.price}
-           colors = {product.colors}
-           />
-           
+              <ProductCard
+                id={product.id}
+                image={product.image}
+                category={product.category}
+                tag={product.tag}
+                rating={product.rating}
+                name={product.name}
+                price={product.price}
+                colors={product.colors}
+              />
             ))}
           </div>
-        
         </div>
       )}
       {activateSearch ? (
@@ -135,38 +131,47 @@ export default function Products() {
               {searchQuery && (
                 <>
                   {searched.map((product) => (
-                    <div key={product.index} className="result d-flex flex-column">
-                      <div className="image"><img src={product.image}/></div>
-                      <div className="d-flex justify-content-center"><p>{product.name}</p></div>
-                      <div className="d-flex justify-content-center"><h5 className="price">{product.price}</h5></div>
+                    <div
+                      key={product.index}
+                      className="result d-flex flex-column"
+                    >
+                      <div className="image">
+                        <img src={product.image} />
+                      </div>
+                      <div className="d-flex justify-content-center">
+                        <p>{product.name}</p>
+                      </div>
+                      <div className="d-flex justify-content-center">
+                        <h5 className="price">{product.price}</h5>
+                      </div>
                     </div>
                   ))}
                 </>
               )}
             </div>
           ) : (
-            <div className="not-found d-flex justify-content-center align-items-center"><h4>No results found for "{searchQuery}"</h4></div>
+            <div className="not-found d-flex justify-content-center align-items-center">
+              <h4>No results found for "{searchQuery}"</h4>
+            </div>
           )}
         </>
       ) : (
         ""
       )}
 
-      <div className="products-logos">
-   
-      </div>
+      <div className="products-logos"></div>
     </Wrapper>
   );
 }
 const Wrapper = styled.div`
   padding-top: 100px;
   margin: auto;
-  .intro-header{
+  .intro-header {
     font-weight: 800;
-    padding-bottom:20px ;
-    font-size:40px;
-    @media (max-width: 600px){
-      font-size:30px;
+    padding-bottom: 20px;
+    font-size: 40px;
+    @media (max-width: 600px) {
+      font-size: 30px;
     }
   }
   .top-buttons {
@@ -178,11 +183,10 @@ const Wrapper = styled.div`
       border-radius: 30px;
       font-weight: 600;
       background: transparent;
-      &:hover{
+      &:hover {
         border: 1px solid black !important;
         transition: 0.3s !important;
       }
-  
     }
     .tab-items {
       width: 100%;
@@ -197,18 +201,17 @@ const Wrapper = styled.div`
     }
   }
   .products-items {
-display: grid;
-grid-template-columns: repeat(5, 1fr);
-
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
   }
   .search-field {
-  align-items: center;
-  input{
-  border: 1px solid gray;
-  border-radius: 10px;
-  padding: 10px;
-  outline:  none !important;
-  }
+    align-items: center;
+    input {
+      border: 1px solid gray;
+      border-radius: 10px;
+      padding: 10px;
+      outline: none !important;
+    }
   }
   .search-results {
     height: 600px !important;
@@ -216,43 +219,43 @@ grid-template-columns: repeat(5, 1fr);
     background-color: #f5f5f5;
     flex-wrap: wrap !important;
   }
-  .result{
+  .result {
     height: fit-content;
-    background-color:  white;
-    .image{
+    background-color: white;
+    .image {
       width: 200px;
       height: 180px;
-      img{
+      img {
         object-fit: contain;
         width: 100%;
         height: 100%;
         display: block;
       }
     }
-    .price{
-      background-color:#5cdb95;
+    .price {
+      background-color: #5cdb95;
       padding: 7px;
     }
   }
-  .not-found{
+  .not-found {
     height: 500px !important;
     border-radius: 20px;
     background-color: rgb(243, 255, 243);
   }
-  @media screen and (max-width: 987px){
-  padding-right: 0 !important;
-  padding-left: 0 !important;
-  .intro-header{
-    padding-left: 24px !important;
-padding-right: 24px !important;
+  @media screen and (max-width: 987px) {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    .intro-header {
+      padding-left: 24px !important;
+      padding-right: 24px !important;
+    }
+    .top-buttons {
+      padding-left: 24px !important;
+    }
+    .products-items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 !important;
+    }
   }
-  .top-buttons {
-    padding-left: 24px !important;
-  }
-  .products-items {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 0 !important;
-  }
-}
 `;
