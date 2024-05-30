@@ -77,7 +77,7 @@ export default function Details() {
           </div>
         </div>
       </div>
-      <div className="d-flex flex-column">
+      <div className={openAddSlide ? "d-none" : "d-flex flex-column"}>
         <div className="text-center ">
           <h4 className="bottom-header">YOU WILL LIKE</h4>
         </div>

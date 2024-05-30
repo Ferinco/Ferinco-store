@@ -7,8 +7,14 @@ import { Button } from "../Custom/button";
 import { useState } from "react";
 
 export default function AddModal() {
-  const { openAddSlide, setOpenAddSlide, cartItem, setCartItem } =
-    useAppContext();
+  const {
+    openAddSlide,
+    setOpenAddSlide,
+    cartItem,
+    setCartItem,
+    alert,
+    setAlert,
+  } = useAppContext();
   const params = useParams();
   const data = Data.filter((item) => Number(params.id) === item.id);
   const product = data[0];
@@ -39,6 +45,7 @@ export default function AddModal() {
     setTimeout(() => {
       setCartItem(quantity);
       setSpinner(false);
+      setAlert(true)
     }, 3000);
   };
 
@@ -120,7 +127,12 @@ export default function AddModal() {
             </div>
           </div>
           <div className="d-flex flex-row justify-content-between select mt-5">
-            <Button transparent className="action-btn" onClick={AddToCart}>
+            <Button
+              transparent
+              className="action-btn"
+              onClick={AddToCart}
+              disabled={quantity === 0}
+            >
               {spinning ? (
                 <div class="spinner-border text-dark" role="status">
                   <span class="sr-only">Loading...</span>

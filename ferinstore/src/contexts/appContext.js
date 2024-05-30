@@ -4,6 +4,7 @@ export function AppProvider({ children }) {
   const [openSidebar, setOpenSidebar] = useState(false);
   const [openAddSlide, setOpenAddSlide] = useState(false);
   const [cartItem, setCartItem] = useState(0);
+  const [alert, setAlert] = useState(false);
 
 
   return (
@@ -14,7 +15,9 @@ export function AppProvider({ children }) {
         openAddSlide,
         setOpenAddSlide,
         cartItem,
-        setCartItem
+        setCartItem,
+        alert,
+        setAlert
       }}
     >
       {children}
