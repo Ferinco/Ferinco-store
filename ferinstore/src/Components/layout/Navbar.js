@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Icon } from "@iconify/react";
-import { useAppContext } from "../../../contexts/appContext";
+import { useAppContext } from "../../contexts/appContext";
 
 const NavConfig = [
   {

@@ -1,10 +1,9 @@
-import React from "react"
 import { Outlet } from "react-router-dom";
 import Navbar from "../Navbar";
 import Footer from "../footer";
 import styled from "styled-components";
 import AddModal from "../../modals/AddModal";
-export default function ExternalLayout (){
+export default function DetailsLayout (){
   return(
     <Div className="d-flex flex-row">
     <div className="pb-5 w-100 outlet">
@@ -12,6 +11,7 @@ export default function ExternalLayout (){
       <Outlet/> 
       <Footer/>
     </div>
+    <AddModal/>
     </Div>
   )
 } 
