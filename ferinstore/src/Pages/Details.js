@@ -10,8 +10,10 @@ import { useLocation } from "react-router-dom";
 import { addItem, toggleModal } from "../redux/slices/cartSlice";
 import { useAppContext } from "../contexts/appContext";
 export default function Details() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []); 
   const params = useParams();
-  const { modalOpen } = useSelector((state) => state.cart);
   console.log(params.id);
   const data = Data.filter((item) => Number(params.id) === item.id);
   const product = data[0];
@@ -20,26 +22,8 @@ export default function Details() {
   const [isAdded, setIsAdded] = useState(false);
   const dispatch = useDispatch();
   const { openAddSlide, setOpenAddSlide } = useAppContext();
-  console.log(openAddSlide);
   //function to handle add to cart
-  function addToCart() {
-    dispatch(toggleModal(true));
-    setIsAdded(true);
-    console.log(product);
-    setTimeout(() => {
-      setIsAdded(false);
-    }, 3000);
-  }
 
-  const closeModal = () => {
-    dispatch(toggleModal(false));
-  };
-  const location = useLocation();
-  useEffect(() => {
-    if (location.pathname !== "details") {
-      dispatch(toggleModal(false));
-    }
-  }, []);
   return (
     <Wrapper className="d-flex flex-column gap-4 container">
       <div className="row p-4 main">

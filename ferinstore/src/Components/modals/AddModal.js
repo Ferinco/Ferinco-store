@@ -4,12 +4,17 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import Data from "../../Data/Data";
 import { Button } from "../Custom/button";
+import { useState } from "react";
 
 export default function AddModal() {
-  const { openAddSlide, setOpenAddSlide } = useAppContext();
+  const { openAddSlide, setOpenAddSlide, cartItem, setCartItem } =
+    useAppContext();
   const params = useParams();
   const data = Data.filter((item) => Number(params.id) === item.id);
   const product = data[0];
+  const [quantity, setQuantity] = useState(0);
+  const [spinning, setSpinner] = useState(false);
+
   console.log(product?.image);
   const backgroundImageStyle = {
     backgroundImage: `url(/Images/backdrop-6.png)`,
@@ -17,6 +22,26 @@ export default function AddModal() {
     backgroundSize: "cover",
     backgroundPosition: "cover",
   };
+
+  //quantity increase/decrease
+  const IncreaseQuantity = () => {
+    setQuantity(quantity + 1);
+  };
+  const DecreaseQuantity = () => {
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+    } else if (quantity <= 0) setQuantity(0);
+  };
+
+  const AddToCart = () => {
+    setSpinner(true);
+
+    setTimeout(() => {
+      setCartItem(quantity);
+      setSpinner(false);
+    }, 3000);
+  };
+
   return (
     <Slide
       className={openAddSlide ? "on-modal" : "off-modal"}
@@ -32,11 +57,19 @@ export default function AddModal() {
             }}
             className="close-btn"
           >
-            <Icon icon="mingcute:arrow-right-line" width="1.2em" height="1.2em"  style={{color: "black", fontSize: "20px"}} />
+            <Icon
+              icon="mingcute:arrow-right-line"
+              width="1.2em"
+              height="1.2em"
+              style={{ color: "black", fontSize: "20px" }}
+            />
           </button>
           <div className="icon-div d-flex flex-column justify-content-center align-items-center">
-            <Icon icon="ion:cart-outline"  style={{ color: "black", fontSize: "25px" }} />{" "}
-            <div className="number-div">0</div>
+            <Icon
+              icon="ion:cart-outline"
+              style={{ color: "black", fontSize: "25px" }}
+            />{" "}
+            <div className="number-div d-flex">{cartItem}</div>
           </div>
         </div>
         <div className="d-flex flex-column gap-3 mt-5 select py-5">
@@ -48,7 +81,12 @@ export default function AddModal() {
               dugjk
             </p>
             <div className="d-flex flex-column gap-2">
-            <Icon icon="ri:share-line" width="1.2em" height="1.2em"  style={{color: "black", fontSize: "15px" }} />
+              <Icon
+                icon="ri:share-line"
+                width="1.2em"
+                height="1.2em"
+                style={{ color: "black", fontSize: "15px" }}
+              />
               <div>
                 <Icon
                   icon="hugeicons:favourite"
@@ -75,16 +113,21 @@ export default function AddModal() {
             <div className="d-flex flex-column">
               <p className="m-0">quantity</p>
               <div className="d-flex flex-row justify-content-between quantity py-1 px-2 gap-2">
-                <button>-</button>
-                <div>1</div>
-                <button>+</button>
+                <button onClick={DecreaseQuantity}>-</button>
+                <div>{quantity}</div>
+                <button onClick={IncreaseQuantity}>+</button>
               </div>
             </div>
           </div>
           <div className="d-flex flex-row justify-content-between select mt-5">
-            <Button transparent className="action-btn">
-              {" "}
-              Add To Cart
+            <Button transparent className="action-btn" onClick={AddToCart}>
+              {spinning ? (
+                <div class="spinner-border text-dark" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+              ) : (
+                " Add To Cart"
+              )}
             </Button>
             <Button className="action-btn">Buy Now</Button>
           </div>
@@ -99,25 +142,28 @@ const Slide = styled.div`
   right: 0 !important;
   transition: 0.3s;
   border-left: 1px solid grey;
-  .close-btn{
+  .close-btn {
     border: 0 !important;
     background: transparent;
   }
-  .number-div{
+  .number-div {
     text-align: center;
     position: absolute;
-z-index: 999;
-border: 1px solid #05386b;
-background-color: #05386b; 
-color: white;
-font-size: 10px !important;
-margin-left: 18px;
-margin-bottom:18px ;
-font-weight: 700 !important;
-width: 18px;
-height: 18px;
-border-radius: 50%;
- }
+    z-index: 999;
+    border: 1px solid #05386b;
+    background-color: #05386b;
+    color: white;
+    font-size: 10px !important;
+    margin-left: 18px;
+    margin-bottom: 18px;
+    font-weight: 700 !important;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+  }
   .price {
     color: #325221;
     font-weight: 500;

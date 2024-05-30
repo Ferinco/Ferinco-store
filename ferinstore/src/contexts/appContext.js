@@ -3,6 +3,8 @@ const AppContext = createContext();
 export function AppProvider({ children }) {
   const [openSidebar, setOpenSidebar] = useState(false);
   const [openAddSlide, setOpenAddSlide] = useState(false);
+  const [cartItem, setCartItem] = useState(0);
+
 
   return (
     <AppContext.Provider
@@ -10,7 +12,9 @@ export function AppProvider({ children }) {
         openSidebar,
         setOpenSidebar,
         openAddSlide,
-        setOpenAddSlide
+        setOpenAddSlide,
+        cartItem,
+        setCartItem
       }}
     >
       {children}
