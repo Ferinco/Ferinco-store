@@ -2,55 +2,91 @@ import styled from "styled-components";
 import { Button } from "../Custom/button";
 function Banner() {
   return (
-    <Wrapper className="container banner d-flex flex-column justify-content-center align-items-center text-center gap-0 mt-5">
-      <div className="text-div">
-        <h1 className="m-0">Your Online destination for online fashion</h1>
+    <Wrapper className="banner d-flex flex-column mt-5 gap-5">
+      <div className="text-div container">
+        <h4 className="m-0">
+          STEP INTO STYLE: INTRODUCING <br /> FERINSTORE - YOUR FASHION HAVEN
+        </h4>
       </div>
-      <div className="image-div d-flex flex-column">
-        <img src="/images/test-bg.png" />
-        <div className="absolute-div d-flex justify-content-start p-3">
-          <div className="buttons d-flex flex-row gap-1 justify-content-end align-items-end">
-            <Button black>Top collections</Button>
-            <Button transparent>view more</Button>
+      <div className="image-div">
+        <div className="back">
+
+          <img src="./images/banner.jpg"/>
+        </div>
+        <div className="overlay d-flex flex-column justify-content-between px-4">
+          <div className="d-flex justify-content-end">
+            <button>Discover Your Style</button>
+          </div>
+          <div className="d-flex justify-content-center brand-name">
+            <h1>Clothify.</h1>
           </div>
         </div>
+      </div>
+      <div className="end-div container">
+<h4>LOOK <span className="amazing">AMAZING</span> WITH CLOTHIFY; SHOP <span className="grey-span">HIGH QUALITY</span> FASHION YOURSELF WITHOUT STRETCHING <span className="grey-span">YOUR BUDGET</span></h4>
       </div>
     </Wrapper>
   );
 }
 const Wrapper = styled.div`
-  width: 95%;
-  margin: auto;
-  gap: 20px;
-  height: auto;
-  h1 {
-    text-transform: capitalize;
-    font-weight: 700;
-    font-size: 52px;
-    max-width: 600px;
-  }
-  .image-div {
-    height: 550px;
-    width: 100%;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top;
-      display: block;
+  .text-div {
+    h4 {
+      font-size: 45px;
     }
   }
-  .absolute-div {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    border-radius: 20px;
+  .back{
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
   }
-  @media (min-width: 300px) and (max-width: 800px) {
-    flex-direction: column !important;
+  .brand-name{
+    overflow: hidden !important;
+  }
+  .image-div {
+    height: 300px;
+    /* border: 1px solid red; */
+    position: relative;
+  }
+  .back{
+    height: 300px;
+    position: relative;
+  }
+  .overlay{
+    height: 330px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    margin-top: -30px;
+  }
+  button{
+    padding: 10px 25px;
+    background-color: black;
+    color: white;
+    border-radius: 35px;
+    border: 4px solid white;
+  }
+  h1{
+    font-size: 200px;
+    margin-bottom: -70px;
+    color: white;
+  }
+  .end-div{
+    h4{
+      font-size: 35px;
+      color: grey;
+      font-weight: 400 !important;
+      line-height: 1.2;
+    }
+    .amazing{
+      color: black !important;
+      text-decoration: 2px underline;
+    }
+    .grey-span{
+      text-decoration: 2px underline;
+    }
   }
 `;
 export default Banner;

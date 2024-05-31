@@ -39,13 +39,22 @@ export default function AddModal() {
     } else if (quantity <= 0) setQuantity(0);
   };
 
+//set timer for alert message
+function DisplayAlert (){
+  setAlert(true)
+  setTimeout(() => {
+    setAlert(false);
+  }, 2500);
+}
+
   const AddToCart = () => {
     setSpinner(true);
 
     setTimeout(() => {
-      setCartItem(quantity);
+      setCartItem(cartItem + quantity);
       setSpinner(false);
-      setAlert(true)
+      setQuantity(0)
+     DisplayAlert()
     }, 3000);
   };
 
