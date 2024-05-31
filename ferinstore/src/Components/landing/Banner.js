@@ -1,92 +1,160 @@
 import styled from "styled-components";
 import { Button } from "../Custom/button";
+import { Icon } from "@iconify/react/dist/iconify.js";
 function Banner() {
   return (
-    <Wrapper className="banner d-flex flex-column mt-5 gap-5">
-      <div className="text-div container">
-        <h4 className="m-0">
-          STEP INTO STYLE: INTRODUCING <br /> FERINSTORE - YOUR FASHION HAVEN
-        </h4>
+    <Wrapper className="container banner d-flex flex-column justify-content-center align-items-center text-center gap-0 mt-5">
+      <div className="text-div d-flex flex-row justify-content-between align-items-center w-100">
+        <Icon icon="noto:sunflower" width="2.3em" height="2.3em" />
+        <h1 className="m-0">Your Online destination for online fashion</h1>
+        <Icon icon="emojione:rosette" width="2.3em" height="2.3em" />
       </div>
-      <div className="image-div">
-        <div className="back">
-
-          <img src="./images/banner.jpg"/>
-        </div>
-        <div className="overlay d-flex flex-column justify-content-between px-4">
-          <div className="d-flex justify-content-end">
-            <button>Discover Your Style</button>
+      <div className="banner-div d-flex flex-column w-100 h-100">
+        <div className="back d-flex flex-column justify-content-between h-100">
+          <div className="top d-flex flex-row justify-content-between">
+            <div className="d-flex flex-row gap-5">
+              <div className="d-flex flex-column gap-2 summer">
+                <p>Summer Collection</p>
+                <h4 className="text-start">
+                  TRANDY AND <br /> CLUSSI FOR <br /> NEW SEASON
+                </h4>
+              </div>
+              <Icon icon="fluent-emoji:rosette" width="2.7em" height="2.7em" />
+            </div>
+            <svg
+              width="150"
+              height="150"
+              viewBox="0 0 150 150"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <path
+                  id="circlePath"
+                  d="M75,75 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"
+                />
+              </defs>
+              <text
+                fontSize="10"
+                fontFamily="Arial, sans-serif"
+                letterSpacing="0.5"
+              >
+                <textPath href="#circlePath" startOffset="50%">
+                  EXPLORE MORE COLLECTION
+                </textPath>
+              </text>
+              <circle cx="75" cy="75" r="50" fill="none" />
+              <polygon points="70,72 80,75 70,78" fill="black" />
+            </svg>
           </div>
-          <div className="d-flex justify-content-center brand-name">
-            <h1>Clothify.</h1>
+          <div className="bottom d-flex flex-row justify-content-between">
+            <div className="d-flex flex-row gap-3 align-items-end">
+              <div className="d-flex flex-column gap-1 text-start">
+                <Icon
+                  icon="fe:quote-left"
+                  width="3.2em"
+                  height="3.2em"
+                  style={{ color: "black" }}
+                />
+                <p>
+                  I'm very much of the 'buy less and buy <br />
+                  better' persuasion but never really knew
+                  <br /> where to look.
+                </p>
+              </div>
+              <Icon icon="emojione:rosette" width="2.2em" height="2.2em" />
+            </div>
+            <div className="d-flex flex-column align-items-end gap-5">
+              <Icon icon="noto:wilted-flower" width="2.0em" height="2.0em" />
+              <div className="d-flex flex-row gap-3 align-items-end">
+                <h1>01</h1>
+                <div className="d-flex flex-column">
+                  <p>31 May 2024 . Blog</p>
+                  <h5>
+                    Always be strong <br />
+                    and have values
+                  </h5>
+                </div>
+                <button><Icon icon="mynaui:arrow-right" width="1.2em" height="1.2em"  style={{color: "white"}} /></button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="end-div container">
-<h4>LOOK <span className="amazing">AMAZING</span> WITH CLOTHIFY; SHOP <span className="grey-span">HIGH QUALITY</span> FASHION YOURSELF WITHOUT STRETCHING <span className="grey-span">YOUR BUDGET</span></h4>
+        <div className="image-div">
+          <img src="/images/test-bg.png" />
+        </div>
       </div>
     </Wrapper>
   );
 }
 const Wrapper = styled.div`
-  .text-div {
+  width: 95%;
+  margin: auto;
+  gap: 20px;
+  height: auto;
+  .summer {
+    p {
+      font-size: 12px !important;
+      text-align: start;
+    }
     h4 {
-      font-size: 45px;
+      line-height: 1.2;
+      font-size: 22px;
     }
   }
-  .back{
-img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
+  p,
+  h1,
+  h5,
+  h4 {
+    margin: 0 !important;
   }
-  .brand-name{
-    overflow: hidden !important;
+  h1 {
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 52px;
+    max-width: 600px;
+  }
+  .banner-div {
+    position: relative;
+    height: 550px !important;
+  }
+  .back {
+    position: relative;
+    z-index: 999;
   }
   .image-div {
-    height: 300px;
-    /* border: 1px solid red; */
-    position: relative;
-  }
-  .back{
-    height: 300px;
-    position: relative;
-  }
-  .overlay{
-    height: 330px;
-    position: absolute;
+    height: 550px;
     width: 100%;
-    top: 0;
-    margin-top: -30px;
-  }
-  button{
-    padding: 10px 25px;
-    background-color: black;
-    color: white;
-    border-radius: 35px;
-    border: 4px solid white;
-  }
-  h1{
-    font-size: 200px;
-    margin-bottom: -70px;
-    color: white;
-  }
-  .end-div{
-    h4{
-      font-size: 35px;
-      color: grey;
-      font-weight: 400 !important;
-      line-height: 1.2;
+    border-radius: 20px;
+    overflow: hidden;
+    position: absolute;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
     }
-    .amazing{
-      color: black !important;
-      text-decoration: 2px underline;
+  }
+  .bottom {
+    h1 {
+      font-weight: 300 !important;
     }
-    .grey-span{
-      text-decoration: 2px underline;
+    p {
+      font-size: 12px;
     }
+    h5 {
+      font-size: 18px;
+    }
+    button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: black;
+      color: white;
+    }
+  }
+  @media (min-width: 300px) and (max-width: 800px) {
+    flex-direction: column !important;
   }
 `;
 export default Banner;

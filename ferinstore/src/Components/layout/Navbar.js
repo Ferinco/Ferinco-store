@@ -40,7 +40,7 @@ export default function Navbar() {
             >
               <Icon icon="bx:menu-alt-right" style={{ color: "black" }} />{" "}
             </button>
-            Logo
+            clothify.
           </h4>
           <div className="links d-none d-md-flex flex-sm-row gap-3 align-items-center ">
             {NavConfig.map((link) => (
