@@ -74,13 +74,32 @@ function Banner() {
                     and have values
                   </h5>
                 </div>
-                <button><Icon icon="mynaui:arrow-right" width="1.2em" height="1.2em"  style={{color: "white"}} /></button>
+                <button>
+                  <Icon
+                    icon="mynaui:arrow-right"
+                    width="1.2em"
+                    height="1.2em"
+                    style={{ color: "white" }}
+                  />
+                </button>
               </div>
             </div>
           </div>
         </div>
-        <div className="image-div">
-          <img src="/images/test-bg.png" />
+        <div className="image-div d-flex flex-row align-items-center">
+          <div className="div-1"></div>
+          <div className="div-2 d-flex flex-column">
+            <div className="first"></div>
+            <div className="second"></div>
+          </div>
+          <div className="div-3"></div>
+          <div className="div-4 d-flex flex-column">
+            <div className="first"></div>
+            <div className="second"></div>
+          </div>
+          <div className="div-5"></div>
+
+          {/* <img src="/images/test-bg.png" /> */}
         </div>
       </div>
     </Wrapper>
@@ -91,6 +110,61 @@ const Wrapper = styled.div`
   margin: auto;
   gap: 20px;
   height: auto;
+  .div-1 {
+    height: 217px;
+    width: 208px;
+    border-radius: 15px;
+    background-color: #c89f68;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover{
+      background-color: red !important;
+    }
+  }
+  .div-2 {
+    gap: 23px;
+    .first {
+      height: 137px;
+      width: 213px;
+      border-radius: 15px;
+      background-color: #a9b7a9;
+    }
+    .second {
+      height: 218.56px;
+      width: 209.5px;
+      border-radius: 15px;
+      background-color: #4499a5;
+    }
+  }
+  .div-3 {
+    height: 473px;
+    width: 257.57px;
+    border-radius: 15px;
+    background-color: #f6c737;
+  }
+  .div-4 {
+    gap: 23px;
+
+    .second {
+      height: 137px;
+      width: 213px;
+      border-radius: 15px;
+      background-color: #4499a5;
+    }
+    .first {
+      height: 218.56px;
+      width: 209.5px;
+      border-radius: 15px;
+      background-color: #f1833f;
+    }
+  }
+  .div-5 {
+    gap: 23px;
+    height: 217px;
+    width: 208px;
+    border-radius: 15px;
+    background-color: #74bc8f;
+  }
   .summer {
     p {
       font-size: 12px !important;
@@ -119,7 +193,7 @@ const Wrapper = styled.div`
   }
   .back {
     position: relative;
-    z-index: 999;
+    /* z-index: 999; */
   }
   .image-div {
     height: 550px;
@@ -127,6 +201,7 @@ const Wrapper = styled.div`
     border-radius: 20px;
     overflow: hidden;
     position: absolute;
+    gap: 19px;
     img {
       width: 100%;
       height: 100%;
