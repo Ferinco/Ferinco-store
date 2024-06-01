@@ -87,19 +87,31 @@ function Banner() {
           </div>
         </div>
         <div className="image-div d-flex flex-row align-items-center">
-          <div className="div-1"></div>
+          <div className="div-1">
+            <img src="/images/banner_images/image_1.png" />
+          </div>
           <div className="div-2 d-flex flex-column">
-            <div className="first"></div>
-            <div className="second"></div>
+            <div className="first item">
+              <img src="/images/banner_images/image_2.png" />
+            </div>
+            <div className="second">
+            <img src="/images/banner_images/image_3.png" />
+            </div>
           </div>
           <div className="div-3"></div>
           <div className="div-4 d-flex flex-column">
-            <div className="first"></div>
-            <div className="second"></div>
-          </div>
-          <div className="div-5"></div>
+            <div className="first">
+            <img src="/images/banner_images/image_4.png" />
 
-          {/* <img src="/images/test-bg.png" /> */}
+            </div>
+            <div className="second">
+            <img src="/images/banner_images/image_5.png" />
+            </div>
+          </div>
+          <div className="div-5">
+          <img src="/images/banner_images/image_6.png" />
+
+          </div>
         </div>
       </div>
     </Wrapper>
@@ -117,7 +129,14 @@ const Wrapper = styled.div`
     background-color: #c89f68;
     cursor: pointer;
     transition: 0.5s;
-    &:hover{
+    img {
+      width: max-content;
+      height: max-content;
+      object-fit: cover;
+      object-position: center;
+      margin-top: 22px !important;
+    }
+    &:hover {
       background-color: red !important;
     }
   }
@@ -128,12 +147,23 @@ const Wrapper = styled.div`
       width: 213px;
       border-radius: 15px;
       background-color: #a9b7a9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: max-content;
+        height: max-content;
+        object-fit: cover;
+        object-position: center;
+        margin-top: -30px;
+      }
     }
     .second {
       height: 218.56px;
       width: 209.5px;
       border-radius: 15px;
       background-color: #4499a5;
+      
     }
   }
   .div-3 {
@@ -150,12 +180,32 @@ const Wrapper = styled.div`
       width: 213px;
       border-radius: 15px;
       background-color: #4499a5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: max-content;
+        height: max-content;
+        object-fit: cover;
+        object-position: center;
+        margin-top: -163px;
+      }
     }
     .first {
       height: 218.56px;
       width: 209.5px;
       border-radius: 15px;
       background-color: #f1833f;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: max-content;
+        height: max-content;
+        object-fit: cover;
+        object-position: center;
+        margin-bottom: 82px;
+      }
     }
   }
   .div-5 {
