@@ -87,30 +87,113 @@ function Banner() {
           </div>
         </div>
         <div className="image-div d-flex flex-row align-items-center">
-          <div className="div-1">
+          <div className="div-1 d-flex flex-column">
             <img src="/images/banner_images/image_1.png" />
+            <div className="details-div d-none flex-column p-2 justify-content-between">
+              <div className="d-flex justify-content-end">
+                <button className="round-button d-flex justify-content-center align-items-center">
+                  {" "}
+                  <Icon
+                    icon="system-uicons:arrow-top-right"
+                    width="1.2em"
+                    height="1.2em"
+                    style={{ color: "white" }}
+                  />
+                </button>
+              </div>
+              <div className="text-div">
+                <h6>Dress the Weather</h6>
+                <p>huihf rjguygfr jguyrrf jhiurg jhiur hrirj</p>
+              </div>
+            </div>
           </div>
           <div className="div-2 d-flex flex-column">
-            <div className="first item">
+            <div className="first d-flex flex-column">
               <img src="/images/banner_images/image_2.png" />
+              <div className="details-div d-none flex-column p-2 justify-content-between">
+                <div className="d-flex justify-content-end">
+                  <button className="round-button d-flex justify-content-center align-items-center">
+                    {" "}
+                    <Icon
+                      icon="system-uicons:arrow-top-right"
+                      width="1.2em"
+                      height="1.2em"
+                      style={{ color: "white" }}
+                    />
+                  </button>
+                </div>
+                <div className="text-div">
+                  <h6>Be the Roque</h6>
+                  <p>huihf rjguygfr jguyrrf jhiurg jhiur hrirj</p>
+                </div>
+              </div>
             </div>
-            <div className="second">
-            <img src="/images/banner_images/image_3.png" />
+            <div className="second d-flex flex-column">
+              <img src="/images/banner_images/image_3.png" />
+              <div className="details-div d-none flex-column p-2 justify-content-between">
+                <div className="d-flex justify-content-end">
+                  <button className="round-button d-flex justify-content-center align-items-center">
+                    {" "}
+                    <Icon
+                      icon="system-uicons:arrow-top-right"
+                      width="1.2em"
+                      height="1.2em"
+                      style={{ color: "white" }}
+                    />
+                  </button>
+                </div>
+                <div className="text-div">
+                  <h6>Be Cultured?</h6>
+                  <p>huihf rjguygfr jguyrrf jhiurg jhiur hrirj</p>
+                </div>
+              </div>
             </div>
           </div>
           <div className="div-3"></div>
           <div className="div-4 d-flex flex-column">
-            <div className="first">
-            <img src="/images/banner_images/image_4.png" />
-
+            <div className="first d-flex flex-column">
+              <img src="/images/banner_images/image_4.png" />
+              <div className="details-div d-none flex-column p-2 justify-content-between">
+                <div className="d-flex justify-content-end">
+                  <button className="round-button d-flex justify-content-center align-items-center">
+                    {" "}
+                    <Icon
+                      icon="system-uicons:arrow-top-right"
+                      width="1.2em"
+                      height="1.2em"
+                      style={{ color: "white" }}
+                    />
+                  </button>
+                </div>
+                <div className="text-div">
+                  <h6>Maintain your Style</h6>
+                  <p>huihf rjguygfr jguyrrf jhiurg jhiur hrirj</p>
+                </div>
+              </div>
             </div>
             <div className="second">
-            <img src="/images/banner_images/image_5.png" />
+              <img src="/images/banner_images/image_5.png" />
+              <div className="details-div d-none flex-column p-2 justify-content-between">
+                <div className="d-flex justify-content-end">
+                  <button className="round-button d-flex justify-content-center align-items-center">
+                    {" "}
+                    <Icon
+                      icon="system-uicons:arrow-top-right"
+                      width="1.2em"
+                      height="1.2em"
+                      style={{ color: "white" }}
+                    />
+                  </button>
+                </div>
+                <div className="text-div">
+                  <h6>Shop the Arts</h6>
+                  <p>huihf rjguygfr jguyrrf jhiurg jhiur hrirj</p>
+                </div>
+              </div>
             </div>
           </div>
           <div className="div-5">
-          <img src="/images/banner_images/image_6.png" />
-
+            <img src="/images/banner_images/image_6.png" />
           </div>
         </div>
       </div>
@@ -122,6 +205,33 @@ const Wrapper = styled.div`
   margin: auto;
   gap: 20px;
   height: auto;
+  .details-div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+        button {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+    .text-div {
+      text-align: start;
+      color: white;
+      p {
+        font-size: 12px;
+        margin: 0 !important;
+      }
+      h6 {
+        font-size: 14px;
+        margin: 0 !important;
+      }
+    }
+  }
   .div-1 {
     height: 217px;
     width: 208px;
@@ -129,15 +239,19 @@ const Wrapper = styled.div`
     background-color: #c89f68;
     cursor: pointer;
     transition: 0.5s;
+    position: relative;
     img {
       width: max-content;
       height: max-content;
       object-fit: cover;
       object-position: center;
-      margin-top: 22px !important;
+      margin-top: 47px !important;
     }
     &:hover {
-      background-color: red !important;
+      .details-div {
+        transition: 0.5s;
+        display: flex !important;
+      }
     }
   }
   .div-2 {
@@ -150,6 +264,15 @@ const Wrapper = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
+      transition: 0.5s;
+      position: relative;
+      &:hover {
+        .details-div {
+          transition: 0.5s;
+          display: flex !important;
+        }
+      }
       img {
         width: max-content;
         height: max-content;
@@ -163,7 +286,15 @@ const Wrapper = styled.div`
       width: 209.5px;
       border-radius: 15px;
       background-color: #4499a5;
-      
+      cursor: pointer;
+      transition: 0.5s;
+      position: relative;
+      &:hover {
+        .details-div {
+          transition: 0.5s;
+          display: flex !important;
+        }
+      }
     }
   }
   .div-3 {
@@ -183,6 +314,15 @@ const Wrapper = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
+      transition: 0.5s;
+      position: relative;
+      &:hover {
+        .details-div {
+          transition: 0.5s;
+          display: flex !important;
+        }
+      }
       img {
         width: max-content;
         height: max-content;
@@ -199,6 +339,15 @@ const Wrapper = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
+      transition: 0.5s;
+      position: relative;
+      &:hover {
+        .details-div {
+          transition: 0.5s;
+          display: flex !important;
+        }
+      }
       img {
         width: max-content;
         height: max-content;
@@ -228,7 +377,7 @@ const Wrapper = styled.div`
   p,
   h1,
   h5,
-  h4 {
+  h6 h4 {
     margin: 0 !important;
   }
   h1 {
