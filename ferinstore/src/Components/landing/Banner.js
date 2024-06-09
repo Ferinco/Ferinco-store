@@ -7,7 +7,12 @@ function Banner() {
       <div className="text-div d-flex flex-row justify-content-between align-items-center w-100">
         <Icon icon="noto:sunflower" width="2.3em" height="2.3em" />
         <h1 className="m-0">Your Online destination for online fashion</h1>
-        <Icon icon="emojione:rosette" width="2.3em" height="2.3em" />
+        <Icon
+          icon="emojione:rosette"
+          width="2.3em"
+          height="2.3em"
+          className="second-icon"
+        />
       </div>
       <div className="banner-div d-flex flex-column w-100 h-100">
         <div className="back d-flex flex-column justify-content-between h-100">
@@ -65,7 +70,7 @@ function Banner() {
             </div>
             <div className="d-flex flex-column align-items-end gap-5">
               <Icon icon="noto:wilted-flower" width="2.0em" height="2.0em" />
-              <div className="d-flex flex-row gap-3 align-items-end">
+              <div className="d-flex flex-row gap-3 align-items-end bottom-right">
                 <h1>01</h1>
                 <div className="d-flex flex-column">
                   <p>31 May 2024 . Blog</p>
@@ -171,7 +176,7 @@ function Banner() {
                 </div>
               </div>
             </div>
-            <div className="second">
+            <div className="second d-flex flex-column">
               <img src="/images/banner_images/image_5.png" />
               <div className="details-div d-none flex-column p-2 justify-content-between">
                 <div className="d-flex justify-content-end">
@@ -192,8 +197,25 @@ function Banner() {
               </div>
             </div>
           </div>
-          <div className="div-5">
+          <div className="div-5 d-flex flex-column">
             <img src="/images/banner_images/image_6.png" />
+            <div className="details-div d-none flex-column p-2 justify-content-between">
+              <div className="d-flex justify-content-end">
+                <button className="round-button d-flex justify-content-center align-items-center">
+                  {" "}
+                  <Icon
+                    icon="system-uicons:arrow-top-right"
+                    width="1.2em"
+                    height="1.2em"
+                    style={{ color: "white" }}
+                  />
+                </button>
+              </div>
+              <div className="text-div">
+                <h6>Shop the Arts</h6>
+                <p>huihf rjguygfr jguyrrf jhiurg jhiur hrirj</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -205,13 +227,35 @@ const Wrapper = styled.div`
   margin: auto;
   gap: 20px;
   height: auto;
+  @media screen and (max-width: 991px) {
+    padding-right: 0 !important;
+  }
+  @media (max-width: 767px) {
+    .text-div {
+      flex-direction: column !important;
+      h1 {
+        font-weight: 700;
+        font-size: 45px;
+        max-width: 600px;
+      }
+    }
+    .second-icon {
+      display: none;
+    }
+    .bottom-right {
+      display: none !important;
+    }
+    .banner-div {
+      margin-top: 30px;
+    }
+  }
   .details-div {
     width: 100%;
     height: 100%;
     position: absolute;
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.3);
-        button {
+    button {
       width: 30px;
       height: 30px;
       border-radius: 50%;
@@ -235,6 +279,7 @@ const Wrapper = styled.div`
   .div-1 {
     height: 217px;
     width: 208px;
+    min-width: 208px;
     border-radius: 15px;
     background-color: #c89f68;
     cursor: pointer;
@@ -245,7 +290,7 @@ const Wrapper = styled.div`
       height: max-content;
       object-fit: cover;
       object-position: center;
-      margin-top: 47px !important;
+      margin-top: 31px !important;
     }
     &:hover {
       .details-div {
@@ -299,7 +344,8 @@ const Wrapper = styled.div`
   }
   .div-3 {
     height: 473px;
-    width: 257.57px;
+    width: 257.57px !important;
+    min-width: 257.57px !important;
     border-radius: 15px;
     background-color: #f6c737;
   }
@@ -363,6 +409,15 @@ const Wrapper = styled.div`
     width: 208px;
     border-radius: 15px;
     background-color: #74bc8f;
+    cursor: pointer;
+    transition: 0.5s;
+    position: relative;
+    &:hover {
+      .details-div {
+        transition: 0.5s;
+        display: flex !important;
+      }
+    }
   }
   .summer {
     p {
@@ -425,6 +480,7 @@ const Wrapper = styled.div`
       border-radius: 50%;
       background-color: black;
       color: white;
+      border: 1px solid black;
     }
   }
   @media (min-width: 300px) and (max-width: 800px) {

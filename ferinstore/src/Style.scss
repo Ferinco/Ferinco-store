@@ -61,6 +61,9 @@ a {
     display: none !important;
   }
 }
+.App{
+  overflow-x: hidden;
+}
 .on-modal{
   background-image: url(../public/Images/backdrop-6.png);
   background-repeat: no-repeat;

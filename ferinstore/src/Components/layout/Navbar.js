@@ -119,7 +119,10 @@ const NavbarWrapper = styled.div`
   .input-div {
     border: 1px solid grey;
     border-radius: 30px;
+    width:200px;
+    justify-content: space-between;
     input {
+      width: 90%;
       border: 0 !important;
       outline: 0 !important;
       border-radius: 30px;

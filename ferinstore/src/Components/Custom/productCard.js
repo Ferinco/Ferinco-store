@@ -29,14 +29,11 @@ function ProductCard(props) {
       ) : (
         ""
       )}
-      <div className="item-body d-flex flex-column mt-4">
-        <div className="about d-flex flex-row justify-content-between">
-          <p className="name">{props.name}</p>
-          <Icon icon="ph:heart-light" className="icon" />
-        </div>
-
-        <h5 className="price">{props.price}</h5>
-        <div className="colors d-flex flex-row gap-1">
+      <div className="item-body d-flex flex-row mt-3 align-items-center justify-content-between">
+        <div className="about d-flex flex-column">
+          <p className="name m-0">{props.name}</p>
+        <h5 className="price m-0">{props.price}</h5>
+        <div className="colors d-flex flex-row gap-1 mt-1">
           {props.colors &&
             props.colors.map((color) => (
               <div
@@ -52,6 +49,10 @@ function ProductCard(props) {
               </div>
             ))}
         </div>
+        </div>
+        <div className="test px-1">
+        <Icon icon="ph:heart-light" className="icon fav-icon mt-1" />
+        </div>
       </div>
     </Card>
   );
@@ -63,6 +64,7 @@ const Card = styled.div`
   height: auto !important;
   width: auto;
   border-radius: 20px !important;
+
   &:hover {
     .tag {
       opacity: 0;
@@ -150,12 +152,13 @@ const Card = styled.div`
   }
   .name {
     font-family: 500;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 600;
   }
   .icon {
-    font-size: 30px;
-    margin-top: -7px;
+    font-size: 25px;
+    cursor: pointer;
+    justify-self: end;
   }
   .price {
     font-weight: 700;
@@ -163,8 +166,8 @@ const Card = styled.div`
     margin-top: -7px;
   }
   .color {
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
     border-radius: 50%;
     cursor: pointer;
     &:first-child {
@@ -180,12 +183,13 @@ const Card = styled.div`
     }
   }
   .active-color {
-    border: 2px solid #5cdb95 !important;
+    border: 2px solid grey !important;
   }
   @media screen and (max-width: 987px) {
     .icon {
       font-size: 20px;
       margin-top: 0px;
+
     }
     .item-body {
       padding: 0 5px;
