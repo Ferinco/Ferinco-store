@@ -8,23 +8,31 @@ export default function Collections() {
           Real Designs by Real Artists for Real People
         </h4>
         <div className="col-md-4 d-flex flex-column gap-2">
-          <p>From our favourite Naija influencers to the best missives from Milan and coolest New Yorkers, find out more.</p>
+          <p>
+            From our favourite Naija influencers to the best missives from Milan
+            and coolest New Yorkers, find out more.
+          </p>
           <Button transparent>Browse All Products</Button>
         </div>
       </div>
-      <div className="body mt-3">
+      <div className="body mt-3 d-flex no-wrap gap-3">
         <div className="image d-flex justify-content-left align-items-end px-3">
-         <div className="d-flex flex-column p-2 gap-2">
-          <p>Culture Store:<br/> Channel Your <span>Culture</span></p>
-         </div>
+          <div className="d-flex flex-column p-2 gap-2">
+            <p>
+              Culture Store:
+              <br /> Channel Your <span>Culture</span>
+            </p>
+          </div>
         </div>
         <div className="image d-flex justify-content-left align-items-end px-3">
-        <div className="d-flex flex-column p-2 gap-2">
-          <p>Time Travel:<br/> Explore The Next Gen.</p>
-         </div>
+          <div className="d-flex flex-column p-2 gap-2">
+            <p>
+              Time Travel:
+              <br /> Explore The Next Gen.
+            </p>
+          </div>
         </div>
       </div>
-
     </CollectionsDiv>
   );
 }
@@ -33,24 +41,32 @@ const CollectionsDiv = styled.div`
   margin: auto;
   display: flex;
   flex-direction: column;
-  Button{
+  overflow-x: visible;
+  width: 100%;
+  @media screen and (max-width:474px){
+    .image{
+      width: 350px !important;
+      height: 270px !important;
+    }
+  }
+  Button {
     padding: 10px 20px;
     font-weight: 700 !important;
   }
   .header {
-    h4{
+    h4 {
       font-weight: 700;
-  padding-bottom:20px ;
-  font-size:40px;
-  @media (max-width: 600px){
-    font-size:30px;
-  }
+      padding-bottom: 20px;
+      font-size: 40px;
+      @media (max-width: 600px) {
+        font-size: 30px;
+      }
     }
-    p{
+    p {
       font-size: 13px;
       margin-bottom: 0;
     }
-    button{
+    button {
       font-size: 13px;
       width: fit-content;
       color: white;
@@ -75,13 +91,13 @@ const CollectionsDiv = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-
   }
   .body {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(2, 1fr);
-    p{
+    width: fit-content;
+    display: flex;
+    flex-wrap: nowrap !important;
+    overflow-x: scroll !important;
+    p {
       color: white;
       font-weight: 500;
       font-size: 20px;
@@ -91,10 +107,12 @@ const CollectionsDiv = styled.div`
 
   .image {
     height: 300px;
-    width: auto;
+    width: 556px ;
     background-position: top;
     background-size: cover;
     border-radius: 20px;
+    width: 456px;
+
     /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
       rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
     h6 {
@@ -105,7 +123,8 @@ const CollectionsDiv = styled.div`
       background-image: url(/Images/collection_1.png);
     }
     &:nth-child(2) {
-      background-image: url(/Images/collection_2.png);    }
+      background-image: url(/Images/collection_2.png);
+    }
   }
   .link {
     display: none;
@@ -118,19 +137,9 @@ const CollectionsDiv = styled.div`
     font-size: 30px;
   }
   @media screen and (min-width: 500px) and (max-width: 768px) {
-    .body {
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(1, 1fr);
-    }
+
   }
   @media screen and (max-width: 500px) {
-    .body {
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(1, 1fr);
-    }
-
   }
   @media screen and (max-width: 991px) {
     .desktop-link {

@@ -211,7 +211,8 @@ const Slide = styled.div`
     height: fit-content;
   }
   .action-btn {
-    min-width: 220px;
+    max-width: 220px;
+    min-width: 170px;
     height: 50px;
     border-radius: 10px;
     &:nth-child(2) {
@@ -232,6 +233,9 @@ const Slide = styled.div`
     margin-right: 0 !important;
     transition: 0.3s;
     backdrop-filter: blur(20px);
+    @media screen and (max-width:706px) {
+      width: 100vw;
+    }
   }
   .quantity {
     border: 1px solid #325221 !important;
