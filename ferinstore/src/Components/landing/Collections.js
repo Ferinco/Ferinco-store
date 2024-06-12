@@ -104,15 +104,12 @@ const CollectionsDiv = styled.div`
       line-height: 1.2;
     }
   }
-
   .image {
     height: 300px;
-    width: 556px ;
+    width: 556px;
     background-position: top;
     background-size: cover;
     border-radius: 20px;
-    width: 456px;
-
     /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
       rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
     h6 {
@@ -148,5 +145,15 @@ const CollectionsDiv = styled.div`
     .link {
       display: flex;
     }
+  }
+  @media screen and (min-width: 991px) {
+    .body{
+      width: 100%;
+    }
+    .image {
+    width: 50% !important;
+
+
+  }
   }
 `;

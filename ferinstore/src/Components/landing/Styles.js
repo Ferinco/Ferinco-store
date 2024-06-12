@@ -4,7 +4,10 @@ import { Button } from "../Custom/button";
 
 export default function Styles() {
   return (
-    <StylesDiv className=" mt-5">
+    <StylesDiv className="py-5 mt-5">
+      <div className="header container">
+        <h4 className="">Our Sub-Stores, but it's still us. Always have been!</h4>
+      </div>
       <div className="row h-100 justify-content-between container gap-3 gap-lg-0">
         <div className="col-lg-8 left p-3">
           <div className="absolute d-flex flex-column justify-content-between">
@@ -28,8 +31,8 @@ export default function Styles() {
             </div>
             <div className="d-flex justify-content-end">
               <p>
-                lkshduifhod fdhdfds ihdisfsd; ohdsifhsd <br /> hiufdsf jhiufdif
-                dhdhbfds ijiuh{" "}
+                Carry your guys along everytime, <br /> everyday for the sake of
+                believe in fashion.{" "}
               </p>
             </div>
           </div>
@@ -46,26 +49,25 @@ export default function Styles() {
             </div>
           </div>
           <div className="sub-right p-2">
-          <div className="absolute d-flex flex-column justify-content-between">
-            <div className="top d-flex justify-content-end">
-              <div className="top-div d-flex justify-content-center align-items-center">
-                <div className="icon-div d-flex justify-content-center align-items-center">
-                  <Icon
-                    icon="solar:bag-2-bold"
-                    width="1.2em"
-                    height="1.2em"
-                    style={{ color: "white" }}
-                  />
+            <div className="absolute d-flex flex-column justify-content-between">
+              <div className="top d-flex justify-content-end">
+                <div className="top-div d-flex justify-content-center align-items-center">
+                  <div className="icon-div d-flex justify-content-center align-items-center">
+                    <Icon
+                      icon="solar:bag-2-bold"
+                      width="1.2em"
+                      height="1.2em"
+                      style={{ color: "white" }}
+                    />
+                  </div>
                 </div>
               </div>
+              <div className="d-flex justify-content-end">
+                <p>
+                  lkshduifhod fdhdfds <br /> hiufdsf jhiufdif.{" "}
+                </p>
+              </div>
             </div>
-            <div className="d-flex justify-content-end">
-              <p>
-                lkshduifhod fdhdfds  <br /> hiufdsf jhiufdif.
-                {" "}
-              </p>
-            </div>
-          </div>
           </div>
         </div>
       </div>
@@ -74,6 +76,18 @@ export default function Styles() {
 }
 const StylesDiv = styled.div`
   width: 100%;
+  .header {
+    h4 {
+      font-weight: 700;
+      padding-bottom: 20px;
+      font-size: 40px;
+      max-width: 50%;
+      @media (max-width: 600px) {
+        font-size: 30px;
+        max-width: 100%;
+      }
+    }
+  }
   .container {
     margin: auto;
   }
@@ -87,9 +101,10 @@ const StylesDiv = styled.div`
     &:nth-child(2) {
       background-color: #74bc8f;
       border-radius: 20px;
-      background-image: url(/Images/collection_2.png);
-      background-position: center;
-      background-size: cover;
+      background-image: url(/Images/bottom-friends.png);
+      background-color: #a9b7a9;
+      background-position: top;
+      background-size: contain;
       background-repeat: no-repeat;
     }
     Button {
@@ -126,7 +141,8 @@ const StylesDiv = styled.div`
   .left {
     height: 100%;
     border-radius: 20px;
-    background-image: url(/Images/collection_1.png);
+    background-image: url(/Images/three-friends.png);
+    background-color: #a9b7a9;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -138,15 +154,19 @@ const StylesDiv = styled.div`
       font-weight: 800 !important;
       color: white;
     }
+    p {
+      color: white;
+      line-height: 1.2;
+    }
   }
   .sub-right {
     height: 100%;
     border-radius: 20px !important;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
       rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-      p{
-        color: white;
-        margin: 0 !important;
-      }
+    p {
+      color: white;
+      margin: 0 !important;
+    }
   }
 `;
