@@ -1,0 +1,19 @@
+
+  [build]
+  command = "npm run build"
+  publish = "build/"
+    base = "build"     
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production]
+  command = "npm run build"  # Replace with your production build command
+  publish = "build"         # Replace with your production build output directory
+
+[context.development]
+  command = "npm run start"  # Replace with your development server start command
+
+
